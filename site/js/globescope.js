@@ -406,8 +406,6 @@ function onMouseDBClick(event)
 
             if (intersects.length > 0)
             {
-                console.log("OK");
-
                 if (intersects[0].object.type == "VRAI")
                 {
                     onImageClick(intersects[0].object.name);

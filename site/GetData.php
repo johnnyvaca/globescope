@@ -3,33 +3,36 @@
 //Get JSON Params
 $obj = json_decode($_POST["x"], false);
 
-$res = json_decode(file_get_contents('data/images.json')); // by default, return everything
-
+$data = json_decode(file_get_contents('data/images.json'),true); // by default, return everything as an associative array
 $query = "";
-    if (isset($_POST['Mode']))
-    {
-        $mode = $_POST["Mode"];
+if (isset($_POST['Mode']))
+{
+    $mode = $_POST["Mode"];
 
-        if ($mode == "search")
+    if ($mode == "search")
+    {
+        $pattern = "/{$obj->Pseudo}/i";
+        $res = [];
+        foreach ($data as $image)
+            if (preg_match($pattern, $image['Pseudo'])) // match
+                $res[] = $image;
+    } else if ($mode == "click")
+    {
+        foreach ($data as $key => $image)
         {
-            foreach ($res as $key => $image)
-                if (!strpos($image->Pseudo,$obj->Pseudo)) // no match
-                    unset($res[$key]);                   // remove from resultset
-        } else if ($mode == "click")
-        {
-            foreach ($res as $key => $image)
-                if ($image->IDPlace == $obj->ID) // found it
-                {
-                    $res = [$image];
-                    break; // no need to continue
-                }
-        } else if ($mode == "load")
-        {
-            // do nothing: we return all
-        } else
-        {
-            $res=null;
+            if ($image['IDPlace'] == $obj->ID) // found it
+            {
+                $res = $image;
+                break; // no need to continue
+            }
         }
+    } else if ($mode == "load")
+    {
+        $res = $data;
+    } else
+    {
+        $res = null;
     }
-    echo json_encode($res);
+}
+echo json_encode($res);
 ?>
