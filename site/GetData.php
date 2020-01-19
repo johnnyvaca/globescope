@@ -1,26 +1,9 @@
 <?php
 
-//Variables d'authentifications
-$servername = "localhost";
-$username = "root";
-$password = "root";
-$dbname = "globescope_img";
-
-/*$servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "globoscope"; */
-
-//Connection à la BD
-$bdd = new PDO('mysql:host=' . $servername . ';dbname=' . $dbname . ';charset=utf8', $username, $password);
-
-// permet d'avoir plus de détails sur les erreurs retournées
-$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-//Gert JSON Params
+//Get JSON Params
 $obj = json_decode($_POST["x"], false);
 
-$output = json_decode(file_get_contents('images.json')); // by default, return evrything
+$res = json_decode(file_get_contents('images.json')); // by default, return everything
 
 $query = "";
     if (isset($_POST['Mode']))
@@ -29,23 +12,24 @@ $query = "";
 
         if ($mode == "search")
         {
-            $query = 'SELECT Pseudo,IDPlace,IDImage,ImageOK  FROM images WHERE Pseudo LIKE \'%' . $obj->Pseudo . '%\'';
+            foreach ($res as $key => $image)
+                if (!strpos($image->Pseudo,$obj->Pseudo)) // no match
+                    unset($res[$key]);                   // remove from resultset
         } else if ($mode == "click")
         {
-            $query = "SELECT IDPlace,IDImage,Pseudo,Slogan,Droit,ImageOK FROM images WHERE IDPlace = " . $obj->ID;
+            foreach ($res as $key => $image)
+                if ($image->IDPlace == $obj->ID) // found it
+                {
+                    $res = [$image];
+                    break; // no need to continue
+                }
         } else if ($mode == "load")
         {
-            die(json_encode($output));
+            // do nothing: we return all
         } else
         {
-            //nothing
+            $res=null;
         }
     }
-
-    $result = $bdd->query($query);
-
-    $output = array();
-    $output = $result->fetchAll();
-
-    echo json_encode($output);
+    echo json_encode($res);
 ?>
