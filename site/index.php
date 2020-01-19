@@ -94,27 +94,9 @@
 <script src="js/childClicked.js"></script>
 <script src="js/Tween.js"></script>
 
-<script type="application/x-glsl" id="sky-vertex">
-		varying vec2 vUV;
+<script src="x-glsl/vertex.xglsl" type="application/x-glsl" id="sky-vertex"></script>
+<script type="application/x-glsl" id="sky-fragment"></script>
 
-		void main() {
-		vUV = uv;
-		vec4 pos = vec4(position, 1.0);
-		gl_Position = projectionMatrix * modelViewMatrix * pos;
-		}
-
-</script>
-
-<script type="application/x-glsl" id="sky-fragment">
-		uniform sampler2D texture;
-		varying vec2 vUV;
-
-		void main() {
-		vec4 sample = texture2D(texture, vUV);
-		gl_FragColor = vec4(sample.xyz, sample.w);
-		}
-
-</script>
 <script src="js/globescope.js"></script>
 
 </body>
