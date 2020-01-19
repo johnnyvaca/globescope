@@ -3,7 +3,7 @@
 //Get JSON Params
 $obj = json_decode($_POST["x"], false);
 
-$res = json_decode(file_get_contents('images.json')); // by default, return everything
+$res = json_decode(file_get_contents('data/images.json')); // by default, return everything
 
 $query = "";
     if (isset($_POST['Mode']))
