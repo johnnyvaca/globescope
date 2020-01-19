@@ -370,7 +370,6 @@ THREE.SimplifyModifier = function() {
 	THREE.SimplifyModifier.prototype.modify = function( geometry, count ) {
 
 		if ( geometry instanceof THREE.BufferGeometry && !geometry.vertices && !geometry.faces ) {
-			console.log('converting BufferGeometry to Geometry');
 			geometry = new THREE.Geometry().fromBufferGeometry( geometry );
 		}
 
@@ -426,7 +425,6 @@ THREE.SimplifyModifier = function() {
 		while( z-- ) {
 			nextVertex = minimumCostEdge( vertices );
 			if (!nextVertex) {
-				console.log('no next vertex');
 				break;
 			}
 			collapse( vertices, faces, nextVertex, nextVertex.collapseNeighbor );

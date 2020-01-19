@@ -8,8 +8,6 @@
 
 THREE.RaytracingRenderer = function ( parameters ) {
 
-	console.log( 'THREE.RaytracingRenderer', THREE.REVISION );
-
 	parameters = parameters || {};
 
 	var scope = this;
@@ -37,8 +35,6 @@ THREE.RaytracingRenderer = function ( parameters ) {
 
 	var toRender = [], workerId = 0, sceneId = 0;
 
-	console.log( '%cSpinning off ' + workers + ' Workers ', 'font-size: 20px; background: black; color: white; font-family: monospace;' );
-
 	this.setWorkers = function( w ) {
 
 		workers = w || navigator.hardwareConcurrency || 4;
@@ -59,8 +55,6 @@ THREE.RaytracingRenderer = function ( parameters ) {
 					context.putImageData( imagedata, data.blockX, data.blockY );
 
 					// completed
-
-					console.log( 'Worker ' + this.id, data.time / 1000, ( Date.now() - reallyThen ) / 1000 + ' s' );
 
 					if ( pool.length > workers ) {
 

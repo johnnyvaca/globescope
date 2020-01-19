@@ -5,12 +5,12 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-		<link rel="stylesheet" href="css/style.css?d=<?php echo time(); ?>"> 	
-		<link rel="stylesheet" href="css/sideBarStyle.css?d=<?php echo time(); ?>"> 	
-		<link rel="stylesheet" href="css/searchBar.css?d=<?php echo time(); ?>"> 	
-		<link rel="stylesheet" href="css/searchResults.css?d=<?php echo time(); ?>"> 	
+		<link rel="stylesheet" href="css/style.css?d=<?php echo time(); ?>">
+		<link rel="stylesheet" href="css/sideBarStyle.css?d=<?php echo time(); ?>">
+		<link rel="stylesheet" href="css/searchBar.css?d=<?php echo time(); ?>">
+		<link rel="stylesheet" href="css/searchResults.css?d=<?php echo time(); ?>">
 		<link rel="stylesheet" href="css/helpStyle.css?d=<?php echo time(); ?>">
-		<link rel="stylesheet" href="css/progressBar.css?d=<?php echo time(); ?>"> 	
+		<link rel="stylesheet" href="css/progressBar.css?d=<?php echo time(); ?>">
 
 	</head>
 
@@ -39,19 +39,19 @@
 		</div>
 		<div id="creditBox">
 			<div id="header">
-				<h3 class="credit" a href="">Credit</h3>            
+				<h3 class="credit" a href="">Credit</h3>
 			</div>
 			<p id="closeCredit" class="closeButton" onclick="closeHelp()">X</p>
-			<img id="imageGroupe" src="images/photoGroupe.png" alt="Development Group"> 
+			<img id="imageGroupe" src="images/photoGroupe.png" alt="Development Group">
 			<div id="Groupe">
 				<p id="groupeMembresContenu"></p>
 			</div>
 			<div class="languageSelect">
 				<span id="creditSpan" onclick="aideFr()">Help</span>
-			</div>            
+			</div>
 		</div>
 	</div>
-	
+
 	<div id="sideBar" class ="GUI">
 		<p id="closeSideBar" class="closeButton">X</p>
 		<div class ="loader" id="imageLoader"></div>
@@ -66,14 +66,14 @@
 		</div>
 		<div id="onSearchDetails" class ="flexContainer">
 		<h1>Resultat de la recherche</h1>
-		
+
 		</div>
 	</div>
-	
+
 	<span><img id="showSearch" class ="GUI" src = "images/searchIcon.png"></span>
 
 	<div id="searchBar" class="GUI">
-		<input type="text" id="searchText">                                        
+		<input type="text" id="searchText">
 		<span id="searchButton">Recherche</span>
 		</input>
 		<div id="onDynamicSearch">
@@ -91,25 +91,25 @@
 	<script src="js/childClicked.js"></script>
 	<script src="js/Tween.js"></script>
 
-	<script type="application/x-glsl" id="sky-vertex">  
+	<script type="application/x-glsl" id="sky-vertex">
 		varying vec2 vUV;
 
-		void main() {  
+		void main() {
 		vUV = uv;
 		vec4 pos = vec4(position, 1.0);
 		gl_Position = projectionMatrix * modelViewMatrix * pos;
 		}
 	</script>
 
-	<script type="application/x-glsl" id="sky-fragment">  
-		uniform sampler2D texture;  
+	<script type="application/x-glsl" id="sky-fragment">
+		uniform sampler2D texture;
 		varying vec2 vUV;
 
-		void main() {  
+		void main() {
 		vec4 sample = texture2D(texture, vUV);
 		gl_FragColor = vec4(sample.xyz, sample.w);
 		}
-	</script>  
+	</script>
 
 	<script>
 
@@ -131,10 +131,10 @@
 		controls.enableDamping = true;
         controls.minDistance = 2850;
         controls.maxDistance = 5000;
-					
+
 		/*Conteneur des détails de l'image recherchée //Onclick */
 		camera.position.z = 7000;
-		
+
 		/*
 		var axisHelper = new THREE.AxisHelper( 10000 );
 		scene.add( axisHelper );
@@ -143,27 +143,27 @@
 		/*Ajouer les élément principaux*/
 		renderer.setSize( rendererW,rendererH);
 
-		var geometry = new THREE.SphereGeometry(10000, 60, 40);  
+		var geometry = new THREE.SphereGeometry(10000, 60, 40);
 
-		/*		SkyBox 
+		/*		SkyBox
 			http://www.ianww.com/blog/2014/02/17/making-a-skydome-in-three-dot-js/
 		*/
-		var uniforms = {  
+		var uniforms = {
 		texture: { type: 't', value: THREE.ImageUtils.loadTexture('images/MilkyWay.jpg') }
 		};
 
-		var material = new THREE.ShaderMaterial( {  
+		var material = new THREE.ShaderMaterial( {
 		uniforms:       uniforms,
 		vertexShader:   document.getElementById('sky-vertex').textContent,
 		fragmentShader: document.getElementById('sky-fragment').textContent
 		});
 
-		skyBox = new THREE.Mesh(geometry, material);  
-		skyBox.scale.set(-1, 1, 1);  
-		skyBox.eulerOrder = 'XZY';  
-		skyBox.renderDepth = 1000.0;  
-		scene.add(skyBox);  
-		
+		skyBox = new THREE.Mesh(geometry, material);
+		skyBox.scale.set(-1, 1, 1);
+		skyBox.eulerOrder = 'XZY';
+		skyBox.renderDepth = 1000.0;
+		scene.add(skyBox);
+
 		/**Fin initialisation three JS */
 		var container = renderer.domElement;
 		container.id = "CanvContainer";
@@ -205,7 +205,7 @@
 		childImage.onload = showOnClickDetails;
 		closeSideBar.onclick = hideSideBar;
 		sideBar.style.display='none';
-		
+
 		/*Loader pour l'image*/
 		var imageLoader =  document.getElementById("imageLoader");
 		imageLoader.className="loader";
@@ -257,7 +257,7 @@
 				.to({ x: to.x, y: to.y, z: to.z, }, duration)
 				.easing(easing)
 				.onUpdate(function(d) {
-					if(options.update){ 
+					if(options.update){
 						options.update(d);
 					}
 				})
@@ -281,13 +281,13 @@
             box.style.display = 'flex';
             var deplacementSouris = document.getElementById('aideDeplacementSouris');
 			deplacementSouris.textContent = "déplacez vous en maintenant le clic gauche de la souris.";
-			
+
             var aideZoom = document.getElementById('aideZoom');
 			aideZoom.textContent = "utilisez les touches +/- ou la molette de souris pour zoomer/dézoomer";
-			
+
             var aideAgrandirImage = document.getElementById('aideAgrandirImage');
 			aideAgrandirImage.textContent = "Double-cliquez sur l'image pour l'agrandir et afficher ses informations";
-			
+
             var aideRecherche = document.getElementById('aideRecherche');
             aideRecherche.textContent = "Pour recherche un/votre pseudo cliquez sur la loupe et ecrivez ensuite un/votre pseudo.";
         }
@@ -298,21 +298,21 @@
 
             var deplacementSouris = document.getElementById('aideDeplacementSouris');
 			deplacementSouris.textContent = "Drag the mouse arround while maintaining the left button down to explore the globe";
-			
+
             var aideZoom = document.getElementById('aideZoom');
 			aideZoom.textContent = "use +/- or the mouse wheel  to zoom/out";
-			
+
             var aideAgrandirImage = document.getElementById('aideAgrandirImage');
 			aideAgrandirImage.textContent = "Click on the picture to enlarge and display the informations";
-			
+
             var aideRecherche = document.getElementById('aideRecherche');
-            aideRecherche.textContent = "To find a/your pseudo, click on the magnifying glass and write a/your pseudo";            
+            aideRecherche.textContent = "To find a/your pseudo, click on the magnifying glass and write a/your pseudo";
         }
 		function credit()
 		{
             var aide = document.getElementById('box');
             aide.style.display = 'none';
-            
+
             var credit = document.getElementById('creditBox');
             credit.style.display = 'block';
 
@@ -340,7 +340,7 @@
 				if(e.keyCode == 27 )
 				{
 					hideSearch();
-				}				
+				}
 			}
 		}
 		function showSearch()
@@ -376,7 +376,7 @@
 				container.onmousedown = onMouseClick;
 				helpButton.style.display = 'block';
 				showSearchButton.style.display ='block';
-			}			
+			}
 		}
 		function showSearchResults()
 		{
@@ -385,14 +385,14 @@
 			{
 				SearchBox.style.display = 'none';
 				showSearchButton.style.display = 'none';
-				helpButton.style.display = 'none';			
+				helpButton.style.display = 'none';
 			}
 			else
 			{
 				SearchBox.style.display = 'none';
 				showSearchButton.style.display = 'block';
 			}
-			
+
 			onClickDetails.style.display = 'none';
 			onSearchDetails.style.display = 'flex';
 
@@ -433,7 +433,7 @@
 		function showSideBar()
 		{
 			imageLoader.style.display = 'block';
-			
+
 
 			sideBar.className = "GUI w3-animate-right";
 			sideBar.style.display='block';
@@ -449,7 +449,7 @@
 				showSearchButton.style.display = 'none';
 
 			}
-			
+
 
 		}
 		function checkEnter(e)
@@ -468,17 +468,16 @@
 			rendererH = window.innerHeight;
 			camera.aspect =  rendererW/rendererH;
 			camera.updateProjectionMatrix();
-			renderer.setSize(rendererW,rendererH );	
+			renderer.setSize(rendererW,rendererH );
 		}
 		function onMouseMove(event)
 		{
 			mouse.x = (event.clientX /rendererW) * 2 -1;
-			mouse.y = -(event.clientY / rendererH) * 2 + 1;		
+			mouse.y = -(event.clientY / rendererH) * 2 + 1;
 		}
 
-		function onMouseClick( event ) 
+		function onMouseClick( event )
 		{
-			console.log(distanceVector(camera.position,new THREE.Vector3(0,0,0)) + " "+ controls.rotateSpeed);
 			mouse.x = (event.clientX /rendererW) * 2 -1;
 			mouse.y = -(event.clientY /rendererH) * 2 + 1;
 			switch(event.button)
@@ -486,10 +485,10 @@
 				case 0:
 					// update the picking ray with the camera and mouse position
 					raycaster.setFromCamera( mouse, camera );
-					
+
 					// calculate objects intersecting the picking ray
 					var intersects = raycaster.intersectObjects( scene.children );
-				
+
 					if(intersects.length > 0)
 					{
 						if(intersects[0].object.type =="VRAI")
@@ -517,24 +516,24 @@
 			return Math.sqrt( dx * dx + dy * dy + dz * dz );
 		}
 
-		function animate() 
+		function animate()
 		{
-			setTimeout( function() 
-			{				
+			setTimeout( function()
+			{
 				requestAnimationFrame( animate );
 				TWEEN.update();
 				controls.update();
-			}, 1000 / 30 );			
+			}, 1000 / 30 );
 
 			render();
 		}
-		function render() 
+		function render()
 		{
 			controls.rotateSpeed = 1/(10000/distanceVector(camera.position,new THREE.Vector3(0,0,0)));
 			// update the picking ray with the camera and mouse position
-			raycaster.setFromCamera( mouse, camera );	
+			raycaster.setFromCamera( mouse, camera );
 			// calculate objects intersecting the picking ray
-			var intersects = raycaster.intersectObjects( scene.children );		
+			var intersects = raycaster.intersectObjects( scene.children );
 			if(intersects.length > 0)
 			{
 				container.style.cursor = "pointer";
