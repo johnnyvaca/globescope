@@ -290,7 +290,7 @@ THREE.OrbitControls = function ( object, domElement ) {
         }else{
             sphericalDelta.theta -= angle;
         }
-        
+
 
 	}
 
@@ -351,23 +351,17 @@ THREE.OrbitControls = function ( object, domElement ) {
 
 	function handleMouseDownRotate( event ) {
 
-		//console.log( 'handleMouseDownRotate' );
-
 		rotateStart.set( event.clientX, event.clientY );
 
 	}
 
 	function handleMouseDownDolly( event ) {
 
-		//console.log( 'handleMouseDownDolly' );
-
 		dollyStart.set( event.clientX, event.clientY );
 
 	}
 
 	function handleMouseMoveRotate( event ) {
-
-		//console.log( 'handleMouseMoveRotate' );
 
 		rotateEnd.set( event.clientX, event.clientY );
 		rotateDelta.subVectors( rotateEnd, rotateStart );
@@ -387,8 +381,6 @@ THREE.OrbitControls = function ( object, domElement ) {
 	}
 
 	function handleMouseMoveDolly( event ) {
-
-		//console.log( 'handleMouseMoveDolly' );
 
 		dollyEnd.set( event.clientX, event.clientY );
 
@@ -412,13 +404,9 @@ THREE.OrbitControls = function ( object, domElement ) {
 
 	function handleMouseUp( event ) {
 
-		// console.log( 'handleMouseUp' );
-
 	}
 
 	function handleMouseWheel( event ) {
-
-		// console.log( 'handleMouseWheel' );
 
 		if ( event.deltaY < 0 ) {
 
@@ -646,7 +634,7 @@ THREE.OrbitControls = function ( object, domElement ) {
 		}
 		scope.update();
 	}
-    
+
 
 	function onMouseUp( event ) {
 
@@ -760,7 +748,7 @@ THREE.OrbitControls = function ( object, domElement ) {
 			case 3: // three-fingered touch: pan
 
 				if ( scope.enablePan === false ) return;
-				
+
 				break;
 
 			default:
@@ -801,7 +789,7 @@ THREE.OrbitControls = function ( object, domElement ) {
 	scope.domElement.addEventListener( 'touchstart', onTouchStart, false );
 	scope.domElement.addEventListener( 'touchend', onTouchEnd, false );
 	scope.domElement.addEventListener( 'touchmove', onTouchMove, false );
-	
+
 
 	window.addEventListener( 'keypress', onKeyPress, false);
 

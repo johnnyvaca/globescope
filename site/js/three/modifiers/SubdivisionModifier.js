@@ -232,8 +232,6 @@ THREE.SubdivisionModifier.prototype.modify = function ( geometry ) {
 			currentEdge.newEdge = newEdgeVertices.length;
 			newEdgeVertices.push( newEdge );
 
-			// console.log(currentEdge, newEdge);
-
 		}
 
 		/******************************************************
@@ -379,8 +377,6 @@ THREE.SubdivisionModifier.prototype.modify = function ( geometry ) {
 		geometry.vertices = newVertices;
 		geometry.faces = newFaces;
 		if ( hasUvs ) geometry.faceVertexUvs[ 0 ] = newUVs;
-
-		// console.log('done');
 
 	};
 
