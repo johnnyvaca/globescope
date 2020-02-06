@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="css/searchResults.css?d=<?php echo time(); ?>">
     <link rel="stylesheet" href="css/helpStyle.css?d=<?php echo time(); ?>">
     <link rel="stylesheet" href="css/progressBar.css?d=<?php echo time(); ?>">
-
 </head>
 
 <body>
@@ -116,6 +115,7 @@ void main() {
 </script>
 
 <script src="js/globescope.js"></script>
+<script src="js/loginAdmin.js"></script>
 
 </body>
 </html>
