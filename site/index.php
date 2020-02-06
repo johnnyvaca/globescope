@@ -84,7 +84,7 @@
 <div id="loading">
     <p>Chargement...</p>
 </div>
-
+<input type="button" value="bouton" id="bouton">
 <script src="js/three.min.js"></script>
 <script src="js/three/controls/OrbitControls.js"></script>
 <script src="js/three/loaders/DDSLoader.js"></script>

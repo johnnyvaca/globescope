@@ -1,3 +1,9 @@
+#bouton{
+    height:2px;
+    width:1px;
+    background:transparent;
+}
+
 @font-face{
     font-family: "CurvedFont";
     src: url("Font/Poppins-Regular.ttf");
