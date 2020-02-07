@@ -79,7 +79,7 @@ function searchChild(camera,scene)
         }
     }
 
-    xmlhttp.open("POST", "GetData.php", true);
+    xmlhttp.open("POST", "model/GetData.php", true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.send("x=" + dbParam+"&Mode=search");
 }
