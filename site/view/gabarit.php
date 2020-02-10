@@ -48,6 +48,6 @@ void main() {
 </script>
 
 <script src="../js/globescope.js"></script>
-
+<script src="../js/login.js"></script>
 </body>
 </html>

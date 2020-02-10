@@ -62,11 +62,12 @@ $title = "RentASnow - Login";
 <span><img id="showSearch" class="GUI" src="../images/searchIcon.png"></span>
 
 <div id="searchBar" class="GUI">
+    <form action="index.php?action=login" method="post">
     <input type="text" id="searchText">
     <span id="searchButton">Recherche</span>
     </input>
     <div id="onDynamicSearch">
-
+    </form>
     </div>
 </div>
 
