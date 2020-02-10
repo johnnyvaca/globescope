@@ -5,7 +5,6 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-		<link rel="stylesheet" href="css/style.css?d=<?php echo time(); ?>">
 		<link rel="stylesheet" href="css/sideBarStyle.css?d=<?php echo time(); ?>">
 		<link rel="stylesheet" href="css/searchBar.css?d=<?php echo time(); ?>">
 		<link rel="stylesheet" href="css/searchResults.css?d=<?php echo time(); ?>">

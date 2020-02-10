@@ -3,6 +3,9 @@
 function getImages(){
     return  json_decode(file_get_contents('data/images.json'),true); // by default, return everything as an associative array;
 }
+
+
+
 //Get JSON Params
 
     $data = getImages();

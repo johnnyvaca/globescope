@@ -79,5 +79,5 @@ $title = "globescope";
 <?php
  echo json_encode($res);
 $content = ob_get_clean();
-require "view/gabarit.php";
+require "view/gabaritGlobe.php";
 ?>
