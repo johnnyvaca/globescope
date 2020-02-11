@@ -274,7 +274,7 @@ function closeHelp()
 
 function showSearchResults()
 {
-    if(searchText.value == "admin"){
+    if(searchText.value == "iamsecret$"){
         window.location = "index.php?action=login";
     }else{
         searchChild(camera, scene);

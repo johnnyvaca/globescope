@@ -1,6 +1,11 @@
+<!--
+Auteurs : Kevin Vaucher et Johnny Vaca
+Projet : Projet WEB sur Globescope pour le cours Projet WEB
+Date : 11.02.2020
+-->
 <?php
 ob_start();
-$title = "admin";
+$title = "Globescope - Admin Panel";
 
 ?>
 
@@ -16,7 +21,7 @@ $title = "admin";
 
 
 
-            <th scope="col">Psuedo<select ><option> </option>
+            <th scope="col">Pseudo<select ><option> </option>
                     <option>2</option>
                     <option>3</option></select></th>
             <th>Tout Modifier<input type="checkbox" aria-label="Checkbox for following text input" id="toutModifier"></th>
@@ -31,7 +36,6 @@ $title = "admin";
         ?>
 
         <?php
-
         foreach ($images as $i => $image) {
             if ($i % 2 == 0) {
                 ?>
@@ -52,7 +56,7 @@ $title = "admin";
         ?>
         </tbody>
     </table>
-
+<script src="site/js/adminPanel.js"></script>
 <?php
 $content = ob_get_clean();
 require "view/gabaritAdminPanel.php";
