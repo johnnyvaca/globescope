@@ -14,8 +14,8 @@ $title = "admin";
 
         </div>
     </div>
-    <h1>PAGE ADMIN
-        <button>MODIFIER</button>
+    <h1>Panel Administrateur
+
     </h1>
     <select name="pays" aria-label="je ne sais pas">
         <option value="France" selected="selected">France </option>
@@ -274,7 +274,28 @@ $title = "admin";
         <option value="Zimbabwe">Zimbabwe </option>
 
     </select>
-    <table class="table table-striped">
+<select>
+    <option value="Tous">Tous</option>
+    <option value="Aucun">Aucun</option>
+</select>
+    <select>
+        <option value="Tous">Tous</option>
+        <option value="Aucun">Aucun</option>
+    </select>
+    <select>
+        <option value="Tous">Tous</option>
+        <option value="Aucun">Aucun</option>
+    </select>
+    <select>
+        <option value="Tous">Tous</option>
+        <option value="Aucun">Aucun</option>
+    </select>
+    <select>
+        <option value="Tous">Tous</option>
+        <option value="Aucun">Aucun</option>
+    </select>
+<div class="divTable">
+    <table class="table">
 
         <thead id="cool">
         <tr>
@@ -324,7 +345,7 @@ $title = "admin";
         ?>
         </tbody>
     </table>
-
+</div>
 <?php
 $content = ob_get_clean();
 require "view/gabaritAdminPanel.php";
