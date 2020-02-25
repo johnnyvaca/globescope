@@ -1,3 +1,4 @@
+
 //Requete XMLHTTP pour récupéerer des détails d'un enfant
 //en paramètre (x) l'ID de l'image recherché
 function onImageClick(x)
