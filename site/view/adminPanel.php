@@ -3,27 +3,43 @@ ob_start();
 $title = "admin";
 
 ?>
-    <div class="divTitle1">
-        <h1>Panel Administrateur
-        </h1>
+    <!--
+        <label for="choix_bieres">Indiquez votre bière préférée :</label>
+        <input list="bieres" type="text" id="choix_bieres">
+        <datalist id="bieres">
+            <option value="Meteor"><button>X</button></option>
+            <option value="Pils">
+            <option value="Kronenbourg">
+            <option value="Grimbergen">
+        </datalist>
+        -->
+    <div class="divMenu">
+        <div class="divTitle1">
+            <h1>Panel Administrateur
+            </h1>
+        </div>
+        <div class="divTitle2">
+            <h3>Liste des Particpants
+            </h3>
+        </div>
+        <div class="divSearch">
+            <select>
+                <option>option11</option>
+            </select>
+            <input type="text">
+        </div>
+        <div class="divModifier">
+            <span>Tout Modifier</span><input type="checkbox" aria-label="Checkbox for following text input"
+                                             id="toutModifier">
+            <button>MODIFIER</button>
+        </div>
     </div>
-    <div class="divTitre1">
-        <h3>Liste des Particpants
-        </h3>
-    </div>
-    <div class="divSearch">
-        <select>
-            <option>option11</option>
-        </select>
-        <input type="text">
-    </div>
-    <span>Tout Modifier</span><input type="checkbox" aria-label="Checkbox for following text input"
-                                     id="toutModifier">
-    <button>MODIFIER</button>
+    <br>
+    <br>
+    <br>
     <div class="divSelects">
-        <select name="pays" aria-label="je ne sais pas">
+        <select name="pays" class="divSelect">
             <option value="France" selected="selected">France</option>
-
             <option value="Afghanistan">Afghanistan</option>
             <option value="Afrique_Centrale">Afrique_Centrale</option>
             <option value="Afrique_du_sud">Afrique_du_Sud</option>
@@ -278,44 +294,39 @@ $title = "admin";
             <option value="Zimbabwe">Zimbabwe</option>
 
         </select>
+        <select class="divSelect">
+            <option value="Tous">Tous</option>
+            <option value="Aucun">Aucun</option>
+        </select>
+        <select class="divSelect">
+            <option value="Tous">Tous</option>
+            <option value="Aucun">Aucun</option>
+        </select class="divSelect">
+        <select class="divSelect">
+            <option value="Tous">Tous</option>
+            <option value="Aucun">Aucun</option>
+        </select class="divSelect">
         <select>
             <option value="Tous">Tous</option>
             <option value="Aucun">Aucun</option>
         </select>
-        <select>
+        <select class="divSelect">
             <option value="Tous">Tous</option>
             <option value="Aucun">Aucun</option>
-        </select>
-        <select>
-            <option value="Tous">Tous</option>
-            <option value="Aucun">Aucun</option>
-        </select>
-        <select>
-            <option value="Tous">Tous</option>
-            <option value="Aucun">Aucun</option>
-        </select>
-        <select>
-            <option value="Tous">Tous</option>
-            <option value="Aucun">Aucun</option>
+            <option></option>
         </select>
     </div>
-
     <!-- <div class="divTable"> -->
     <table class="table">
-
         <thead id="cool">
         <tr>
             <th>
-
             </th>
-
-
         </tr>
         </thead>
         <tbody id="tbody">
         <?php
         // var_dump($images);
-
         // sort($images);
         // print_r($tab);
         ?>
@@ -329,11 +340,11 @@ $title = "admin";
                 <?php
             } else {
                 ?>
-                <tr>
+                <tr class="bg-danger">
                 <?php
             }
             ?>
-            <td><img src="images/64-64/<?= $image['IDImage'] ?>.png" width="200px" height="200px"></td>
+            <!--        <td><img src="images/64-64/<?= $image['IDImage'] ?>.png" width="200px" height="200px"></td> -->
             <td><?= $image['Pseudo'] ?></td>
             <td><span>modifier</span><input type="checkbox" aria-label="Checkbox for following text input"></td>
             </tr>
