@@ -4,7 +4,6 @@
 }
 
 .divTitle1 {
-
     position: absolute;
     left: 1%;
 }
@@ -29,6 +28,12 @@
     top: 5%;
     right: 1%;
 }
+.divSelect {
+    width: 100%;
+    background-color: #721c24;
+    position: relative;
+    top: 2%;
+}
 
 .divSelects {
     width: 25%;
@@ -38,16 +43,10 @@
     left: 1%;
 }
 
-.divSelect {
-    width: 100%;
-    background-color: #721c24;
-    position: relative;
-    top: 2%;
-}
 
 .table {
     width: 75%;
-    position: absolute;
+    position: relative;
     left: 1%;
     top: 15%;
 }
