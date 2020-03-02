@@ -12,4 +12,3 @@ function getLoginPage(){
    $images = getImages();
     require "view/adminPanel.php";
 }
-?>

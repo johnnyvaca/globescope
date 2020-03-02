@@ -39,6 +39,3 @@ function getImages(){
 
     }
 echo json_encode($res);
-
-
-?>

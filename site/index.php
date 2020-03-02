@@ -10,6 +10,4 @@ switch ($action) {
 
     default:
         getHomePage();
-
 }
-?>
