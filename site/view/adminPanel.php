@@ -1,6 +1,6 @@
 <?php
 ob_start();
-$title = "Panel Administrateur";
+$title = "admin";
 
 ?>
     <!--
@@ -21,17 +21,21 @@ $title = "Panel Administrateur";
         <div class="divTitle2">
             <h3>Liste des Participants
             </h3>
-        </div>q
+        </div>
         <div class="divSearch">
+
             <select>
                 <option>option11</option>
             </select>
+            <span>    hello </span>
             <input type="text">
         </div>
         <div class="divModifier">
-            <span>Tout Modifier </span><input type="checkbox" aria-label="Checkbox for following text input"
-                                              id="toutModifier">
             <button>MODIFIER</button>
+
+            <span>Tout Modifier</span><input type="checkbox" aria-label="Checkbox for following text input"
+                                             id="toutModifier">
+
         </div>
     </div>
     <br>
@@ -294,67 +298,84 @@ $title = "Panel Administrateur";
             <option value="Zimbabwe">Zimbabwe</option>
 
         </select>
+        <br>
         <select class="divSelect">
             <option value="Tous">Tous</option>
             <option value="Aucun">Aucun</option>
         </select>
+        <br>
         <select class="divSelect">
-            <option value="Tous">Tous</option>
-            <option value="Aucun">Aucun</option>
-        </select class="divSelect">
-        <select class="divSelect">
-            <option value="Tous">Tous</option>
-            <option value="Aucun">Aucun</option>
-        </select class="divSelect">
-        <select>
             <option value="Tous">Tous</option>
             <option value="Aucun">Aucun</option>
         </select>
+        <br>
+        <select class="divSelect">
+            <option value="Tous">Tous</option>
+            <option value="Aucun">Aucun</option>
+        </select>
+        <br>
+        <select class="divSelect">
+            <option value="Tous">Tous</option>
+            <option value="Aucun">Aucun</option>
+        </select>
+        <br>
         <select class="divSelect">
             <option value="Tous">Tous</option>
             <option value="Aucun">Aucun</option>
             <option></option>
         </select>
     </div>
-    <!-- <div class="divTable"> -->
-    <table class="table">
-        <thead id="cool">
-        <tr>
-            <th>
-            </th>
-        </tr>
-        </thead>
-        <tbody id="tbody">
-        <?php
-        // var_dump($images);
-        // sort($images);
-        // print_r($tab);
-        ?>
+    <div class="divTable scrollit">
+        <table class="table">
+            <!--  <thead id="cool">
+              <tr>
+                  <th>
+                  </th>
+              </tr>
+              </thead> -->
+            <tbody id="tbody">
+            <?php
+            // var_dump($images);
+            // sort($images);
+            // print_r($tab);
+            ?>
 
-        <?php
+            <?php
 
-        foreach ($images as $i => $image) {
-            if ($i % 2 == 0) {
+            foreach ($images as $i => $image) {
+                if ($i % 2 == 0) {
+                    ?>
+                    <tr class="bg-success">
+                    <?php
+                } else {
+                    ?>
+                    <tr class="bg-danger">
+                    <?php
+                }
                 ?>
-                <tr class="bg-success">
-                <?php
-            } else {
-                ?>
-                <tr class="bg-danger">
+                <td> <img src="imagesss/64-64/" width="200px" height="200px"></td>
+                <td>Pseudo<br><br><?= $image['Pseudo'] ?></td>
+                <td>Pays<br><br><?= $image['Pseudo'] ?></td>
+                <td>Phrase personalisée<br><br><?= $image['Pseudo'] ?></td>
+                <td>Droit<br><br><?= $image['Pseudo'] ?></td>
+                <td>
+
+                    <br>
+                    <br>
+                    <span>modifier</span><input type="checkbox" aria-label="Checkbox for following text input"></td>
+                </tr>
                 <?php
             }
             ?>
-            <!--        <td><img src="images/64-64/<?= $image['IDImage'] ?>.png" width="200px" height="200px"></td> -->
-            <td><?= $image['Pseudo'] ?></td>
-            <td><span>Modifier </span><input type="checkbox" aria-label="Checkbox for following text input"></td>
-            </tr>
-            <?php
-        }
-        ?>
-        </tbody>
-    </table>
-
+            </tbody>
+        </table>
+    </div>
 <?php
 $content = ob_get_clean();
 require "view/gabaritAdminPanel.php";
 ?>
+
+<!--
+   /// IMAGES //
+
+<?= $image['IDImage'] ?>.png -->
