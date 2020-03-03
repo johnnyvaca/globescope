@@ -20,10 +20,12 @@ $title = "globescope";
             <hr></hr>
             <p id="aideAgrandirImage">Double-cliquez sur l'image pour l'agrandir et afficher ses informations</p>
             <hr></hr>
-            <p id="aideRecherche">Pour recherche un/votre pseudo cliquez sur la loupe et ecrivez ensuite un/votre pseudo.</p>
+            <p id="aideRecherche">Pour recherche un/votre pseudo cliquez sur la loupe et ecrivez ensuite un/votre
+                pseudo.</p>
         </div>
         <div class="languageSelect">
-            <span id="FR" onclick="aideFr()">FR</span>/<span id="EN" onclick="aideAng()">EN</span>/<span id="creditSpan" onclick="credit()">Credits</span>
+            <span id="FR" onclick="aideFr()">FR</span>/<span id="EN" onclick="aideAng()">EN</span>/<span id="creditSpan"
+                                                                                                         onclick="credit()">Credits</span>
         </div>
     </div>
     <div id="creditBox">
@@ -49,6 +51,9 @@ $title = "globescope";
         <span id="separator"></span>
         <div id="description">
             <p id="childPseudo"></p>
+            <p id="childCountry"></p>
+            <p id="childCity"></p>
+            <p id="childTeam"></p>
             <p id="childCitation"></p>
             <p id="childRight"></p>
         </div>
@@ -77,7 +82,7 @@ $title = "globescope";
 </div>
 
 <?php
- echo json_encode($res);
+echo json_encode($res);
 $content = ob_get_clean();
 require "view/gabaritGlobe.php";
 ?>

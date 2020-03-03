@@ -34,6 +34,15 @@ void main() {
 }
 
 
+
+
+
+
+
+
+
+
+
 </script>
 <script type="application/x-glsl" id="sky-fragment">
 uniform sampler2D texture;
@@ -43,6 +52,15 @@ void main() {
     vec4 sample = texture2D(texture, vUV);
     gl_FragColor = vec4(sample.xyz, sample.w);
 }
+
+
+
+
+
+
+
+
+
 
 
 </script>

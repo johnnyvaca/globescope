@@ -1,6 +1,6 @@
 <?php
 ob_start();
-$title = "admin";
+$title = "Panel Administrateur";
 
 ?>
     <!--
@@ -19,9 +19,9 @@ $title = "admin";
             </h1>
         </div>
         <div class="divTitle2">
-            <h3>Liste des Particpants
+            <h3>Liste des Participants
             </h3>
-        </div>
+        </div>q
         <div class="divSearch">
             <select>
                 <option>option11</option>
@@ -29,8 +29,8 @@ $title = "admin";
             <input type="text">
         </div>
         <div class="divModifier">
-            <span>Tout Modifier</span><input type="checkbox" aria-label="Checkbox for following text input"
-                                             id="toutModifier">
+            <span>Tout Modifier </span><input type="checkbox" aria-label="Checkbox for following text input"
+                                              id="toutModifier">
             <button>MODIFIER</button>
         </div>
     </div>
@@ -346,7 +346,7 @@ $title = "admin";
             ?>
             <!--        <td><img src="images/64-64/<?= $image['IDImage'] ?>.png" width="200px" height="200px"></td> -->
             <td><?= $image['Pseudo'] ?></td>
-            <td><span>modifier</span><input type="checkbox" aria-label="Checkbox for following text input"></td>
+            <td><span>Modifier </span><input type="checkbox" aria-label="Checkbox for following text input"></td>
             </tr>
             <?php
         }

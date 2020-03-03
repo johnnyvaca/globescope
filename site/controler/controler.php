@@ -1,14 +1,17 @@
 <?php
 
 
-function getHomePage(){
+function getHomePage()
+{
 
     require "model/GetData.php";
     require "view/globescope.php";
 
 }
-function getLoginPage(){
+
+function getLoginPage()
+{
     require "model/model.php";
-   $images = getImages();
+    $images = getImages();
     require "view/adminPanel.php";
 }

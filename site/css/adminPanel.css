@@ -5,29 +5,26 @@
 
 .divTitle1 {
     position: absolute;
-    left: 1%;
+    left: 3%;
 }
 
 .divTitle2 {
-
     position: absolute;
-    top: 5%;
-    left: 29%;
+    top: 3%;
+    left: 45%;
 }
 
 .divSearch {
-
     position: absolute;
-
     right: 10%;
 }
 
 .divModifier {
-
     position: absolute;
     top: 5%;
     right: 1%;
 }
+
 .divSelect {
     width: 100%;
     background-color: #721c24;
@@ -42,7 +39,6 @@
     top: 15%;
     left: 1%;
 }
-
 
 .table {
     width: 75%;
