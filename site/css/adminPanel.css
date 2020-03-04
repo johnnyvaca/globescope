@@ -19,9 +19,9 @@
 .divSearch {
 
 
-width: 15%;
     position: absolute;
     top: 1%;
+    left: 67%;
     right: 10%;
 }
 
@@ -31,47 +31,54 @@ width: 15%;
     top: 10%;
     right: 5.5%;
 }
+
 .divSelect {
     width: 100%;
-    background-color: #721c24;
-    position: relative;
-    top: 10%;
+    height: 5%;
+
+
 }
 
 .divSelects {
     width: 10%;
-    background-color: #6f42c1;
+    height: 80%;
     position: absolute;
     top: 15%;
     left: 1%;
 }
 
-.divTable{
+.divTable {
     position: absolute;
     left: 13%;
     right: 2%;
     top: 15%;
 
 }
-.scrollit {
-    overflow:scroll;
-    height:80%;
-}
-tr{
-    height: 100px;
-}
-td{
-    height: 100px;
-}
-img{
-    height: 100px;
-}
-.divSearch > select{
 
-position: absolute;
+.scrollit {
+    overflow: scroll;
+    height: 80%;
+}
+
+tr {
+    height: 100px;
+}
+
+td {
+    height: 100px;
+}
+
+img {
+    height: 100px;
+}
+
+.divSearch > select {
+
+    position: absolute;
     left: 0px;
 }
-.divSearch > input{
+
+.divSearch > input {
 
     position: absolute;
     right: 0px;
