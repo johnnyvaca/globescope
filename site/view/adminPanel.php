@@ -15,7 +15,10 @@ $title = "admin";
         <option value="Kronenbourg">
         <option value="Grimbergen">
     </datalist>
+
+Giovanni Battista Piranesi et ses Prisons imaginaires
 -->
+
 <div class="divMenu">
     <div class="divTitle1">
         <h1>Panel Administrateur
@@ -26,7 +29,6 @@ $title = "admin";
         </h3>
     </div>
     <div class="divSearch">
-
 
 
         <select aria-label="gros">
@@ -53,9 +55,9 @@ $title = "admin";
     <span>Trier par pseudo</span>
     <select class="divSelect">
         <option hidden selected>Trier par pseudo</option>
-        <option value="avec">tous</option>
+        <option value="tous">tous</option>
         <option value="avec">avec</option>
-        <option value="avec">sans</option>
+        <option value="sans">sans</option>
     </select>
     <br>
     <br> <br>
@@ -63,9 +65,16 @@ $title = "admin";
     <select class="divSelect">
         <option hidden selected>Trier par droit</option>
         <optgroup label="Trier par Droit">
-            <option value="avec">tous</option>
+            <option value="tous">tous</option>
             <option value="avec">avec</option>
-            <option value="avec">sans</option>
+            <option value="sans">sans</option>
+            <?php foreach ($images as $image) {
+                if ($image['Droit'] != "") {
+                    ?>
+                    <option value="<?= $image['Droit'] ?>"><?= $image['Droit'] ?></option>
+                <?php }
+
+            } ?>
         </optgroup>
     </select>
     <br>
@@ -74,11 +83,117 @@ $title = "admin";
     <span>Trier par pays</span>
     <select name="pays" class="divSelect">
         <option hidden selected>Trier par pays</option>
-        <option value="avec">tous</option>
+        <option value="tous">tous</option>
         <option value="avec">avec</option>
-        <option value="avec">sans</option>
+        <option value="sans">sans</option>
+        <?php foreach ($images as $image) {
+            if ($image['Pays'] != "") {
+                ?>
+                <option value="<?= $image['Pays'] ?>"><?= $image['Pays'] ?></option>
+            <?php }
 
-        <option value="France" >France</option>
+        } ?>
+
+    </select>
+    <br>
+
+    <br> <br>
+
+
+    <span>Trier par ville</span>
+    <select class="divSelect">
+        <option hidden selected>Trier par ville</option>
+        <option value="tous">tous</option>
+        <option value="avec">avec</option>
+        <option value="sans">sans</option>
+        <?php foreach ($images as $image) {
+            if ($image['Ville'] != "") {
+                ?>
+                <option value="<?= $image['Ville'] ?>"><?= $image['Ville'] ?></option>
+            <?php }
+
+        } ?>
+    </select>
+    <br>
+    <br> <br>
+    <span>Trier par phrase ...</span>
+    <select class="divSelect">
+        <option hidden selected>Trier par phrase...</option>
+        <option value="tous">tous</option>
+        <option value="avec">avec</option>
+        <option value="sans">sans</option>
+    </select>
+    <br>
+    <br> <br>
+    <span>Trier par équipe</span>
+    <select class="divSelect">
+        <option hidden selected>Trier par équipe</option>
+        <option value="tous">tous</option>
+        <option value="avec">avec</option>
+        <option value="sans">sans</option>
+        <?php foreach ($images as $image) {
+            if ($image['Equipe'] != "") {
+                ?>
+                <option value="<?= $image['Equipe'] ?>"><?= $image['Equipe'] ?></option>
+            <?php }
+
+        } ?>
+        <option></option>
+    </select>
+</div>
+<div class="divTable scrollit">
+    <table class="table">
+        <!--  <thead id="cool">
+          <tr>
+              <th>
+              </th>
+          </tr>
+          </thead> -->
+        <tbody id="tbody">
+        <?php
+        // var_dump($images);
+        // sort($images);
+        // print_r($tab);
+        ?>
+
+        <?php
+
+        foreach ($images as $i => $image) {
+            if ($i % 2 == 0) {
+                ?>
+                <tr class="bg-success">
+                <?php
+            } else {
+                ?>
+                <tr class="bg-danger">
+                <?php
+            }
+            ?>
+            <td><img src="images/64-64" width="200px" height="200px"></td>
+            <td><b>Pseudo</b><br><br><?= $image['Pseudo'] ?></td>
+            <td><b>Pays</b><br><br><?= $image['Pseudo'] ?></td>
+            <td><b>Phrase personalisée</b><br><br><?= $image['Pseudo'] ?></td>
+            <td><b>Droit</b><br><br><?= $image['Pseudo'] ?></td>
+            <td>
+
+                <br>
+                <br>
+                <span><b>modifier</b></span><input type="checkbox" aria-label="Checkbox for following text input"></td>
+            </tr>
+            <?php
+        }
+        ?>
+        </tbody>
+    </table>
+</div>
+<?php
+
+
+$content = ob_get_clean();
+require "view/gabaritAdminPanel.php";
+?>
+
+<!-- <option value="France" >France</option>
         <option value="Afghanistan">Afghanistan</option>
         <option value="Afrique_Centrale">Afrique_Centrale</option>
         <option value="Afrique_du_sud">Afrique_du_Sud</option>
@@ -332,89 +447,5 @@ $title = "admin";
         <option value="Zambie">Zambie</option>
         <option value="Zimbabwe">Zimbabwe</option>
 
-    </select>
-    <br>
-
-    <br> <br>
-
-
-    <span>Trier par ville</span>
-    <select class="divSelect">
-        <option hidden selected>Trier par ville</option>
-        <option value="avec">tous</option>
-        <option value="avec">avec</option>
-        <option value="avec">sans</option>
-    </select>
-    <br>
-    <br> <br>
-    <span>Trier par phrase ...</span>
-    <select class="divSelect">
-        <option hidden selected>Trier par phrase...</option>
-        <option value="avec">tous</option>
-        <option value="avec">avec</option>
-        <option value="avec">sans</option>
-    </select>
-    <br>
-    <br> <br>
-    <span>Trier par équipe</span>
-    <select class="divSelect">
-        <option hidden selected>Trier par équipe</option>
-        <option value="avec">tous</option>
-        <option value="avec">avec</option>
-        <option value="avec">sans</option>
-        <option></option>
-    </select>
-</div>
-<div class="divTable scrollit">
-    <table class="table">
-        <!--  <thead id="cool">
-          <tr>
-              <th>
-              </th>
-          </tr>
-          </thead> -->
-        <tbody id="tbody">
-        <?php
-        // var_dump($images);
-        // sort($images);
-        // print_r($tab);
-        ?>
-
-        <?php
-
-        foreach ($images as $i => $image) {
-            if ($i % 2 == 0) {
-                ?>
-                <tr class="bg-success">
-                <?php
-            } else {
-                ?>
-                <tr class="bg-danger">
-                <?php
-            }
-            ?>
-            <td><img src="images/64-64" width="200px" height="200px"></td>
-            <td><b>Pseudo</b><br><br><?= $image['Pseudo'] ?></td>
-            <td><b>Pays</b><br><br><?= $image['Pseudo'] ?></td>
-            <td><b>Phrase personalisée</b><br><br><?= $image['Pseudo'] ?></td>
-            <td><b>Droit</b><br><br><?= $image['Pseudo'] ?></td>
-            <td>
-
-                <br>
-                <br>
-                <span><b>modifier</b></span><input type="checkbox" aria-label="Checkbox for following text input"></td>
-            </tr>
-            <?php
-        }
-        ?>
-        </tbody>
-    </table>
-</div>
-<?php
-$content = ob_get_clean();
-require "view/gabaritAdminPanel.php";
-?>
-
-<!--
    /// IMAGES //
 <?= $image['IDImage'] ?>.png -->
