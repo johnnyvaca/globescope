@@ -27,12 +27,16 @@ $title = "admin";
     </div>
     <div class="divSearch">
 
-        <select>
+
+
+        <select aria-label="gros">
             <option hidden selected>Rechercher par...</option>
             <option>Pseudo</option>
             <option>Droit</option>
         </select>
-        <input type="text" placeholder="Recherche...">
+
+        <input type="text" placeholder="Recherche..." aria-label="label">
+
     </div>
     <div class="divModifier">
         <button>MODIFIER</button>
@@ -49,8 +53,9 @@ $title = "admin";
     <span>Trier par pseudo</span>
     <select class="divSelect">
         <option hidden selected>Trier par pseudo</option>
-        <option value="Tous">Tous</option>
-        <option value="Aucun">Aucun</option>
+        <option value="avec">tous</option>
+        <option value="avec">avec</option>
+        <option value="avec">sans</option>
     </select>
     <br>
     <br> <br>
@@ -58,8 +63,9 @@ $title = "admin";
     <select class="divSelect">
         <option hidden selected>Trier par droit</option>
         <optgroup label="Trier par Droit">
-            <option value="Tous">Tous</option>
-            <option value="Aucun">Aucun</option>
+            <option value="avec">tous</option>
+            <option value="avec">avec</option>
+            <option value="avec">sans</option>
         </optgroup>
     </select>
     <br>
@@ -68,6 +74,10 @@ $title = "admin";
     <span>Trier par pays</span>
     <select name="pays" class="divSelect">
         <option hidden selected>Trier par pays</option>
+        <option value="avec">tous</option>
+        <option value="avec">avec</option>
+        <option value="avec">sans</option>
+
         <option value="France" >France</option>
         <option value="Afghanistan">Afghanistan</option>
         <option value="Afrique_Centrale">Afrique_Centrale</option>
@@ -331,24 +341,27 @@ $title = "admin";
     <span>Trier par ville</span>
     <select class="divSelect">
         <option hidden selected>Trier par ville</option>
-        <option value="Tous">Tous</option>
-        <option value="Aucun">Aucun</option>
+        <option value="avec">tous</option>
+        <option value="avec">avec</option>
+        <option value="avec">sans</option>
     </select>
     <br>
     <br> <br>
     <span>Trier par phrase ...</span>
     <select class="divSelect">
         <option hidden selected>Trier par phrase...</option>
-        <option value="Tous">Tous</option>
-        <option value="Aucun">Aucun</option>
+        <option value="avec">tous</option>
+        <option value="avec">avec</option>
+        <option value="avec">sans</option>
     </select>
     <br>
     <br> <br>
     <span>Trier par équipe</span>
     <select class="divSelect">
         <option hidden selected>Trier par équipe</option>
-        <option value="Tous">Tous</option>
-        <option value="Aucun">Aucun</option>
+        <option value="avec">tous</option>
+        <option value="avec">avec</option>
+        <option value="avec">sans</option>
         <option></option>
     </select>
 </div>
@@ -380,7 +393,7 @@ $title = "admin";
                 <?php
             }
             ?>
-            <td><img src="imagesss/64-64/" width="200px" height="200px"></td>
+            <td><img src="images/64-64" width="200px" height="200px"></td>
             <td><b>Pseudo</b><br><br><?= $image['Pseudo'] ?></td>
             <td><b>Pays</b><br><br><?= $image['Pseudo'] ?></td>
             <td><b>Phrase personalisée</b><br><br><?= $image['Pseudo'] ?></td>
@@ -404,5 +417,4 @@ require "view/gabaritAdminPanel.php";
 
 <!--
    /// IMAGES //
-
 <?= $image['IDImage'] ?>.png -->
