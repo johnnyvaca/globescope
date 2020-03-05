@@ -53,7 +53,7 @@ $jj = count($images);
 <br>
 <br>
 <br>
-<!--<label for="choix_bieres">Indiquez votre bière préférée :</label>-->
+<!--<label for="choix_bieres">Indiquez votre bière préférée :</label>
 <input list="bieres" type="text" id="choix_bieres">
 <datalist id="bieres">
     <option value="Meteor">
@@ -61,6 +61,7 @@ $jj = count($images);
     <option value="Kronenbourg">
     <option value="Grimbergen">
 </datalist>
+-->
 <div class="divSelects">
     <span>Trier par pseudo</span>
     <select class="divSelect">

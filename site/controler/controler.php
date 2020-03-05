@@ -20,24 +20,31 @@ function getAdminPanelPage()
         if($image['Droit'] != "")
         $droits[$i] = $image['Droit'];
 
-    $droits= array_unique($droits);
+
 
         if($image['Ville'] != "")
         $villes[$i] = $image['Ville'];
 
 
-    $villes = array_unique($villes);
+
 
 
         if($image['Equipe'] != "")
         $equipes[$i] = $image['Equipe'];
 
-    $equipes= array_unique($equipes);
+
 
         if($image['Pays'] != "")
         $pays[$i] = $image['Pays'];
 
     }
+    $equipes= array_unique($equipes);
+    $equipes = sort($equipes);
+    $villes = array_unique($villes);
+    $ds= array_unique($droits);
+    $droits= array_unique($droits);
+    print_r($ds);
+    echo natcasesort($droits);
     $pays = array_unique($pays);
 
     require "view/adminPanel.php";
