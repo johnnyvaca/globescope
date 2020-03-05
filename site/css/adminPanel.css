@@ -69,7 +69,8 @@ td {
 }
 
 img {
-    height: 100px;
+    height: 120px;
+    width: 120px;
 }
 
 .divSearch > select {

@@ -1,7 +1,6 @@
 <?php
 ob_start();
 $title = "admin";
-
 ?>
 <!--
 <br>
@@ -18,7 +17,9 @@ $title = "admin";
 
 Giovanni Battista Piranesi et ses Prisons imaginaires
 -->
-
+<?php
+$jj = count($images);
+//echo $jj / 2 ?>
 <div class="divMenu">
     <div class="divTitle1">
         <h1>Panel Administrateur
@@ -68,10 +69,12 @@ Giovanni Battista Piranesi et ses Prisons imaginaires
             <option value="tous">tous</option>
             <option value="avec">avec</option>
             <option value="sans">sans</option>
-            <?php foreach ($images as $image) {
-                if ($image['Droit'] != "") {
+            <?php
+            foreach ($droits as $droit) {
+
+                if ($droit != "") {
                     ?>
-                    <option value="<?= $image['Droit'] ?>"><?= $image['Droit'] ?></option>
+                    <option value="<?= $droit ?>"><?= $droit ?></option>
                 <?php }
 
             } ?>
@@ -86,10 +89,12 @@ Giovanni Battista Piranesi et ses Prisons imaginaires
         <option value="tous">tous</option>
         <option value="avec">avec</option>
         <option value="sans">sans</option>
-        <?php foreach ($images as $image) {
-            if ($image['Pays'] != "") {
+        <?php
+        foreach ($pays as $image) {
+
+            if ($image != "") {
                 ?>
-                <option value="<?= $image['Pays'] ?>"><?= $image['Pays'] ?></option>
+                <option value="<?= $image ?>"><?= $image ?></option>
             <?php }
 
         } ?>
@@ -99,17 +104,18 @@ Giovanni Battista Piranesi et ses Prisons imaginaires
 
     <br> <br>
 
-
     <span>Trier par ville</span>
     <select class="divSelect">
         <option hidden selected>Trier par ville</option>
         <option value="tous">tous</option>
         <option value="avec">avec</option>
         <option value="sans">sans</option>
-        <?php foreach ($images as $image) {
-            if ($image['Ville'] != "") {
+        <?php
+        foreach ($villes as $ville) {
+
+            if ($ville != "") {
                 ?>
-                <option value="<?= $image['Ville'] ?>"><?= $image['Ville'] ?></option>
+                <option value="<?= $ville ?>"><?= $ville ?></option>
             <?php }
 
         } ?>
@@ -130,11 +136,12 @@ Giovanni Battista Piranesi et ses Prisons imaginaires
         <option hidden selected>Trier par équipe</option>
         <option value="tous">tous</option>
         <option value="avec">avec</option>
-        <option value="sans">sans</option>
-        <?php foreach ($images as $image) {
-            if ($image['Equipe'] != "") {
+        <option value="sans">sans</option>            <?php
+        foreach ($equipes as $ville) {
+
+            if ($ville != "") {
                 ?>
-                <option value="<?= $image['Equipe'] ?>"><?= $image['Equipe'] ?></option>
+                <option value="<?= $ville ?>"><?= $ville ?></option>
             <?php }
 
         } ?>
@@ -143,18 +150,8 @@ Giovanni Battista Piranesi et ses Prisons imaginaires
 </div>
 <div class="divTable scrollit">
     <table class="table">
-        <!--  <thead id="cool">
-          <tr>
-              <th>
-              </th>
-          </tr>
-          </thead> -->
+
         <tbody id="tbody">
-        <?php
-        // var_dump($images);
-        // sort($images);
-        // print_r($tab);
-        ?>
 
         <?php
 
@@ -169,16 +166,18 @@ Giovanni Battista Piranesi et ses Prisons imaginaires
                 <?php
             }
             ?>
-            <td><img src="images/64-64" width="200px" height="200px"></td>
+            <td><img src="images/128-128/<?= $image['IDImage'] ?>.png" width="200px" height="200px" alt="image"></td>
             <td><b>Pseudo</b><br><br><?= $image['Pseudo'] ?></td>
             <td><b>Pays</b><br><br><?= $image['Pseudo'] ?></td>
             <td><b>Phrase personalisée</b><br><br><?= $image['Pseudo'] ?></td>
-            <td><b>Droit</b><br><br><?= $image['Pseudo'] ?></td>
+            <td><b>Droit</b><br><br><?= $i ?></td>
             <td>
 
                 <br>
                 <br>
-                <span><b>modifier</b></span><input type="checkbox" aria-label="Checkbox for following text input"></td>
+                <span><b>modifier</b></span>
+                <input type="checkbox">
+            </td>
             </tr>
             <?php
         }
@@ -186,14 +185,27 @@ Giovanni Battista Piranesi et ses Prisons imaginaires
         </tbody>
     </table>
 </div>
+<script>
+
+    window.onload = function(){
+
+        $.get("data.json", function(data){
+            console.log(data);
+        });
+    }
+
+</script>
 <?php
 
 
 $content = ob_get_clean();
 require "view/gabaritAdminPanel.php";
 ?>
+<!--
+   /// IMAGES //
+<?= $image['IDImage'] ?>.png
 
-<!-- <option value="France" >France</option>
+<option value="France" >France</option>
         <option value="Afghanistan">Afghanistan</option>
         <option value="Afrique_Centrale">Afrique_Centrale</option>
         <option value="Afrique_du_sud">Afrique_du_Sud</option>
@@ -447,5 +459,4 @@ require "view/gabaritAdminPanel.php";
         <option value="Zambie">Zambie</option>
         <option value="Zimbabwe">Zimbabwe</option>
 
-   /// IMAGES //
-<?= $image['IDImage'] ?>.png -->
+ -->
