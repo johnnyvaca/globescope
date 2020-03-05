@@ -20,6 +20,7 @@ Giovanni Battista Piranesi et ses Prisons imaginaires
 <?php
 $jj = count($images);
 //echo $jj / 2 ?>
+
 <div class="divMenu">
     <div class="divTitle1">
         <h1>Panel Administrateur
@@ -52,6 +53,14 @@ $jj = count($images);
 <br>
 <br>
 <br>
+<!--<label for="choix_bieres">Indiquez votre bière préférée :</label>-->
+<input list="bieres" type="text" id="choix_bieres">
+<datalist id="bieres">
+    <option value="Meteor">
+    <option value="Pils">
+    <option value="Kronenbourg">
+    <option value="Grimbergen">
+</datalist>
 <div class="divSelects">
     <span>Trier par pseudo</span>
     <select class="divSelect">
@@ -63,7 +72,8 @@ $jj = count($images);
     <br>
     <br> <br>
     <span>Trier par Droit</span>
-    <select class="divSelect">
+    <input list="droit" type="text" id="choix_bieres">
+    <datalist class="divSelect" id="droit">
         <option hidden selected>Trier par droit</option>
         <optgroup label="Trier par Droit">
             <option value="tous">tous</option>
@@ -79,7 +89,7 @@ $jj = count($images);
 
             } ?>
         </optgroup>
-    </select>
+    </datalist>
     <br>
     <br> <br>
 
@@ -185,16 +195,7 @@ $jj = count($images);
         </tbody>
     </table>
 </div>
-<script>
 
-    window.onload = function () {
-
-        $.get("data.json", function (data) {
-            console.log(data);
-        });
-    }
-
-</script>
 <?php
 
 

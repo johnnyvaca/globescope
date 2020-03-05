@@ -3,18 +3,14 @@ toutModifier.addEventListener('change', toutSelectionner);
 function toutSelectionner() {
 
     nbrImages = tbody.childNodes.length;
-    // alert((nbrImages-1)/2);
     for (i = 0; i < nbrImages; i++) {
-        //     alert((nbrImages-1)/2);
+
         if(this.checked) {
-            //   alert("OUI");
             //  cool.children[0].children[2].children[0].textContent = "ne rien Modifier";
             tbody.rows[i].cells[5].children[3].checked = true;
-            //alert(tbody.rows[i].cells[5].children[3].value);
 
-            //   alert(nbrImages);
         } else {
-            //      alert("NON");
+
             //  cool.children[0].children[2].children[0].textContent = "Tout Modifier";
             tbody.rows[i].cells[5].children[3].checked = false;
             // alert(tbody.rows[i].cells[0]);
@@ -22,7 +18,7 @@ function toutSelectionner() {
     }
 }
 
-
+/*
 // console.log(tbody.children);
 function fnAjouterVoyageur() {
 // Controle si un transport a deja été ajouté
@@ -31,7 +27,6 @@ function fnAjouterVoyageur() {
         // chaque inputX contient les valeurs de chaque valeurs des champs text des voyageurs
         input0 = document.getElementById('tbody').children[2];
         longueur = input0.childNodes.length;
-        console.log(longueur);
         //controlle si tous les champs text contiennent un carachtere
 
 
@@ -77,7 +72,7 @@ function fnAjouterVoyageur() {
 
 
 }
-
+*/
 
 /**Initialisation THREE JS */
 var scene = new THREE.Scene();
@@ -166,7 +161,6 @@ var childImage = document.getElementById("childImage");
 var childPseudo = document.getElementById("childPseudo");
 var childCitation = document.getElementById("childCitation");
 var childRight = document.getElementById("childRight");
-var childPays = document.getElementById("childPays");
 
 childImage.onload = showOnClickDetails;
 closeSideBar.onclick = hideSideBar;
@@ -371,7 +365,6 @@ function showOnClickDetails() {
     var nodes = onClickDetails.childNodes;
     var i = 0;
     for (i = 0; i < nodes.length; i++) {
-        console.log($nodes.length);
         if (nodes[i].style != null)
             nodes[i].style.display = "flex";
     }

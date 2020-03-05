@@ -86,7 +86,6 @@ var childImage = document.getElementById("childImage");
 var childPseudo = document.getElementById("childPseudo");
 var childCitation = document.getElementById("childCitation");
 var childRight = document.getElementById("childRight");
-var childPays = document.getElementById("childPays");
 
 childImage.onload = showOnClickDetails;
 closeSideBar.onclick = hideSideBar;
