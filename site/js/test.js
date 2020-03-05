@@ -371,6 +371,7 @@ function showOnClickDetails() {
     var nodes = onClickDetails.childNodes;
     var i = 0;
     for (i = 0; i < nodes.length; i++) {
+        console.log($nodes.length);
         if (nodes[i].style != null)
             nodes[i].style.display = "flex";
     }

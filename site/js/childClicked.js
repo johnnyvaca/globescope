@@ -26,7 +26,7 @@ function onImageClick(x) {
                     childRight.textContent = myObj.Droit;
                     childPays.textContent = myObj.Pays;
                 }
-            }
+           }
         }
     }
 
