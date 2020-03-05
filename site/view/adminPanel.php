@@ -33,7 +33,7 @@ $jj = count($images);
 
 
         <select aria-label="gros">
-            <option hidden selected>Rechercher par...</option>
+            <option hidden selected>Rechercher par ...</option>
             <option>Pseudo</option>
             <option>Droit</option>
         </select>
@@ -136,7 +136,7 @@ $jj = count($images);
         <option hidden selected>Trier par équipe</option>
         <option value="tous">tous</option>
         <option value="avec">avec</option>
-        <option value="sans">sans</option>            <?php
+        <option value="sans">sans</option> <?php
         foreach ($equipes as $ville) {
 
             if ($ville != "") {
@@ -187,9 +187,9 @@ $jj = count($images);
 </div>
 <script>
 
-    window.onload = function(){
+    window.onload = function () {
 
-        $.get("data.json", function(data){
+        $.get("data.json", function (data) {
             console.log(data);
         });
     }

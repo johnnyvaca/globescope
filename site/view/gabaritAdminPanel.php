@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap-reboot.css?d=<?php echo time(); ?>">
 </head>
 <body id="body">
-
 <?= $content ?>
 <script src="../js/test.js"></script>
 <script src="../js/globescope.js"></script>
