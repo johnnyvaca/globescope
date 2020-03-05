@@ -18,6 +18,7 @@ $title = "admin";
 Giovanni Battista Piranesi et ses Prisons imaginaires
 -->
 <?php
+// DATA-TABLE //
 $jj = count($images);
 //echo $jj / 2 ?>
 <div class="divMenu">
