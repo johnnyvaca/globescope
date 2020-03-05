@@ -299,6 +299,7 @@ function showSearchResults()
         var i = 0;
         for (i = 0; i < nodes.length; i++)
         {
+            console.log(i);
             if (nodes[i].style != null)
                 nodes[i].style.display = "block";
         }
