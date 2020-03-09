@@ -3,20 +3,6 @@ Auteurs : Kevin Vaucher et Johnny Vaca
 Projet : Projet WEB sur Globescope pour le cours Projet WEB
 Date : 11.02.2020
 */
-(function ($) {
-
-    $("#search").keyup(function (event) {
-        var input = $(this);
-        var val = input.val();
-        var regexp='\\b(.*)a(.*)\\b';
-        $('#tbody').find('td').each(function () {
-            var td = $(this);
-            var result=    td.text().match(new RegExp(regexp, 'i'));
-            console.log(result);
-        })
-    });
-})(jQuery);
-
 
 toutModifier.addEventListener('change', toutSelectionner);
 

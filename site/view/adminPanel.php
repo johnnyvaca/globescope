@@ -177,7 +177,7 @@ $jj = count($images);
                 <?php
             }
             ?>
-            <td><img src="images/128-128/<?= $image['IDImage'] ?>.png" width="200px" height="250px" alt="image"></td>
+            <td><img src="images/128-128/" width="200px" height="250px" alt="image"></td>
             <td><b>Pseudo</b><br><br><?= $image['Pseudo'] ?></td>
             <td><b>Pays</b><br><br><?= $image['Pseudo'] ?></td>
             <td><b>Slogan</b><br><br><?= $image['Pseudo'] ?></td>
