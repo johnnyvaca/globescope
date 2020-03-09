@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
     <title><?= $title ?></title>
     <meta charset="utf-8">
@@ -11,8 +11,13 @@
 </head>
 <body id="body">
 <?= $content ?>
-<script src="../js/test.js"></script>
+<script src="../js/adminPanel.js"></script>
 <script src="../js/globescope.js"></script>
-
+<script src="../node_modules/jquery/dist/jquery.js"</script>
+<script src="../node_modules/jquery/dist/jquery.js"</script>
+<script src="../node_modules/jquery/dist/core.js"</script>
+<script src="../node_modules/jquery/dist/jquery.slim.js"</script>
+<script src="../node_modules/jquery/dist/jquery.min.js"</script>
+<script src="../node_modules/jquery/dist/jquery.slim.min.js"</script>
 </body>
 </html>

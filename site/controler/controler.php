@@ -14,37 +14,31 @@ function getAdminPanelPage()
     require "model/model.php";
 
     $images = getImages();
+    $iDroit = 0;
+    $iVille = 0;
+    $iEquipe = 0;
+    $iPays = 0;
+    foreach ($images as $image) {
 
-    foreach ($images as $i => $image) {
+        if ($image['Droit'] != "") {
+            $droits[$iDroit] = $image['Droit'];
+            $iDroit++;
+        } else if ($image['Ville'] != "") {
 
-        if($image['Droit'] != "")
-        $droits[$i] = $image['Droit'];
-
-
-
-        if($image['Ville'] != "")
-        $villes[$i] = $image['Ville'];
-
-
-
-
-
-        if($image['Equipe'] != "")
-        $equipes[$i] = $image['Equipe'];
-
-
-
-        if($image['Pays'] != "")
-        $pays[$i] = $image['Pays'];
+            $villes[$iVille] = $image['Ville'];
+            $iVille++;
+        } else if ($image['Equipe'] != "") {
+            $equipes[$iEquipe] = $image['Equipe'];
+            $iEquipe++;
+        } else if ($image['Pays'] != "") {
+            $pays[$iPays] = $image['Pays'];
+            $iPays++;
+        }
 
     }
-    $equipes= array_unique($equipes);
-    $equipes = sort($equipes);
+    $equipes = array_unique($equipes);
     $villes = array_unique($villes);
-    $ds= array_unique($droits);
-    $droits= array_unique($droits);
-    print_r($ds);
-    echo natcasesort($droits);
+    $droits = array_unique($droits);
     $pays = array_unique($pays);
 
     require "view/adminPanel.php";

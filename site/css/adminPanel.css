@@ -61,16 +61,16 @@
 }
 
 tr {
-    height: 100px;
+    height: 125px;
 }
 
 td {
-    height: 100px;
+    height: 125px;
 }
 
 img {
-    height: 120px;
-    width: 120px;
+    height: 125px;
+    width: 100px;
 }
 
 .divSearch > select {

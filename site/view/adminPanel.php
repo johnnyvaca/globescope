@@ -39,7 +39,7 @@ $jj = count($images);
             <option>Droit</option>
         </select>
 
-        <input type="text" placeholder="Recherche..." aria-label="label">
+        <input type="text" placeholder="Recherche..." aria-label="label" id="search">
 
     </div>
     <div class="divModifier">
@@ -177,11 +177,11 @@ $jj = count($images);
                 <?php
             }
             ?>
-            <td><img src="images/128-128/<?= $image['IDImage'] ?>.png" width="200px" height="200px" alt="image"></td>
+            <td><img src="images/128-128/<?= $image['IDImage'] ?>.png" width="200px" height="250px" alt="image"></td>
             <td><b>Pseudo</b><br><br><?= $image['Pseudo'] ?></td>
             <td><b>Pays</b><br><br><?= $image['Pseudo'] ?></td>
-            <td><b>Phrase personalisée</b><br><br><?= $image['Pseudo'] ?></td>
-            <td><b>Droit</b><br><br><?= $i ?></td>
+            <td><b>Slogan</b><br><br><?= $image['Pseudo'] ?></td>
+            <td><b>Droit</b><br><br><?= $image['Droit'] ?></td>
             <td>
 
                 <br>
