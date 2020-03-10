@@ -23,22 +23,28 @@ function getAdminPanelPage()
         if ($image['Droit'] != "") {
             $droits[$iDroit] = $image['Droit'];
             $iDroit++;
-        } else if ($image['Ville'] != "") {
+        }
+        if ($image['Ville'] != "") {
 
             $villes[$iVille] = $image['Ville'];
             $iVille++;
-        } else if ($image['Equipe'] != "") {
+        }
+        if ($image['Equipe'] != "") {
             $equipes[$iEquipe] = $image['Equipe'];
+
             $iEquipe++;
-        } else if ($image['Pays'] != "") {
+        }
+        if ($image['Pays'] != "") {
             $pays[$iPays] = $image['Pays'];
+
             $iPays++;
         }
 
     }
-    $equipes = array_unique($equipes);
-    $villes = array_unique($villes);
+
     $droits = array_unique($droits);
+    $villes = array_unique($villes);
+    $equipes = array_unique($equipes);
     $pays = array_unique($pays);
 
     require "view/adminPanel.php";

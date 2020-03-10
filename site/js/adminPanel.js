@@ -23,7 +23,7 @@ function toutSelectionner() {
         }
     }
 }
-
+const selectCosa  = document.querySelector('#tbody')
 function cargarUsuarios() {
     fetch('model/data/images.json')
         .then(reponse => reponse.json())
@@ -34,7 +34,8 @@ function cargarUsuarios() {
                  Pseudo = changeValueSelect();
                 if (Pseudo == "avec"){
                     if(image.Pseudo != ""){
-                            
+
+
                         console.log(image.Pseudo);
 
                     }

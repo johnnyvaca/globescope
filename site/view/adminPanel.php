@@ -93,16 +93,17 @@ $jj = count($images);
 
     <span>Trier par pays</span>
     <select name="pays" class="divSelect"  id="selectPays">
-        <option hidden selected>Trier par pays</option>
         <option value="tous">tous</option>
         <option value="avec">avec</option>
         <option value="sans">sans</option>
         <?php
-        foreach ($pays as $image) {
+        foreach ($pays as $imag) {
 
-            if ($image != "") {
+
+            if ($imag != "") {
                 ?>
-                <option value="<?= $image ?>"><?= $image ?></option>
+
+                <option value="<?= $imag ?>"><?= $imag ?></option>
             <?php }
 
         } ?>
@@ -145,11 +146,11 @@ $jj = count($images);
         <option value="tous">tous</option>
         <option value="avec">avec</option>
         <option value="sans">sans</option> <?php
-        foreach ($equipes as $ville) {
+        foreach ($equipes as $equipe) {
 
-            if ($ville != "") {
+            if ($equipe != "") {
                 ?>
-                <option value="<?= $ville ?>"><?= $ville ?></option>
+                <option value="<?= $equipe ?>"><?= $equipe ?></option>
             <?php }
 
         } ?>
