@@ -34,7 +34,9 @@ function cargarUsuarios() {
                  Pseudo = changeValueSelect();
                 if (Pseudo == "avec"){
                     if(image.Pseudo != ""){
+                            
                         console.log(image.Pseudo);
+
                     }
 
                 }else if(Pseudo == "sans"){
