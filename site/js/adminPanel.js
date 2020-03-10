@@ -12,15 +12,47 @@ function toutSelectionner() {
     for (i = 0; i < nbrImages; i++) {
 
         if (this.checked) {
-            //  cool.children[0].children[2].children[0].textContent = "ne rien Modifier";
+            cool.children[1].textContent = "ne rien Modifier";
             tbody.rows[i].cells[5].children[3].checked = true;
 
         } else {
 
-            //  cool.children[0].children[2].children[0].textContent = "Tout Modifier";
+            cool.children[1].textContent = "Tout Modifier";
             tbody.rows[i].cells[5].children[3].checked = false;
-            // alert(tbody.rows[i].cells[0]);
+
         }
     }
 }
 
+function cargarUsuarios() {
+    fetch('model/data/images.json')
+        .then(reponse => reponse.json())
+
+        .then(images => {
+            images.forEach(image => {
+
+                 Pseudo = changeValueSelect();
+                if (Pseudo == "avec"){
+                    if(image.Pseudo != ""){
+                        console.log(image.Pseudo);
+                    }
+
+                }else if(Pseudo == "sans"){
+                    if(image.Pseudo == ""){
+                        console.log(image.Pseudo);
+                    }
+
+                }else if(Pseudo == "tous"){
+                    console.log(image.Pseudo);
+                }
+
+            });
+        })
+}
+
+selectPseudo.addEventListener('change',cargarUsuarios);
+function changeValueSelect() {
+ //   console.log(selectPseudo.value);
+    return selectPseudo.value;
+}
+cargarUsuarios();

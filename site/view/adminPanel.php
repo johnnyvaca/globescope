@@ -42,7 +42,7 @@ $jj = count($images);
         <input type="text" placeholder="Recherche..." aria-label="label" id="search">
 
     </div>
-    <div class="divModifier">
+    <div class="divModifier" id="cool">
         <button>MODIFIER</button>
 
         <span>Tout Modifier</span><input type="checkbox" aria-label="Checkbox for following text input"
@@ -64,7 +64,7 @@ $jj = count($images);
 -->
 <div class="divSelects">
     <span>Trier par pseudo</span>
-    <select class="divSelect">
+    <select class="divSelect" id="selectPseudo">
         <option hidden selected>Trier par pseudo</option>
         <option value="tous">tous</option>
         <option value="avec">avec</option>
@@ -73,29 +73,26 @@ $jj = count($images);
     <br>
     <br> <br>
     <span>Trier par Droit</span>
-    <input list="droit" type="text" id="choix_bieres">
-    <datalist class="divSelect" id="droit">
-        <option hidden selected>Trier par droit</option>
-        <optgroup label="Trier par Droit">
-            <option value="tous">tous</option>
-            <option value="avec">avec</option>
-            <option value="sans">sans</option>
-            <?php
-            foreach ($droits as $droit) {
 
-                if ($droit != "") {
-                    ?>
-                    <option value="<?= $droit ?>"><?= $droit ?></option>
-                <?php }
+    <select class="divSelect" id="selectDroit">
+        <option value="tous">tous</option>
+        <option value="avec">avec</option>
+        <option value="sans">sans</option>
+        <?php
+        foreach ($droits as $droit) {
 
-            } ?>
-        </optgroup>
-    </datalist>
+            if ($droit != "" && $droit != " ") {
+                ?>
+                <option value="<?= $droit ?>"><?= $droit ?></option>
+            <?php }
+
+        } ?>
+    </select>
     <br>
     <br> <br>
 
     <span>Trier par pays</span>
-    <select name="pays" class="divSelect">
+    <select name="pays" class="divSelect"  id="selectPays">
         <option hidden selected>Trier par pays</option>
         <option value="tous">tous</option>
         <option value="avec">avec</option>
@@ -116,7 +113,7 @@ $jj = count($images);
     <br> <br>
 
     <span>Trier par ville</span>
-    <select class="divSelect">
+    <select class="divSelect" id="selectVille">
         <option hidden selected>Trier par ville</option>
         <option value="tous">tous</option>
         <option value="avec">avec</option>
@@ -186,9 +183,9 @@ $jj = count($images);
                 <br>
                 <br>
                 <span><b>modifier</b></span>
-                <form>
+
                 <input type="checkbox" aria-label="helo">
-                </form>
+
             </td>
             </tr>
             <?php

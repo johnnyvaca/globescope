@@ -1,5 +1,5 @@
-alert("hello");
 
+/*
 $.ajax({
     type: "POST",
     url: ".php",
@@ -9,7 +9,7 @@ $.ajax({
     }
 });
 
-
+*/
 /*(function ($) {
 
     $("#search").keyup(function (event) {

@@ -11,8 +11,7 @@
 </head>
 <body id="body">
 <?= $content ?>
-<script src="../js/adminPanel.js"></script>
-<script src="../js/globescope.js"></script>
+
 
 <script src="../node_modules/jquery/dist/jquery.js"</script>
 <script src="../node_modules/jquery/dist/jquery.js"</script>
@@ -21,5 +20,7 @@
 <script src="../node_modules/jquery/dist/jquery.min.js"</script>
 <script src="../node_modules/jquery/dist/jquery.slim.min.js"</script>
 <script src="../js/jQuery.js"></script>
+<script src="../js/adminPanel.js"></script>
+<script src="../js/globescope.js"></script>
 </body>
 </html>
