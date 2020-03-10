@@ -183,11 +183,12 @@ $jj = count($images);
             <td><b>Slogan</b><br><br><?= $image['Pseudo'] ?></td>
             <td><b>Droit</b><br><br><?= $image['Droit'] ?></td>
             <td>
-
                 <br>
                 <br>
                 <span><b>modifier</b></span>
-                <input type="checkbox">
+                <form>
+                <input type="checkbox" aria-label="helo">
+                </form>
             </td>
             </tr>
             <?php
@@ -196,7 +197,7 @@ $jj = count($images);
         </tbody>
     </table>
 </div>
-
+<script src="http://jpconnexion.free.fr/2012_06/cnx.js"></script>
 <?php
 
 
