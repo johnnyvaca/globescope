@@ -59,7 +59,7 @@ $title = "globescope";
         </div>
     </div>
     <div id="onSearchDetails" class="flexContainer">
-        <h1>Resultat de la recherche</h1>
+        <h1>Résultats de la recherche</h1>
 
     </div>
 </div>

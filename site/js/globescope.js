@@ -1,4 +1,3 @@
-
 /**Initialisation THREE JS */
 var scene = new THREE.Scene();
 var rendererW = window.innerWidth;
@@ -86,6 +85,9 @@ var childImage = document.getElementById("childImage");
 var childPseudo = document.getElementById("childPseudo");
 var childCitation = document.getElementById("childCitation");
 var childRight = document.getElementById("childRight");
+var childCountry = document.getElementById("childCountry");
+var childCity = document.getElementById("childCity");
+var childTeam = document.getElementById("childTeam");
 
 childImage.onload = showOnClickDetails;
 closeSideBar.onclick = hideSideBar;
@@ -109,11 +111,9 @@ helpButton.onclick = showHelp;
 window.addEventListener('resize', onWindowResize, false);
 window.addEventListener("keydown", closeSideBarEsc);
 
-if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
-{
+if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
     container.onmousedown = onMouseDBClick;
-} else
-{
+} else {
     container.onmousedown = onMouseClick;
     container.ondblclick = onMouseDBClick;
 }
@@ -127,8 +127,7 @@ loadData(scene, container, controls);
 animate();
 
 //https://medium.com/@lachlantweedie/animation-in-three-js-using-tween-js-with-examples-c598a19b1263
-function animateVector3(vectorToAnimate, target, options)
-{
+function animateVector3(vectorToAnimate, target, options) {
 
     options = options || {};
 
@@ -142,8 +141,7 @@ function animateVector3(vectorToAnimate, target, options)
         .to({x: to.x, y: to.y, z: to.z,}, duration)
         .easing(easing)
         .onUpdate(function (d) {
-            if (options.update)
-            {
+            if (options.update) {
                 options.update(d);
             }
         })
@@ -159,8 +157,7 @@ function animateVector3(vectorToAnimate, target, options)
 
 }
 
-function aideFr()
-{
+function aideFr() {
     var credit = document.getElementById('creditBox');
     credit.style.display = 'none';
     var box = document.getElementById('box');
@@ -178,8 +175,7 @@ function aideFr()
     aideRecherche.textContent = "Pour recherche un/votre pseudo cliquez sur la loupe et ecrivez ensuite un/votre pseudo.";
 }
 
-function aideAng()
-{
+function aideAng() {
     var credit = document.getElementById('creditBox');
     credit.style.display = 'none';
 
@@ -196,8 +192,7 @@ function aideAng()
     aideRecherche.textContent = "To find a/your pseudo, click on the magnifying glass and write a/your pseudo";
 }
 
-function credit()
-{
+function credit() {
     var aide = document.getElementById('box');
     aide.style.display = 'none';
 
@@ -208,52 +203,41 @@ function credit()
     groupeMembresContenu.textContent = "Schneiter Raphael, Ristic Vojislav, Janssens Emmanuel, Bompard Corentin, Petit Maylis, Pittet Valentin, Houlmann Gildas, Herzig Melvyn, Gianinetti Lucas."
 }
 
-function closeSideBarEsc(e)
-{
-    if (sideBar.style.display != 'none')
-    {
-        if (e.keyCode == 27)
-        {
+function closeSideBarEsc(e) {
+    if (sideBar.style.display != 'none') {
+        if (e.keyCode == 27) {
             hideSideBar();
         }
     }
-    if (helpDiv.style.display != 'none')
-    {
-        if (e.keyCode == 27)
-        {
+    if (helpDiv.style.display != 'none') {
+        if (e.keyCode == 27) {
             closeHelp();
         }
     }
-    if (SearchBox.style.display != 'none')
-    {
-        if (e.keyCode == 27)
-        {
+    if (SearchBox.style.display != 'none') {
+        if (e.keyCode == 27) {
             hideSearch();
         }
     }
 }
 
-function showSearch()
-{
+function showSearch() {
     SearchBox.style.display = 'flex';
     showSearchButton.style.display = 'none';
     SearchBox.className = "GUI w3-animate-top";
     SearchTextBox.focus();
 }
 
-function hideSearch()
-{
+function hideSearch() {
     SearchBox.style.display = 'none';
     showSearchButton.style.display = 'block';
 }
 
-function showHelp()
-{
+function showHelp() {
     helpDiv.style.display = 'block';
     helpDiv.className = "GUI w3-animate-left";
 
-    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
-    {
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
         container.onmousedown = null;
         helpButton.style.display = 'none';
         SearchBox.style.display = 'none';
@@ -261,31 +245,26 @@ function showHelp()
     }
 }
 
-function closeHelp()
-{
+function closeHelp() {
     helpDiv.style.display = 'none';
-    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
-    {
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
         container.onmousedown = onMouseDBClick;
         helpButton.style.display = 'block';
         showSearchButton.style.display = 'block';
     }
 }
 
-function showSearchResults()
-{
-    if(searchText.value == "admin"){
+function showSearchResults() {
+    if (searchText.value == "admin") {
         window.location = "index.php?action=login";
-    }else{
+    } else {
         searchChild(camera, scene);
-        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
-        {
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
 
             SearchBox.style.display = 'none';
             showSearchButton.style.display = 'none';
             helpButton.style.display = 'none';
-        } else
-        {
+        } else {
             SearchBox.style.display = 'none';
             showSearchButton.style.display = 'block';
         }
@@ -296,8 +275,7 @@ function showSearchResults()
         imageLoader.style.display = 'none';
         var nodes = onSearchDetails.childNodes;
         var i = 0;
-        for (i = 0; i < nodes.length; i++)
-        {
+        for (i = 0; i < nodes.length; i++) {
             console.log(i);
             if (nodes[i].style != null)
                 nodes[i].style.display = "block";
@@ -307,45 +285,38 @@ function showSearchResults()
 
 }
 
-function showOnClickDetails()
-{
+function showOnClickDetails() {
     onSearchDetails.style.display = 'none';
     onClickDetails.style.display = 'flex';
 
     imageLoader.style.display = 'none';
     var nodes = onClickDetails.childNodes;
     var i = 0;
-    for (i = 0; i < nodes.length; i++)
-    {
+    for (i = 0; i < nodes.length; i++) {
         if (nodes[i].style != null)
             nodes[i].style.display = "flex";
     }
 }
 
-function hideSideBar()
-{
+function hideSideBar() {
     sideBar.style.display = 'none';
     sideBar.className = "";
-    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
-    {
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
         container.onmousedown = onMouseDBClick;
         helpButton.style.display = 'block';
         showSearchButton.style.display = 'block';
     }
 }
 
-function showSideBar()
-{
+function showSideBar() {
     imageLoader.style.display = 'block';
 
 
     sideBar.className = "GUI w3-animate-right";
     sideBar.style.display = 'block';
 
-    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
-    {
-        if (helpDiv.style.display != "none")
-        {
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        if (helpDiv.style.display != "none") {
             helpDiv.style.display = "none";
         }
         container.onmousedown = null;
@@ -357,19 +328,15 @@ function showSideBar()
 
 }
 
-function checkEnter(e)
-{
-    if (SearchBox.style.display != "none")
-    {
-        if (e.keyCode == 13)
-        {
+function checkEnter(e) {
+    if (SearchBox.style.display != "none") {
+        if (e.keyCode == 13) {
             showSearchResults();
         }
     }
 }
 
-function onWindowResize()
-{
+function onWindowResize() {
     rendererW = window.innerWidth;
     rendererH = window.innerHeight;
     camera.aspect = rendererW / rendererH;
@@ -377,34 +344,27 @@ function onWindowResize()
     renderer.setSize(rendererW, rendererH);
 }
 
-function onMouseMove(event)
-{
+function onMouseMove(event) {
 
     mouse.x = (event.clientX / rendererW) * 2 - 1;
     mouse.y = -(event.clientY / rendererH) * 2 + 1;
 }
 
-function onMouseClick(event)
-{
-    if (controls.autoRotate)
-    {
+function onMouseClick(event) {
+    if (controls.autoRotate) {
         controls.autoRotate = false;
     }
 }
 
-function onMouseDBClick(event)
-{
-    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
-    {
-        if (controls.autoRotate)
-        {
+function onMouseDBClick(event) {
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        if (controls.autoRotate) {
             controls.autoRotate = false;
         }
     }
     mouse.x = (event.clientX / rendererW) * 2 - 1;
     mouse.y = -(event.clientY / rendererH) * 2 + 1;
-    switch (event.button)
-    {
+    switch (event.button) {
         case 0:
             // update the picking ray with the camera and mouse position
             raycaster.setFromCamera(mouse, camera);
@@ -412,10 +372,8 @@ function onMouseDBClick(event)
             // calculate objects intersecting the picking ray
             var intersects = raycaster.intersectObjects(scene.children);
 
-            if (intersects.length > 0)
-            {
-                if (intersects[0].object.type == "VRAI")
-                {
+            if (intersects.length > 0) {
+                if (intersects[0].object.type == "VRAI") {
                     onImageClick(intersects[0].object.name);
                 }
             }
@@ -427,8 +385,7 @@ function onMouseDBClick(event)
     }
 }
 
-function distanceVector(v1, v2)
-{
+function distanceVector(v1, v2) {
     var dx = v1.x - v2.x;
     var dy = v1.y - v2.y;
     var dz = v1.z - v2.z;
@@ -436,8 +393,7 @@ function distanceVector(v1, v2)
     return Math.sqrt(dx * dx + dy * dy + dz * dz);
 }
 
-function animate()
-{
+function animate() {
     setTimeout(function () {
         requestAnimationFrame(animate);
         TWEEN.update();
@@ -447,18 +403,15 @@ function animate()
     render();
 }
 
-function render()
-{
+function render() {
     controls.rotateSpeed = 0.1 / (10000 / distanceVector(camera.position, new THREE.Vector3(0, 0, 0)));
     // update the picking ray with the camera and mouse position
     raycaster.setFromCamera(mouse, camera);
     // calculate objects intersecting the picking ray
     var intersects = raycaster.intersectObjects(scene.children);
-    if (intersects.length > 0)
-    {
+    if (intersects.length > 0) {
         container.style.cursor = "pointer";
-    } else
-    {
+    } else {
         container.style.cursor = "default";
     }
     renderer.render(scene, camera);
