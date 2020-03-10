@@ -7,7 +7,6 @@ switch ($action) {
     case "login":
         getAdminPanelPage();
         break;
-
     default:
         getHomePage();
 }

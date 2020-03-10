@@ -5,14 +5,14 @@
     "mer": "0",
     "lat": "10",
     "lon": "6",
-    "Pseudo": "",
-    "Droit": "",
-    "Slogan": "",
-    "Provenance": "",
+    "Pseudo": "Test",
+    "Droit": "a",
+    "Slogan": "b",
+    "Provenance": "c",
     "ImageOK": "VRAI",
-    "Pays": "",
-    "Ville":  "",
-    "Equipe": ""
+    "Pays": "d",
+    "Ville":  "e",
+    "Equipe": "f"
   },
   {
     "IDPlace": "18",
