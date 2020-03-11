@@ -23,39 +23,83 @@ function toutSelectionner() {
         }
     }
 }
-const selectCosa  = document.querySelector('#tbody')
+
+const selectCosa = document.querySelector('#tbody')
+
 function cargarUsuarios() {
+    i = 0;
     fetch('model/data/images.json')
         .then(reponse => reponse.json())
 
         .then(images => {
             images.forEach(image => {
 
-                 Pseudo = changeValueSelect();
-                if (Pseudo == "avec"){
-                    if(image.Pseudo != ""){
+                Pseudo1 = changeValueSelect();
+                if (Pseudo1 == "avec") {
+                    if (image.Pseudo != "") {
+                        tbody.innerHTML = "";
+                        imgTd = document.createElement('img');
+                        br1Td = document.createElement('br');
+                        br2Td = document.createElement('br');
+                        bTd = document.createElement('b');
+                        span1Td = document.createElement('span');
+                        span2Td = document.createElement('span');
+                        tdImage = document.createElement('td');
+                        tdPseudo = document.createElement('td');
+                        tdPays = document.createElement('td');
+                        tdSlogan = document.createElement('td');
+                        tdDroit = document.createElement('td');
+                        trPaire = document.createElement('tr');
+                        scrImg = "images/128-128/" + image.IDImage;
+
+                        imgTd.setAttribute("src", scrImg);
+                        imgTd.setAttribute("alt", "image");
 
 
-                        console.log(image.Pseudo);
+                        if (i % 2 === 0) {
+                            trPaire.className = "bg-success";
+                        } else {
+                            trPaire.className = "bg-danger";
+                        }
+                        span2Td.innerText = image.Pseudo;
 
+                        tdImage.appendChild(bTd);
+                        bTd.appendChild(span1Td);
+
+                        tdPseudo.appendChild(bTd);
+                        tdPseudo.appendChild(br1Td);
+                        tdPseudo.appendChild(br2Td);
+
+                        trPaire.appendChild(tdPseudo);
+                        trPaire.appendChild(tdPays);
+                        trPaire.appendChild(tdSlogan);
+                        trPaire.appendChild(tdDroit);
+                        tbody.appendChild(trPaire);
+
+
+                        //   console.log(image.Pseudo);
+                        console.log(i);
+                        i++;
                     }
 
-                }else if(Pseudo == "sans"){
-                    if(image.Pseudo == ""){
-                        console.log(image.Pseudo);
+                } else if (Pseudo1 == "sans") {
+                    if (image.Pseudo == "") {
+                        //      console.log(image.Pseudo);
                     }
 
-                }else if(Pseudo == "tous"){
-                    console.log(image.Pseudo);
+                } else if (Pseudo1 == "tous") {
+                    //  console.log(image.Pseudo);
                 }
 
             });
         })
 }
 
-selectPseudo.addEventListener('change',cargarUsuarios);
+selectPseudo.addEventListener('change', cargarUsuarios);
+
 function changeValueSelect() {
- //   console.log(selectPseudo.value);
+    //   console.log(selectPseudo.value);
     return selectPseudo.value;
 }
+
 cargarUsuarios();

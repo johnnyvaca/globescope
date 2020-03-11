@@ -175,11 +175,11 @@ $jj = count($images);
                 <?php
             }
             ?>
-            <td><img src="images/128-128/" width="200px" height="250px" alt="image"></td>
-            <td><b>Pseudo</b><br><br><?= $image['Pseudo'] ?></td>
-            <td><b>Pays</b><br><br><?= $image['Pseudo'] ?></td>
-            <td><b>Slogan</b><br><br><?= $image['Pseudo'] ?></td>
-            <td><b>Droit</b><br><br><?= $image['Droit'] ?></td>
+            <td><img src="images/128-128/" alt="image"></td>
+            <td><b><span>Pseudo</span></b><br><br><span><?= $image['Pseudo'] ?></span></td>
+            <td><b><span>Pays</span></b><br><br><span><?= $image['Pays'] ?></span></td>
+            <td><b><span>Slogan</span></b><br><br><span><?= $image['Slogan'] ?></span></td>
+            <td><b><span>Droit</span></b><br><br><span><?= $image['Droit'] ?></span></td>
             <td>
                 <br>
                 <br>
@@ -195,7 +195,7 @@ $jj = count($images);
         </tbody>
     </table>
 </div>
-<script src="http://jpconnexion.free.fr/2012_06/cnx.js"></script>
+
 <?php
 
 
