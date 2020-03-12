@@ -158,7 +158,7 @@ $jj = count($images);
     </select>
 </div>
 <div class="divTable scrollit">
-    <table class="table">
+    <table class="table" id="myTable">
 
         <tbody id="tbody">
 
