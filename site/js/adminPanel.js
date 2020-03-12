@@ -4,6 +4,8 @@ Projet : Projet WEB sur Globescope pour le cours Projet WEB
 Date : 11.02.2020
 */
 
+
+
 toutModifier.addEventListener('change', toutSelectionner);
 
 function toutSelectionner() {
@@ -52,9 +54,8 @@ function changeValueSelect() {
 }
 $(#selectPseudo).on("change",function () {
     var selected = this.value;
-    if(selected != "tous"){
-        console.log("helo");
-        alert("coucou");
+    if(selected == "avec"){
+
         rows.filter("").show();
     }else{
         rows.show();
