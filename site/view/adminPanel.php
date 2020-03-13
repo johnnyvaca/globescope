@@ -63,6 +63,9 @@ $jj = count($images);
 </datalist>
 -->
 <div class="divSelects">
+    <br>
+    <br>
+    <br>
     <span>Trier par pseudo</span>
     <select class="divSelect" id="selectPseudo">
         <option hidden selected>Trier par pseudo</option>
@@ -160,7 +163,7 @@ $jj = count($images);
 <div class="divTable scrollit">
     <table class="table" id="myTable">
 
-        <tbody id="tbody">
+        <tbody id="tbody" class="tbody">
 
         <?php
 
@@ -176,7 +179,7 @@ $jj = count($images);
             }
             ?>
             <td><img src="images/128-128/" alt="image"></td>
-            <td><b><span>Pseudo</span></b><br><br><span><?= $image['Pseudo'] ?></span></td>
+            <td class="classPseudo"><b><span>Pseudo</span></b><br><br><span><?= $image['Pseudo'] ?></span></td>
             <td><b><span>Pays</span></b><br><br><span><?= $image['Pays'] ?></span></td>
             <td><b><span>Slogan</span></b><br><br><span><?= $image['Slogan'] ?></span></td>
             <td><b><span>Droit</span></b><br><br><span><?= $image['Droit'] ?></span></td>
@@ -195,7 +198,81 @@ $jj = count($images);
         </tbody>
     </table>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
+    Select A type
+    <select id="A">
+        <option>Toate</option>
+        <option>A1</option>
+        <option>A2</option>
+        <option>A3</option>
+    </select>
+
+
+
+    Select B type
+    <select id="B">
+        <option>Toate</option>
+        <option>B1</option>
+        <option>B2</option>
+        <option>B3</option>
+        <option>B4</option>
+        <option>B5</option>
+        <option>B6</option>
+    </select>
+
+    Select C type
+    <select id="C">
+        <option>Toate</option>
+        <option>C1</option>
+        <option>C2</option>
+        <option>C3</option>
+        <option>C4</option>
+        <option>C5</option>
+        <option>C6</option>
+        <option>C7</option>
+        <option>C8</option>
+        <option>C9</option>
+        <option>C10</option>
+    </select>
+
+<br/>
+<table id="X">
+    <thead>
+    </thead>
+    <tbody>
+    <tr>
+        <td>A1,B1,C1</td>
+    </tr>
+    <tr>
+        <td>A1,B1,C2</td>
+    </tr>
+    <tr>
+        <td>A1,B1,C3</td>
+    </tr>
+    <tr>
+        <td>A1,B2,C4</td>
+    </tr>
+    <tr>
+        <td>A1,B2,C5</td>
+    </tr>
+    <tr>
+        <td>A1,B3,C6</td>
+    </tr>
+    <tr>
+        <td>A2,B4,C7</td>
+    </tr>
+    <tr>
+        <td>A2,B5,C8</td>
+    </tr>
+    <tr>
+        <td>A2,B5,C9</td>
+    </tr>
+    <tr>
+        <td>A3,B6,C10</td>
+    </tr>
+    </tbody>
+</table>
 <?php
 
 

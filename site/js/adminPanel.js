@@ -6,7 +6,104 @@ Date : 11.02.2020
 
 
 
-toutModifier.addEventListener('change', toutSelectionner);
+
+
+// Helper function: returns rows that meet the condition in the 3
+// select boxes. The optional arguments can specify one of the select boxes
+// and which value to use instead of the selected value in that select box
+function getRows(override, value) {
+    var filter = "table tbody tr td";
+    $("#selectPseudo").each(function() {
+        var test = this === override ? value : $(this).val();
+        if (test !== "tous") filter += ":contains(" + test + ")";
+    });
+    return $(filter).parent();
+}
+
+$('#selectPseudo').on('change', function() {
+    $('table tbody tr td').hide();
+    getRows().show();
+    /*
+    $('#selectPseudo').each(function (i, select) {
+        $('option', this).each(function () {
+            $(this).toggle(getRows(select, $(this).text()).length > 0);
+        });
+    });
+    */
+
+});
+
+
+/*
+ * function getRows(override, value) {
+    var filter = "table tbody tr td";
+    $("#A,#B,#C").each(function() {
+        var test = this === override ? value : $(this).val();
+        if (test !== "Toate") filter += ":contains(" + test + ")";
+    });
+    return $(filter).parent();
+}
+
+ $('#A,#B,#C').on('change', function() {
+    $('table tbody tr').hide();
+    getRows().show();
+    $('#A,#B,#C').each(function (i, select) {
+        $('option', this).each(function () {
+            $(this).toggle(getRows(select, $(this).text()).length > 0);
+        });
+    });
+});
+ */
+
+
+
+
+// FUNCION PARA FILTRAR POR SELECT TIPO EQUIPO
+/*
+////////   https://stackoverflow.com/questions/45990106/filter-table-with-three-select-inputs-using-jquery
+$(document).ready(function($) {
+    $('table').show();
+    $('#selectPseudo').change(function() {
+        $('table').show();
+        var selection = $(this).val();
+        if (selection === 'tous') {
+            $('tr').show();
+        }
+        else {
+            var dataset = $('#myTable .tbody').find('tr');
+            // show all rows first
+            dataset.show();
+        }
+        // filter the rows that should be hidden
+        dataset.filter(function(index, item) {
+            return $(item).find('#third-child').text().split(',').indexOf(selection) === -1;
+        }).hide();
+    });
+});
+
+// FUNCION PARA FILTRAR POR SELECT MARCA
+$(document).ready(function($) {
+    $('table').show();
+    $('#marca_eq').change(function() {
+        $('table').show();
+        var selection = $(this).val();
+        if (selection === '-Todas-') {
+            $('tr').show();
+        }
+        else {
+            var dataset = $('#teq .contenidobusqueda').find('tr');
+            // show all rows first
+            dataset.show();
+        }
+        // filter the rows that should be hidden
+        dataset.filter(function(index, item) {
+            return $(item).find('#fourth-child').text().split(',').indexOf(selection) === -1;
+        }).hide();
+    });
+});
+*/
+
+// toutModifier.addEventListener('change', toutSelectionner);
 
 function toutSelectionner() {
 
@@ -25,11 +122,10 @@ function toutSelectionner() {
         }
     }
 }
-
 const selectCosa = document.querySelector('#tbody')
 i = 0;
 function cargarUsuarios() {
-
+/*
     fetch('model/data/images.json')
         .then(reponse => reponse.json())
 
@@ -41,21 +137,29 @@ function cargarUsuarios() {
             });
         })
     return images;
+    */
+
+    selected = changeValueSelect();
+    if(selected === "avec"){
+        alert("hello");
+        rows.filter("").show();
+    }else{
+        rows.show();
+        addRemoveClass(rows);
+    }
 }
 
 
 selectPseudo.addEventListener('change', cargarUsuarios);
-
+/*
 function changeValueSelect() {
-    var selected = this.value;
-
-    //   console.log(selectPseudo.value);
-   // return selectPseudo.value;
+return selectPseudo.value
+    ;
 }
 $(#selectPseudo).on("change",function () {
     var selected = this.value;
     if(selected == "avec"){
-
+            alert("hello");
         rows.filter("").show();
     }else{
         rows.show();
@@ -63,6 +167,8 @@ $(#selectPseudo).on("change",function () {
     }
 
 })
+*/
+/*
 function addRemoveClass(theRows) {
     theRows.removeClass("bg-success bg-danger");
     theRows.filter(":bg-success").addClass("bg-success");
@@ -70,8 +176,8 @@ function addRemoveClass(theRows) {
 }
 var rows = $("table#myTable tr:not(:first-child)");
 addRemoveClass(rows);
-
-col = cargarUsuarios();
+*/
+// cargarUsuarios();
 
 
 
