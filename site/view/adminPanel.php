@@ -2,21 +2,7 @@
 ob_start();
 $title = "admin";
 ?>
-<!--
-<br>
-<br>
-<br>
-    <label for="choix_bieres">Indiquez votre bière préférée :</label>
-    <input list="bieres" type="text" id="choix_bieres">
-    <datalist id="bieres">
-        <option value="Meteor"><button>X</button></option>
-        <option value="Pils">
-        <option value="Kronenbourg">
-        <option value="Grimbergen">
-    </datalist>
 
-Giovanni Battista Piranesi et ses Prisons imaginaires
--->
 <?php
 $jj = count($images);
 //echo $jj / 2 ?>
