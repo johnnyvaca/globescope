@@ -21,26 +21,22 @@ function monScript() {
 
 function getRows(override, value) {
     var filter = "table tbody tr .classDroit";
-    $("#selectPseudo").each(function() {
+    $("#A,#B,#C,#selectDroit").each(function() {
         var test = this === override ? value : $(this).val();
         if (test !== "tous") filter += ":contains(" + test + ")";
     });
     return $(filter).parent();
 }
 
-$('#selectPseudo').on('change', function() {9
-    $('table tbody tr .classDroit').hide();
+$('#A,#B,#C,#selectDroit').on('change', function() {
+    $('table tbody tr').hide();
     getRows().show();
-
-    $('#selectPseudo').each(function (i, select) {
+    $('#A,#B,#C,#selectDroit').each(function (i, select) {
         $('option', this).each(function () {
             $(this).toggle(getRows(select, $(this).text()).length > 0);
         });
     });
-
-
 });
-
 /*
  *
 function getRows(override, value) {
