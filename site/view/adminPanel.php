@@ -83,19 +83,17 @@ $jj = count($images);
         <option value="sans">sans</option>
         <?php
         foreach ($droits as $droit) {
-
             if ($droit != "" && $droit != " ") {
                 ?>
                 <option value="<?= $droit ?>"><?= $droit ?></option>
             <?php }
-
         } ?>
     </select>
     <br>
     <br> <br>
 
     <span>Trier par pays</span>
-    <select name="pays" class="divSelect"  id="selectPays">
+    <select name="pays" class="divSelect" id="selectPays">
         <option value="tous">tous</option>
         <option value="avec">avec</option>
         <option value="sans">sans</option>
@@ -182,7 +180,7 @@ $jj = count($images);
             <td class="classPseudo"><b><span>Pseudo</span></b><br><br><span><?= $image['Pseudo'] ?></span></td>
             <td><b><span>Pays</span></b><br><br><span><?= $image['Pays'] ?></span></td>
             <td><b><span>Slogan</span></b><br><br><span><?= $image['Slogan'] ?></span></td>
-            <td><b><span>Droit</span></b><br><br><span><?= $image['Droit'] ?></span></td>
+            <td class="classDroit"><b><span>Droit</span></b><br><br><span><?= $image['Droit'] ?></span></td>
             <td>
                 <br>
                 <br>
@@ -198,43 +196,43 @@ $jj = count($images);
         </tbody>
     </table>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
 
-    Select A type
-    <select id="A">
-        <option>Toate</option>
-        <option>A1</option>
-        <option>A2</option>
-        <option>A3</option>
-    </select>
+Select A type
+<select id="A">
+    <option>Toate</option>
+    <option>A1</option>
+    <option>A2</option>
+    <option>A3</option>
+    <option>droit</option>
+</select>
 
 
+Select B type
+<select id="B">
+    <option>Toate</option>
+    <option>B1</option>
+    <option>B2</option>
+    <option>B3</option>
+    <option>B4</option>
+    <option>B5</option>
+    <option>B6</option>
+</select>
 
-    Select B type
-    <select id="B">
-        <option>Toate</option>
-        <option>B1</option>
-        <option>B2</option>
-        <option>B3</option>
-        <option>B4</option>
-        <option>B5</option>
-        <option>B6</option>
-    </select>
-
-    Select C type
-    <select id="C">
-        <option>Toate</option>
-        <option>C1</option>
-        <option>C2</option>
-        <option>C3</option>
-        <option>C4</option>
-        <option>C5</option>
-        <option>C6</option>
-        <option>C7</option>
-        <option>C8</option>
-        <option>C9</option>
-        <option>C10</option>
-    </select>
+Select C type
+<select id="C">
+    <option>Toate</option>
+    <option>C1</option>
+    <option>C2</option>
+    <option>C3</option>
+    <option>C4</option>
+    <option>C5</option>
+    <option>C6</option>
+    <option>C7</option>
+    <option>C8</option>
+    <option>C9</option>
+    <option>C10</option>
+</select>
 
 <br/>
 <table id="X">

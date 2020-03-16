@@ -3,14 +3,46 @@ Auteurs : Kevin Vaucher et Johnny Vaca
 Projet : Projet WEB sur Globescope pour le cours Projet WEB
 Date : 11.02.2020
 */
+/*
+window.addEventListener('load',monScript);
 
+function monScript() {
 
-
+}
+*/
 
 
 // Helper function: returns rows that meet the condition in the 3
 // select boxes. The optional arguments can specify one of the select boxes
 // and which value to use instead of the selected value in that select box
+
+
+
+
+function getRows(override, value) {
+    var filter = "table tbody tr .classDroit";
+    $("#selectPseudo").each(function() {
+        var test = this === override ? value : $(this).val();
+        if (test !== "tous") filter += ":contains(" + test + ")";
+    });
+    return $(filter).parent();
+}
+
+$('#selectPseudo').on('change', function() {9
+    $('table tbody tr .classDroit').hide();
+    getRows().show();
+
+    $('#selectPseudo').each(function (i, select) {
+        $('option', this).each(function () {
+            $(this).toggle(getRows(select, $(this).text()).length > 0);
+        });
+    });
+
+
+});
+
+/*
+ *
 function getRows(override, value) {
     var filter = "table tbody tr td";
     $("#selectPseudo").each(function() {
@@ -23,19 +55,17 @@ function getRows(override, value) {
 $('#selectPseudo').on('change', function() {
     $('table tbody tr td').hide();
     getRows().show();
-    /*
+
     $('#selectPseudo').each(function (i, select) {
         $('option', this).each(function () {
             $(this).toggle(getRows(select, $(this).text()).length > 0);
         });
     });
-    */
+
 
 });
 
-
-/*
- * function getRows(override, value) {
+ function getRows(override, value) {
     var filter = "table tbody tr td";
     $("#A,#B,#C").each(function() {
         var test = this === override ? value : $(this).val();
@@ -54,8 +84,6 @@ $('#selectPseudo').on('change', function() {
     });
 });
  */
-
-
 
 
 // FUNCION PARA FILTRAR POR SELECT TIPO EQUIPO
@@ -122,33 +150,36 @@ function toutSelectionner() {
         }
     }
 }
+
 const selectCosa = document.querySelector('#tbody')
 i = 0;
+
 function cargarUsuarios() {
-/*
-    fetch('model/data/images.json')
-        .then(reponse => reponse.json())
+    /*
+        fetch('model/data/images.json')
+            .then(reponse => reponse.json())
 
-        .then(images => {
-            images.forEach(image => {
+            .then(images => {
+                images.forEach(image => {
 
-                Pseudo1 = changeValueSelect();
+                    Pseudo1 = changeValueSelect();
 
-            });
-        })
-    return images;
-    */
+                });
+            })
+        return images;
+        */
 
     selected = changeValueSelect();
-    if(selected === "avec"){
+    if (selected === "avec") {
         alert("hello");
         rows.filter("").show();
-    }else{
+    } else {
         rows.show();
         addRemoveClass(rows);
     }
 }
 
+toutModifier.addEventListener('change', toutSelectionner);
 
 selectPseudo.addEventListener('change', cargarUsuarios);
 /*
@@ -178,7 +209,6 @@ var rows = $("table#myTable tr:not(:first-child)");
 addRemoveClass(rows);
 */
 // cargarUsuarios();
-
 
 
 /*
