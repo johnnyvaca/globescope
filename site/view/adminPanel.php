@@ -6,13 +6,13 @@ Date : 16.03.2020
 
 <?php
 ob_start();
-$title = "admin";
+$title = "Globescope - Panel Administrateur";
 ?>
 
 <?php
 $jj = count($images);
 //echo $jj / 2 ?>
-
+<form action="index.php?action=modify" method="POST">
 <div class="divMenu">
     <div class="divTitle1">
         <h1>Panel Administrateur
@@ -23,8 +23,6 @@ $jj = count($images);
         </h3>
     </div>
     <div class="divSearch">
-
-
         <select aria-label="gros">
             <option hidden selected>Rechercher par ...</option>
             <option>Pseudo</option>
@@ -33,13 +31,15 @@ $jj = count($images);
 
         <input type="text" placeholder="Recherche..." aria-label="label" id="search">
     </div>
-    <div class="divModifier" id="cool">
-        <button>MODIFIER</button>
 
-        <span>Tout Modifier</span><input type="checkbox" aria-label="Checkbox for following text input"
-                                         id="toutModifier">
+        <div class="divModifier" id="cool">
 
-    </div>
+                <input type="submit" value="Modifier">
+
+            <span>Tout Modifier </span><input type="checkbox" aria-label="Checkbox for following text input"
+                                              id="toutModifier">
+
+        </div>
 </div>
 <br>
 <br>
@@ -57,20 +57,20 @@ $jj = count($images);
     <br>
     <br>
     <br>
-    <span>Trier par pseudo</span>
+    <span>Trier par Pseudo</span>
     <select class="divSelect" id="selectPseudo">
-        <option value="tous">tous</option>
-        <option value="avec">avec</option>
-        <option value="sans">sans</option>
+        <option value="tous">Tous</option>
+        <option value="avec">Avec</option>
+        <option value="sans">Sans</option>
     </select>
     <br>
     <br> <br>
     <span>Trier par Droit</span>
 
     <select class="divSelect" id="selectDroit">
-        <option>tous</option>
-        <option>avec</option>
-        <option>sans</option>
+        <option>Tous</option>
+        <option>Avec</option>
+        <option>Sans</option>
         <?php
         foreach ($droits as $droit) {
             if ($droit != "" && $droit != " ") {
@@ -82,11 +82,11 @@ $jj = count($images);
     <br>
     <br> <br>
 
-    <span>Trier par pays</span>
-    <select name="pays" class="divSelect" id="selectPays">
-        <option value="tous">tous</option>
-        <option value="avec">avec</option>
-        <option value="sans">sans</option>
+    <span>Trier par Pays</span>
+    <select class="divSelect" id="selectPays">
+        <option value="tous">Tous</option>
+        <option value="avec">Avec</option>
+        <option value="sans">Sans</option>
         <?php
         foreach ($pays as $imag) {
 
@@ -106,9 +106,9 @@ $jj = count($images);
 
     <span>Trier par ville</span>
     <select class="divSelect" id="selectVille">
-        <option value="tous">tous</option>
-        <option value="avec">avec</option>
-        <option value="sans">sans</option>
+        <option value="tous">Tous</option>
+        <option value="avec">Avec</option>
+        <option value="sans">Sans</option>
         <?php
         foreach ($villes as $ville) {
 
@@ -121,19 +121,19 @@ $jj = count($images);
     </select>
     <br>
     <br> <br>
-    <span>Trier par phrase ...</span>
+    <span>Trier par Phrase ...</span>
     <select class="divSelect">
-        <option value="tous">tous</option>
-        <option value="avec">avec</option>
-        <option value="sans">sans</option>
+        <option value="tous">Tous</option>
+        <option value="avec">Avec</option>
+        <option value="sans">Sans</option>
     </select>
     <br>
     <br> <br>
-    <span>Trier par équipe</span>
+    <span>Trier par Equipe</span>
     <select class="divSelect">
-        <option value="tous">tous</option>
-        <option value="avec">avec</option>
-        <option value="sans">sans</option> <?php
+        <option value="tous">Tous</option>
+        <option value="avec">Avec</option>
+        <option value="sans">Sans</option> <?php
         foreach ($equipes as $equipe) {
 
             if ($equipe != "") {
@@ -151,7 +151,6 @@ $jj = count($images);
         <tbody id="tbody" class="tbody">
 
         <?php
-
         foreach ($images as $i => $image) {
             if ($i % 2 == 0) {
                 ?>
@@ -163,6 +162,7 @@ $jj = count($images);
                 <?php
             }
             ?>
+
             <td><img src="images/128-128/" alt="image"></td>
             <td class="classPseudo"><b><span>Pseudo</span></b><br><br><span><?= $image['Pseudo'] ?></span></td>
             <td><b><span>Pays</span></b><br><br><span><?= $image['Pays'] ?></span></td>
@@ -171,20 +171,19 @@ $jj = count($images);
             <td>
                 <br>
                 <br>
-                <span><b>modifier</b></span>
-
-                <input type="checkbox" aria-label="helo">
-
+                <span><b>Modifier</b></span>
+                <input type="checkbox" aria-label="helo" value="<?= $image['IDPlace'] ?>" name="arrayModify[]">
             </td>
             </tr>
             <?php
         }
         ?>
+
         </tbody>
     </table>
 </div>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</form>
 <?php
 
 
@@ -224,13 +223,12 @@ require "view/gabaritAdminPanel.php";
         <option value="Bolivie">Bolivie</option>
         <option value="Botswana">Botswana</option>
         <option value="Bhoutan">Bhoutan</option>
-        <option value="Boznie_Herzegovine">Boznie_Herzegovine</option>
+        <option value="Boznie_Herzegovine">Bosnie_Herzegovine</option>
         <option value="Bresil">Bresil</option>
         <option value="Brunei">Brunei</option>
         <option value="Bulgarie">Bulgarie</option>
         <option value="Burkina_Faso">Burkina_Faso</option>
         <option value="Burundi">Burundi</option>
-
         <option value="Caiman">Caiman</option>
         <option value="Cambodge">Cambodge</option>
         <option value="Cameroun">Cameroun</option>

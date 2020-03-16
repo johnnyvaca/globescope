@@ -9,16 +9,13 @@ Date : 16.03.2020
 
 function getHomePage()
 {
-
     require "model/GetData.php";
     require "view/globescope.php";
-
 }
 
 function getAdminPanelPage()
 {
     require "model/model.php";
-
     $images = getImages();
     $iDroit = 0;
     $iVille = 0;
@@ -47,12 +44,14 @@ function getAdminPanelPage()
         }
 
     }
-
     $droits = array_unique($droits);
     $villes = array_unique($villes);
     $equipes = array_unique($equipes);
     $pays = array_unique($pays);
-
     require "view/adminPanel.php";
+}
 
+function getModifyPage(){
+    require "model/model.php";
+    require "view/modifyPanel.php";
 }

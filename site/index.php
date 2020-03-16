@@ -13,6 +13,10 @@ switch ($action) {
     case "login":
         getAdminPanelPage();
         break;
+    case "modify":
+        var_dump($_POST['arrayModify']);
+    //    getModifyPage();
+        break;
 
     default:
         getHomePage();
