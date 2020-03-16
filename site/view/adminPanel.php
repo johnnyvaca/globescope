@@ -1,3 +1,9 @@
+<!--
+Auteurs : Kevin Vaucher et Johnny Vaca
+Projet : Projet Web Globescope
+Date : 16.03.2020
+-->
+
 <?php
 ob_start();
 $title = "admin";
@@ -26,7 +32,6 @@ $jj = count($images);
         </select>
 
         <input type="text" placeholder="Recherche..." aria-label="label" id="search">
-
     </div>
     <div class="divModifier" id="cool">
         <button>MODIFIER</button>

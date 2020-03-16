@@ -1,3 +1,9 @@
+<!--
+Auteurs : Kevin Vaucher et Johnny Vaca
+Projet : Projet Web Globescope
+Date : 16.03.2020
+-->
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/html">
 <head>
