@@ -21,19 +21,19 @@ function monScript() {
 
 function getRows(override, value) {
     var filter = "table tbody tr .classDroit";
-    $("#A,#B,#C,#selectDroit").each(function() {
+    $("#selectDroit").each(function() {
         var test = this === override ? value : $(this).val();
         if (test !== "Toate") filter += ":contains(" + test + ")";
     });
     return $(filter).parent();
 }
 
-$('#A,#B,#C,#selectDroit').on('change', function() {
+$('#selectDroit').on('change', function() {
     $('table tbody tr').hide();
     getRows().show();
-    $('#A,#B,#C,#selectDroit').each(function (i, select) {
+    $('#selectDroit').each(function (i, select) {
         $('option', this).each(function () {
-            $(this).toggle(getRows(select, $(this).text()).length > 0);
+            $(this).toggle(getRows(select, $(this).text()).length >= 0);
         });
     });
 });
