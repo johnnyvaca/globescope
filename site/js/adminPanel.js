@@ -23,7 +23,7 @@ function getRows(override, value) {
     var filter = "table tbody tr .classDroit";
     $("#A,#B,#C,#selectDroit").each(function() {
         var test = this === override ? value : $(this).val();
-        if (test !== "tous") filter += ":contains(" + test + ")";
+        if (test !== "Toate") filter += ":contains(" + test + ")";
     });
     return $(filter).parent();
 }
