@@ -53,5 +53,6 @@ function getAdminPanelPage()
 
 function getModifyPage(){
     require "model/model.php";
+    $images = getImages();
     require "view/modifyPanel.php";
 }

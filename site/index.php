@@ -5,7 +5,7 @@ Date : 16.03.2020
 -->
 
 <?php
-session_start();
+
 require "controler/controler.php";
 
 $action = $_GET['action'];
@@ -15,7 +15,7 @@ switch ($action) {
         break;
     case "modify":
         var_dump($_POST['arrayModify']);
-    //    getModifyPage();
+        getModifyPage();
         break;
 
     default:

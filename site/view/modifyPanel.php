@@ -19,7 +19,7 @@ $jj = count($images);
         </h1>
     </div>
     <div class="divTitle2">
-        <h3>Liste des Participants
+        <h3>MODIFICATION
         </h3>
     </div>
     <div class="divSearch">
@@ -148,7 +148,7 @@ $jj = count($images);
 <div class="divTable scrollit">
     <table class="table" id="myTable">
 
-        <tbody id="tbody" class="tbody">
+        <tbody class="tbody">
 
         <?php
 

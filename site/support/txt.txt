@@ -1,0 +1,128 @@
+
+
+function getRows(override, value) {
+    var filter = "table tbody tr .classPseudo";
+    $("#selectPseudo").each(function () {
+        var test = this === override ? value : $(this).val();
+        if (test !== "tous") filter += ":contains(" + test + ")";
+    });
+    return $(filter).parent();
+}
+
+$('#selectPseudo').on('change', function () {
+    $('table tbody tr').hide();
+    getRows().show();
+    $('#selecPseudo').each(function (i, select) {
+        $('option', this).each(function () {
+            $(this).toggle(getRows(select, $(this).text()).length >= 0);
+        });
+    });
+});
+
+
+
+function getRows(override, value) {
+    var filter = "table tbody tr .classDroit";
+    $("#selectDroit").each(function () {
+        var test = this === override ? value : $(this).val();
+        if (test !== "tous") filter += ":contains(" + test + ")";
+    });
+    return $(filter).parent();
+}
+
+$('#selectDroit').on('change', function () {
+    $('table tbody tr').hide();
+    getRows().show();
+    $('#selectDroit').each(function (i, select) {
+        $('option', this).each(function () {
+            $(this).toggle(getRows(select, $(this).text()).length >= 0);
+        });
+    });
+});
+
+
+
+function getRows(override, value) {
+    var filter = "table tbody tr .classPays";
+    $("#selectPays").each(function () {
+        var test = this === override ? value : $(this).val();
+        if (test !== "tous") filter += ":contains(" + test + ")";
+    });
+    return $(filter).parent();
+}
+
+$('#selectPays').on('change', function () {
+    $('table tbody tr').hide();
+    getRows().show();
+    $('#selectPays').each(function (i, select) {
+        $('option', this).each(function () {
+            $(this).toggle(getRows(select, $(this).text()).length >= 0);
+        });
+    });
+});
+
+
+
+
+function getRows(override, value) {
+    var filter = "table tbody tr .classVille";
+    $("#selectVille").each(function () {
+        var test = this === override ? value : $(this).val();
+        if (test !== "tous") filter += ":contains(" + test + ")";
+    });
+    return $(filter).parent();
+}
+
+$('#selectVille').on('change', function () {
+    $('table tbody tr').hide();
+    getRows().show();
+    $('#selectVille').each(function (i, select) {
+        $('option', this).each(function () {
+            $(this).toggle(getRows(select, $(this).text()).length >= 0);
+        });
+    });
+});
+
+
+
+
+function getRows(override, value) {
+    var filter = "table tbody tr .classSlogan";
+    $("#selectSlogan").each(function () {
+        var test = this === override ? value : $(this).val();
+        if (test !== "tous") filter += ":contains(" + test + ")";
+    });
+    return $(filter).parent();
+}
+
+$('#selectSlogan').on('change', function () {
+    $('table tbody tr').hide();
+    getRows().show();
+    $('#selectSlogan').each(function (i, select) {
+        $('option', this).each(function () {
+            $(this).toggle(getRows(select, $(this).text()).length >= 0);
+        });
+    });
+});
+
+
+
+
+function getRows(override, value) {
+    var filter = "table tbody tr .classEquipe";
+    $("#selectEquipe").each(function () {
+        var test = this === override ? value : $(this).val();
+        if (test !== "tous") filter += ":contains(" + test + ")";
+    });
+    return $(filter).parent();
+}
+
+$('#selectEquipe').on('change', function () {
+    $('table tbody tr').hide();
+    getRows().show();
+    $('#selectEquipe').each(function (i, select) {
+        $('option', this).each(function () {
+            $(this).toggle(getRows(select, $(this).text()).length >= 0);
+        });
+    });
+});

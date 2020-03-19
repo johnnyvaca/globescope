@@ -17,26 +17,54 @@ function monScript() {
 // and which value to use instead of the selected value in that select box
 
 
-
-
 function getRows(override, value) {
     var filter = "table tbody tr .classDroit";
-    $("#selectDroit").each(function() {
-        var test = this === override ? value : $(this).val();
-        if (test !== "Toate") filter += ":contains(" + test + ")";
+
+
+    $("#selectDroit").each(function () {
+        //  var test = this === override ? value : $(this).val();
+
+        if (this === override) {
+            test = value;
+            console.log("test : " + value);
+        } else {
+            test = $(this).val();
+        }
+
+        if (test === "Tous") {
+
+
+
+            //   console.log("\n" + filter);
+        }else
+        if (test === "Sans") {
+
+                // console.log(test);
+                filter += ":contains("*+")";
+                alert(filter);
+            // console.log("\n" + filter);
+        } else {
+            filter += ":contains(" + test + ")";
+        }
     });
     return $(filter).parent();
 }
 
-$('#selectDroit').on('change', function() {
+$('#selectDroit').on('change', function () {
     $('table tbody tr').hide();
     getRows().show();
+
+    /*
     $('#selectDroit').each(function (i, select) {
         $('option', this).each(function () {
-            $(this).toggle(getRows(select, $(this).text()).length >= 0);
+            $(this).toggle(getRows(select, $(this).text()).length > 0);
         });
     });
+    */
+
 });
+
+
 /*
  *
 function getRows(override, value) {

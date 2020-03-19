@@ -15,7 +15,7 @@ $jj = count($images);
 <form action="index.php?action=modify" method="POST">
 <div class="divMenu">
     <div class="divTitle1">
-        <h1>Panel Administrateur
+        <h1>Panel Administrateur - Liste des Participants
         </h1>
     </div>
     <div class="divTitle2">
@@ -168,11 +168,11 @@ $jj = count($images);
             <td><b><span>Pays</span></b><br><br><span><?= $image['Pays'] ?></span></td>
             <td><b><span>Slogan</span></b><br><br><span><?= $image['Slogan'] ?></span></td>
             <td class="classDroit"><b><span>Droit</span></b><br><br><span><?= $image['Droit'] ?></span></td>
-            <td>
+            <td class="classModify">
                 <br>
                 <br>
                 <span><b>Modifier</b></span>
-                <input type="checkbox" aria-label="helo" value="<?= $image['IDPlace'] ?>" name="arrayModify[]">
+                <input class="mode" type="checkbox" aria-label="helo" value="<?= $image['IDPlace'] ?>" name="arrayModify[]">
             </td>
             </tr>
             <?php
