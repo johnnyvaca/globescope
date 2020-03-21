@@ -56,10 +56,13 @@ function getAdminPanelPage()
     require "view/adminPanel.php";
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function getModifyPage(){
     require "model/model.php";
     $images = getImages();
     require "view/modifyPanel.php";
+=======
+>>>>>>> parent of d1735f4... wip
 =======
 >>>>>>> parent of d1735f4... wip
 }

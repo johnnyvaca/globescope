@@ -14,10 +14,13 @@ switch ($action) {
         getAdminPanelPage();
         break;
 <<<<<<< HEAD
+<<<<<<< HEAD
     case "modify":
         var_dump($_POST['arrayModify']);
         getModifyPage();
         break;
+=======
+>>>>>>> parent of d1735f4... wip
 =======
 >>>>>>> parent of d1735f4... wip
 

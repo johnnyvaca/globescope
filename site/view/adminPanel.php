@@ -172,13 +172,19 @@ $jj = count($images);
                 <br>
                 <br>
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <span><b>Modifier</b></span>
                 <input class="mode" type="checkbox" aria-label="helo" value="<?= $image['IDPlace'] ?>" name="arrayModify[]">
 =======
+=======
+>>>>>>> parent of d1735f4... wip
                 <span><b>modifier</b></span>
 
                 <input type="checkbox" aria-label="helo">
 
+<<<<<<< HEAD
+>>>>>>> parent of d1735f4... wip
+=======
 >>>>>>> parent of d1735f4... wip
             </td>
             </tr>
