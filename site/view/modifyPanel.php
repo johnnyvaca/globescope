@@ -1,12 +1,10 @@
-<!--
-Auteurs : Kevin Vaucher et Johnny Vaca
-Projet : Projet Web Globescope
-Date : 16.03.2020
--->
 
 <?php
+//Auteurs : Kevin Vaucher et Johnny Vaca
+//Projet : Projet Web Globescope
+//Date : 16.03.2020
 ob_start();
-$title = "admin";
+$title = "Globescope - Modification";
 ?>
 
 <?php
@@ -19,7 +17,7 @@ $jj = count($images);
         </h1>
     </div>
     <div class="divTitle2">
-        <h3>MODIFICATION
+        <h3>Liste des Participants
         </h3>
     </div>
     <div class="divSearch">
@@ -59,18 +57,18 @@ $jj = count($images);
     <br>
     <span>Trier par pseudo</span>
     <select class="divSelect" id="selectPseudo">
-        <option value="tous">tous</option>
-        <option value="avec">avec</option>
-        <option value="sans">sans</option>
+        <option value="tous">Tous</option>
+        <option value="avec">Avec</option>
+        <option value="sans">Sans</option>
     </select>
     <br>
     <br> <br>
     <span>Trier par Droit</span>
 
     <select class="divSelect" id="selectDroit">
-        <option>tous</option>
-        <option>avec</option>
-        <option>sans</option>
+        <option>Tous</option>
+        <option>Avec</option>
+        <option>Sans</option>
         <?php
         foreach ($droits as $droit) {
             if ($droit != "" && $droit != " ") {
@@ -82,11 +80,11 @@ $jj = count($images);
     <br>
     <br> <br>
 
-    <span>Trier par pays</span>
+    <span>Trier par Pays</span>
     <select name="pays" class="divSelect" id="selectPays">
-        <option value="tous">tous</option>
-        <option value="avec">avec</option>
-        <option value="sans">sans</option>
+        <option value="tous">Tous</option>
+        <option value="avec">Avec</option>
+        <option value="sans">Sans</option>
         <?php
         foreach ($pays as $imag) {
 
@@ -104,11 +102,11 @@ $jj = count($images);
 
     <br> <br>
 
-    <span>Trier par ville</span>
+    <span>Trier par Ville</span>
     <select class="divSelect" id="selectVille">
-        <option value="tous">tous</option>
-        <option value="avec">avec</option>
-        <option value="sans">sans</option>
+        <option value="tous">Tous</option>
+        <option value="avec">Avec</option>
+        <option value="sans">Sans</option>
         <?php
         foreach ($villes as $ville) {
 
@@ -121,19 +119,19 @@ $jj = count($images);
     </select>
     <br>
     <br> <br>
-    <span>Trier par phrase ...</span>
+    <span>Trier par Phrase</span>
     <select class="divSelect">
-        <option value="tous">tous</option>
-        <option value="avec">avec</option>
-        <option value="sans">sans</option>
+        <option value="tous">Tous</option>
+        <option value="avec">Avec</option>
+        <option value="sans">Sans</option>
     </select>
     <br>
     <br> <br>
-    <span>Trier par équipe</span>
+    <span>Trier par Equipe</span>
     <select class="divSelect">
-        <option value="tous">tous</option>
-        <option value="avec">avec</option>
-        <option value="sans">sans</option> <?php
+        <option value="tous">Tous</option>
+        <option value="avec">Avec</option>
+        <option value="sans">Sans</option> <?php
         foreach ($equipes as $equipe) {
 
             if ($equipe != "") {
@@ -148,7 +146,7 @@ $jj = count($images);
 <div class="divTable scrollit">
     <table class="table" id="myTable">
 
-        <tbody class="tbody">
+        <tbody id="tbody" class="tbody">
 
         <?php
 
@@ -171,7 +169,7 @@ $jj = count($images);
             <td>
                 <br>
                 <br>
-                <span><b>modifier</b></span>
+                <span><b>Modifier</b></span>
 
                 <input type="checkbox" aria-label="helo">
 
