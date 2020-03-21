@@ -1,9 +1,3 @@
-<!--
-Auteurs : Kevin Vaucher et Johnny Vaca
-Projet : Projet Web Globescope
-Date : 16.03.2020
--->
-
 <?php
 
 
