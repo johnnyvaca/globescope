@@ -51,7 +51,7 @@ $jj = count($images);
     <option value="Grimbergen">
 </datalist>
 -->
-<div class="divSelects">
+<div class="divSelects" id="selects">
     <br>
     <br>
     <br>
@@ -68,7 +68,10 @@ $jj = count($images);
     <select class="divSelect" id="selectDroit">
         <option>Tous</option>
         <option>Avec</option>
+        <option></option>
         <option>Sans</option>
+        <option>Tu as le droit</option>
+
         <?php
         foreach ($droits as $droit) {
             if ($droit != "" && $droit != " ") {
@@ -119,8 +122,8 @@ $jj = count($images);
     </select>
     <br>
     <br> <br>
-    <span>Trier par Phrase ...</span>
-    <select class="divSelect">
+    <span>Trier par Slogan ...</span>
+    <select class="divSelect" id="selectSlogan">
         <option value="tous">Tous</option>
         <option value="avec">Avec</option>
         <option value="sans">Sans</option>
@@ -128,7 +131,7 @@ $jj = count($images);
     <br>
     <br> <br>
     <span>Trier par Equipe</span>
-    <select class="divSelect">
+    <select class="divSelect" id="selectEquipe">
         <option value="tous">Tous</option>
         <option value="avec">Avec</option>
         <option value="sans">Sans</option> <?php
@@ -180,7 +183,7 @@ $jj = count($images);
         </tbody>
     </table>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
 </form>
 <?php
 

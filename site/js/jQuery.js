@@ -1,54 +1,59 @@
-
 /*
-$.ajax({
-    type: "POST",
-    url: ".php",
-    data: { "codigo" :  "codigo" },
-    success: function(data){
-        alert(data);
-    }
-});
+function getRows(override, value) {
+    var filter = "table tbody tr .classDroit";
+    $("#selectDroit").each(function() {
+        var test = this === override ? value : $(this).val();
 
+        if (test !== "Tous"){
+            filter += ":contains("+test+")";
+        }
+    eso =$(filter).parent();
+        console.log(eso);
+    });
+    return $(filter).parent();
+}
+
+$('#selectDroit').on('change', function() {
+    $('table tbody tr').hide();
+
+    getRows().show();
+
+    $('#selectDroit').each(function (i, select) {
+        $('option', this).each(function () {
+            $(this).toggle(getRows(select, $(this).text()).length >= 0);
+        });
+    });
+
+});
 */
-/*(function ($) {
-
-    $("#search").keyup(function (event) {
-        var input = $(this);
-        var val = input.val();
-        if(val == ''){
-            $('#tbody tr').show();
-            return true;
-        }
-        var regexp='\\b(.*)';
-        for (var i in val){
-            regexp += '('+val[i]+')(.*)';
-        }
-        regexp += '\\b';
-        $('#tbody').find('td').each(function () {
-            var td = $(this);
-            var result=    td.text().match(new RegExp(regexp, 'i'));
-            console.log(result);
-        })
-    });
-})(jQuery);*/
 
 
 
-//window.location = "model/model.php";
-//var echo = cnx().ajax.phpPostSyn("../model/model.php", "getImages");
-   // alert(echo);
+
+
+
 
 
 
 
 /*
-$.get("model/model.php",function (data) {
-data = JSON.parse(data);
-$.each(data,function (key,val) {
-alert(val.Pseudo);
-});
+
+ function getRows(override, value) {
+    var filter = "table tbody tr td";
+    $("#A,#B,#C").each(function() {
+        var test = this === override ? value : $(this).val();
+        if (test !== "Toate") filter += ":contains(" + test + ")";
     });
-    alert("hello");
+    return $(filter).parent();
+}
 
-     */
-
+ $('#A,#B,#C').on('change', function() {
+    $('table tbody tr').hide();
+    getRows().show();
+    $('#A,#B,#C').each(function (i, select) {
+        $('option', this).each(function () {
+            $(this).toggle(getRows(select, $(this).text()).length > 0);
+        });
+    });
+});
+ */

@@ -18,7 +18,7 @@ Date : 16.03.2020
 <body id="body">
 <?= $content ?>
 
-
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>-->
 <script src="../node_modules/jquery/dist/jquery.js"</script>
 <script src="../node_modules/jquery/dist/jquery.js"</script>
 <script src="../node_modules/jquery/dist/core.js"</script>
