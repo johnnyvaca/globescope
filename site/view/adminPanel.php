@@ -1,4 +1,3 @@
-
 <?php
 //Auteurs : Kevin Vaucher et Johnny Vaca
 //Projet : Projet Web Globescope
@@ -21,11 +20,12 @@ $jj = count($images);
         </h3>
     </div>
     <div class="divSearch">
+        <!--
         <select aria-label="gros">
             <option hidden selected>Rechercher par ...</option>
             <option>Pseudo</option>
             <option>Droit</option>
-        </select>
+        </select> -->
 
         <input type="text" placeholder="Recherche..." aria-label="label" id="search">
     </div>
@@ -55,7 +55,7 @@ $jj = count($images);
     <br>
     <br>
     <br>
-    <span>Trier par Pseudo</span>
+    <span>Filtrer par Pseudo</span>
     <select class="divSelect" id="selectPseudo">
         <option value="tous">Tous</option>
         <option value="avec">Avec</option>
@@ -63,7 +63,7 @@ $jj = count($images);
     </select>
     <br>
     <br> <br>
-    <span>Trier par Droit</span>
+    <span>Filtrer par Droit</span>
 
     <select class="divSelect" id="selectDroit">
         <option>Tous</option>
@@ -83,7 +83,7 @@ $jj = count($images);
     <br>
     <br> <br>
 
-    <span>Trier par Pays</span>
+    <span>Filtrer par Pays</span>
     <select class="divSelect" id="selectPays">
         <option value="tous">Tous</option>
         <option value="avec">Avec</option>
@@ -105,7 +105,7 @@ $jj = count($images);
 
     <br> <br>
 
-    <span>Trier par ville</span>
+    <span>Filtrer par ville</span>
     <select class="divSelect" id="selectVille">
         <option value="tous">Tous</option>
         <option value="avec">Avec</option>
@@ -122,7 +122,7 @@ $jj = count($images);
     </select>
     <br>
     <br> <br>
-    <span>Trier par Slogan ...</span>
+    <span>Filtrer par Slogan ...</span>
     <select class="divSelect" id="selectSlogan">
         <option value="tous">Tous</option>
         <option value="avec">Avec</option>
@@ -130,7 +130,7 @@ $jj = count($images);
     </select>
     <br>
     <br> <br>
-    <span>Trier par Equipe</span>
+    <span>Filtrer par Equipe</span>
     <select class="divSelect" id="selectEquipe">
         <option value="tous">Tous</option>
         <option value="avec">Avec</option>
