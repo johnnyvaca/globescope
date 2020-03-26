@@ -57,20 +57,18 @@ $jj = count($images);
     <br>
     <span>Filtrer par Pseudo</span>
     <select class="divSelect" id="selectPseudo">
-        <option value="tous">Tous</option>
-        <option value="avec">Avec</option>
-        <option value="sans">Sans</option>
+        <option value="tous">tous</option>
+        <option value="avec">avec</option>
+        <option value="sans">sans</option>
     </select>
     <br>
     <br> <br>
     <span>Filtrer par Droit</span>
 
     <select class="divSelect" id="selectDroit">
-        <option>Tous</option>
-        <option>Avec</option>
-        <option></option>
-        <option>Sans</option>
-        <option>Tu as le droit</option>
+        <option>tous</option>
+        <option>avec</option>
+        <option>sans</option>
 
         <?php
         foreach ($droits as $droit) {
@@ -85,9 +83,9 @@ $jj = count($images);
 
     <span>Filtrer par Pays</span>
     <select class="divSelect" id="selectPays">
-        <option value="tous">Tous</option>
-        <option value="avec">Avec</option>
-        <option value="sans">Sans</option>
+        <option value="tous">tous</option>
+        <option value="avec">avec</option>
+        <option value="sans">sans</option>
         <?php
         foreach ($pays as $imag) {
 
@@ -107,9 +105,9 @@ $jj = count($images);
 
     <span>Filtrer par ville</span>
     <select class="divSelect" id="selectVille">
-        <option value="tous">Tous</option>
-        <option value="avec">Avec</option>
-        <option value="sans">Sans</option>
+        <option value="tous">tous</option>
+        <option value="avec">avec</option>
+        <option value="sans">sans</option>
         <?php
         foreach ($villes as $ville) {
 
@@ -124,17 +122,17 @@ $jj = count($images);
     <br> <br>
     <span>Filtrer par Slogan ...</span>
     <select class="divSelect" id="selectSlogan">
-        <option value="tous">Tous</option>
-        <option value="avec">Avec</option>
-        <option value="sans">Sans</option>
+        <option value="tous">tous</option>
+        <option value="avec">avec</option>
+        <option value="sans">sans</option>
     </select>
     <br>
     <br> <br>
     <span>Filtrer par Equipe</span>
     <select class="divSelect" id="selectEquipe">
-        <option value="tous">Tous</option>
-        <option value="avec">Avec</option>
-        <option value="sans">Sans</option> <?php
+        <option value="tous">tous</option>
+        <option value="avec">avec</option>
+        <option value="sans">sans</option> <?php
         foreach ($equipes as $equipe) {
 
             if ($equipe != "") {
