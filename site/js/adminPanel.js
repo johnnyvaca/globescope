@@ -11,6 +11,8 @@ function monScript() {
 
 }
 */
+
+
 function toutSelectionner() {
 
     nbrImages = tbody.childNodes.length;
@@ -93,8 +95,6 @@ function changeSelects() {
         for(i = 0;i<data.length;i++){
             console.log(data[i]);
         }
-    //    console.clear();
-
         console.log(valueSelected[3]);
     });
 
