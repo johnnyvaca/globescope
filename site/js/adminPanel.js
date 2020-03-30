@@ -5,306 +5,19 @@ Date : 11.02.2020
 */
 
 
-window.addEventListener('load',monScript);
+window.addEventListener('load', monScript);
 
 function monScript() {
     /*
-    changeSelectsPseudo();
-    changeSelectsPays();
-    changeSelectsVille();
-    changeSelectsEquipe();
-    changeSelectsDroit();
-    changeSelectsSlogan();
+        changeSelectsPseudo();
+        changeSelectsPays();
+        changeSelectsVille();
+        changeSelectsEquipe();
+        changeSelectsDroit();
+        changeSelectsSlogan();
+
     */
-
 }
-function changeSelectsPseudo() {
-
-
-    var i = 0;
-    fetch('model/data/images.json')
-        .then(reponse => reponse.json())
-        .then(images => {
-            if ("sans" === selectPseudo.value) {
-                images.forEach(image => {
-                    texte = $("tbody#tbody").find("tr").eq(i).find("td").eq(1).find("span").eq(1).text()
-                    if (image.Pseudo !== "") {
-
-                        if (texte !== "") {
-                            $("tbody#tbody").find("tr").eq(i).addClass("pseudo");
-                            $("tbody#tbody").find("tr").eq(i).find("td").eq(5).find("input").eq(0).attr('checked', false);
-                        }
-                    } else {
-                        $("tbody#tbody").find("tr").eq(i).removeClass("pseudo");
-                    }
-                    i++;
-                });
-            } else if ("avec" === selectPseudo.value) {
-                images.forEach(image => {
-                    texte = $("tbody#tbody").find("tr").eq(i).find("td").eq(1).find("span").eq(1).text()
-                    if (image.Pseudo === "") {
-                        if (texte === "") {
-                            $("tbody#tbody").find("tr").eq(i).addClass("pseudo");
-                            $("tbody#tbody").find("tr").eq(i).find("td").eq(5).find("input").eq(0).attr('checked', false);
-                        }
-                    } else {
-                        $("tbody#tbody").find("tr").eq(i).removeClass("pseudo");
-                    }
-                    i++;
-                });
-            } else if ("tous" === selectPseudo.value) {
-                images.forEach(image => {
-                    $("tbody#tbody").find("tr").eq(i).removeClass("pseudo");
-                    $("tbody#tbody").find("tr").eq(i).find("td").eq(5).find("input").eq(0).attr('checked', false);
-                    i++;
-                });
-
-            }
-        });
-
-    toutModifier.checked = false;
-}
-function changeSelectsPays() {
-
-
-    var i = 0;
-
-    fetch('model/data/images.json')
-        .then(reponse => reponse.json())
-        .then(images => {
-            if ("sans" === selectPays.value) {
-                images.forEach(image => {
-                    texte = $("tbody#tbody").find("tr").eq(i).find("td").eq(2).find("span").eq(1).text()
-                    if (image.Pays !== "") {
-
-                        if (texte !== "") {
-                            $("tbody#tbody").find("tr").eq(i).addClass("pays");
-                            $("tbody#tbody").find("tr").eq(i).find("td").eq(5).find("input").eq(0).attr('checked', false);
-                        }
-                    } else {
-
-                        $("tbody#tbody").find("tr").eq(i).removeClass("pays");
-                    }
-                    i++;
-                });
-            } else if ("avec" === selectPays.value) {
-                images.forEach(image => {
-                    texte = $("tbody#tbody").find("tr").eq(i).find("td").eq(2).find("span").eq(1).text()
-                    if (image.Droit === "") {
-                        if (texte === "") {
-                            $("tbody#tbody").find("tr").eq(i).addClass("pays");
-                            $("tbody#tbody").find("tr").eq(i).find("td").eq(5).find("input").eq(0).attr('checked', false);
-                        }
-                    } else {
-                        $("tbody#tbody").find("tr").eq(i).removeClass("pays");
-                    }
-                    i++;
-                });
-            } else if ("tous" === selectPays.value) {
-                images.forEach(image => {
-                    $("tbody#tbody").find("tr").eq(i).removeClass("pays");
-                    $("tbody#tbody").find("tr").eq(i).find("td").eq(5).find("input").eq(0).attr('checked', false);
-                    i++;
-                });
-
-            }
-        });
-
-    toutModifier.checked = false;
-}
-function changeSelectsVille() {
-
-
-    var i = 0;
-
-    fetch('model/data/images.json')
-        .then(reponse => reponse.json())
-        .then(images => {
-            if ("sans" === selectVille.value) {
-                images.forEach(image => {
-                    texte = $("tbody#tbody").find("tr").eq(i).find("td").eq(3).find("span").eq(1).text()
-                    if (image.Ville !== "") {
-
-                        if (texte !== "") {
-                            $("tbody#tbody").find("tr").eq(i).addClass("ville");
-                            $("tbody#tbody").find("tr").eq(i).find("td").eq(5).find("input").eq(0).attr('checked', false);
-                        }
-                    } else {
-
-                        $("tbody#tbody").find("tr").eq(i).removeClass("ville");
-                    }
-                    i++;
-                });
-            } else if ("avec" === selectVille.value) {
-                images.forEach(image => {
-                    texte = $("tbody#tbody").find("tr").eq(i).find("td").eq(3).find("span").eq(1).text()
-                    if (image.Ville === "") {
-                        if (texte === "") {
-                            $("tbody#tbody").find("tr").eq(i).addClass("ville");
-                            $("tbody#tbody").find("tr").eq(i).find("td").eq(5).find("input").eq(0).attr('checked', false);
-                        }
-                    } else {
-                        $("tbody#tbody").find("tr").eq(i).removeClass("ville");
-                    }
-                    i++;
-                });
-            } else if ("tous" === selectVille.value) {
-                images.forEach(image => {
-                    $("tbody#tbody").find("tr").eq(i).removeClass("ville");
-                    $("tbody#tbody").find("tr").eq(i).find("td").eq(5).find("input").eq(0).attr('checked', false);
-                    i++;
-                });
-
-            }
-        });
-
-    toutModifier.checked = false;
-}
-function changeSelectsEquipe() {
-
-
-    var i = 0;
-
-    fetch('model/data/images.json')
-        .then(reponse => reponse.json())
-        .then(images => {
-            if ("sans" === selectEquipe.value) {
-                images.forEach(image => {
-                    texte = $("tbody#tbody").find("tr").eq(i).find("td").eq(4).find("span").eq(1).text()
-                    if (image.Equipe !== "") {
-
-                        if (texte !== "") {
-                            $("tbody#tbody").find("tr").eq(i).addClass("equipe");
-                            $("tbody#tbody").find("tr").eq(i).find("td").eq(4).find("input").eq(0).attr('checked', false);
-                        }
-                    } else {
-
-                        $("tbody#tbody").find("tr").eq(i).removeClass("equipe");
-                    }
-                    i++;
-                });
-            } else if ("avec" === selectEquipe.value) {
-                images.forEach(image => {
-                    texte = $("tbody#tbody").find("tr").eq(i).find("td").eq(2).find("span").eq(1).text()
-                    if (image.Equipe === "") {
-                        if (texte === "") {
-                            $("tbody#tbody").find("tr").eq(i).addClass("equipe");
-                            $("tbody#tbody").find("tr").eq(i).find("td").eq(5).find("input").eq(0).attr('checked', false);
-                        }
-                    } else {
-                        $("tbody#tbody").find("tr").eq(i).removeClass("equipe");
-                    }
-                    i++;
-                });
-            } else if ("tous" === selectEquipe.value) {
-                images.forEach(image => {
-                    $("tbody#tbody").find("tr").eq(i).removeClass("equipe");
-                    $("tbody#tbody").find("tr").eq(i).find("td").eq(5).find("input").eq(0).attr('checked', false);
-                    i++;
-                });
-
-            }
-        });
-
-    toutModifier.checked = false;
-}
-function changeSelectsDroit() {
-
-
-    var i = 0;
-
-    fetch('model/data/images.json')
-        .then(reponse => reponse.json())
-        .then(images => {
-            if ("sans" === selectDroit.value) {
-                images.forEach(image => {
-                    texte = $("tbody#tbody").find("tr").eq(i).find("td").eq(5).find("span").eq(1).text()
-                    if (image.Droit !== "") {
-
-                        if (texte !== "") {
-                            $("tbody#tbody").find("tr").eq(i).addClass("droit");
-                            $("tbody#tbody").find("tr").eq(i).find("td").eq(5).find("input").eq(0).attr('checked', false);
-                        }
-                    } else {
-
-                        $("tbody#tbody").find("tr").eq(i).removeClass("droit");
-                    }
-                    i++;
-                });
-            } else if ("avec" === selectDroit.value) {
-                images.forEach(image => {
-                    texte = $("tbody#tbody").find("tr").eq(i).find("td").eq(5).find("span").eq(1).text()
-                    if (image.Droit === "") {
-                        if (texte === "") {
-                            $("tbody#tbody").find("tr").eq(i).addClass("droit");
-                            $("tbody#tbody").find("tr").eq(i).find("td").eq(5).find("input").eq(0).attr('checked', false);
-                        }
-                    } else {
-                        $("tbody#tbody").find("tr").eq(i).removeClass("droit");
-                    }
-                    i++;
-                });
-            } else if ("tous" === selectDroit.value) {
-                images.forEach(image => {
-                    $("tbody#tbody").find("tr").eq(i).removeClass("droit");
-                    $("tbody#tbody").find("tr").eq(i).find("td").eq(5).find("input").eq(0).attr('checked', false);
-                    i++;
-                });
-
-            }
-        });
-
-    toutModifier.checked = false;
-}
-function changeSelectsSlogan() {
-
-
-    var i = 0;
-
-    fetch('model/data/images.json')
-        .then(reponse => reponse.json())
-        .then(images => {
-            if ("sans" === selectSlogan.value) {
-                images.forEach(image => {
-                    texte = $("tbody#tbody").find("tr").eq(i).find("td").eq(6).find("span").eq(1).text()
-                    if (image.Slogan !== "") {
-
-                        if (texte !== "") {
-                            $("tbody#tbody").find("tr").eq(i).addClass("slogan");
-                            $("tbody#tbody").find("tr").eq(i).find("td").eq(5).find("input").eq(0).attr('checked', false);
-                        }
-                    } else {
-
-                        $("tbody#tbody").find("tr").eq(i).removeClass("slogan");
-                    }
-                    i++;
-                });
-            } else if ("avec" === selectSlogan.value) {
-                images.forEach(image => {
-                    texte = $("tbody#tbody").find("tr").eq(i).find("td").eq(6).find("span").eq(1).text()
-                    if (image.Slogan === "") {
-                        if (texte === "") {
-                            $("tbody#tbody").find("tr").eq(i).addClass("slogan");
-                            $("tbody#tbody").find("tr").eq(i).find("td").eq(5).find("input").eq(0).attr('checked', false);
-                        }
-                    } else {
-                        $("tbody#tbody").find("tr").eq(i).removeClass("slogan");
-                    }
-                    i++;
-                });
-            } else if ("tous" === selectSlogan.value) {
-                images.forEach(image => {
-                    $("tbody#tbody").find("tr").eq(i).removeClass("slogan");
-                    $("tbody#tbody").find("tr").eq(i).find("td").eq(5).find("input").eq(0).attr('checked', false);
-                    i++;
-                });
-
-            }
-        });
-
-    toutModifier.checked = false;
-}
-
 
 function toutSelectionner() {
 
@@ -319,7 +32,6 @@ function toutSelectionner() {
             cool.children[1].textContent = "Tout Modifier";
             tbody.rows[i].cells[7].children[3].checked = false;
         }
-
 
 
         element = document.querySelector("#tbody").children;
@@ -342,7 +54,8 @@ function toutSelectionner() {
         if (element[i].classList.contains("slogan")) {
             tbody.rows[i].cells[7].children[3].checked = false;
 
-        }        if (element[i].classList.contains("equipe")) {
+        }
+        if (element[i].classList.contains("equipe")) {
             tbody.rows[i].cells[7].children[3].checked = false;
 
         }
@@ -361,6 +74,349 @@ function toutSelectionner() {
 
 }
 
+function changeSelectsPseudo() {
+
+
+    var i = 0;
+    fetch('model/data/images.json')
+        .then(reponse => reponse.json())
+        .then(images => {
+            if ("sans" === selectPseudo.value) {
+                images.forEach(image => {
+                    texte = $("tbody#tbody").find("tr").eq(i).find("td").eq(1).find("span").eq(1).text()
+                    if (image.Pseudo !== "") {
+
+                        if (texte !== "") {
+                            $("tbody#tbody").find("tr").eq(i).addClass("pseudo");
+                            $("tbody#tbody").find("tr").eq(i).find("td").eq(7).find("input").eq(0).attr('checked', false);
+                        }
+                    } else {
+                        $("tbody#tbody").find("tr").eq(i).removeClass("pseudo");
+                    }
+                    i++;
+                });
+            } else if ("avec" === selectPseudo.value) {
+                images.forEach(image => {
+                    texte = $("tbody#tbody").find("tr").eq(i).find("td").eq(1).find("span").eq(1).text()
+                    if (image.Pseudo === "") {
+                        if (texte === "") {
+                            $("tbody#tbody").find("tr").eq(i).addClass("pseudo");
+                            $("tbody#tbody").find("tr").eq(i).find("td").eq(7).find("input").eq(0).attr('checked', false);
+                        }
+                    } else {
+                        $("tbody#tbody").find("tr").eq(i).removeClass("pseudo");
+                    }
+                    i++;
+                });
+            } else if ("tous" === selectPseudo.value) {
+                images.forEach(image => {
+                    $("tbody#tbody").find("tr").eq(i).removeClass("pseudo");
+                    $("tbody#tbody").find("tr").eq(i).find("td").eq(7).find("input").eq(0).attr('checked', false);
+                    i++;
+                });
+
+            }
+        });
+
+    toutModifier.checked = false;
+}
+
+function changeSelectsPays() {
+
+
+    var i = 0;
+
+    fetch('model/data/images.json')
+        .then(reponse => reponse.json())
+        .then(images => {
+            if ("sans" === selectPays.value) {
+                images.forEach(image => {
+                    texte = $("tbody#tbody").find("tr").eq(i).find("td").eq(2).find("span").eq(1).text()
+                    if (image.Pays !== "") {
+
+                        if (texte !== "") {
+                            $("tbody#tbody").find("tr").eq(i).addClass("pays");
+                            $("tbody#tbody").find("tr").eq(i).find("td").eq(7).find("input").eq(0).attr('checked', false);
+                        }
+                    } else {
+
+                        $("tbody#tbody").find("tr").eq(i).removeClass("pays");
+                    }
+                    i++;
+                });
+            } else if ("avec" === selectPays.value) {
+                images.forEach(image => {
+                    texte = $("tbody#tbody").find("tr").eq(i).find("td").eq(2).find("span").eq(1).text()
+                    if (image.Droit === "") {
+                        if (texte === "") {
+                            $("tbody#tbody").find("tr").eq(i).addClass("pays");
+                            $("tbody#tbody").find("tr").eq(i).find("td").eq(7).find("input").eq(0).attr('checked', false);
+                        }
+                    } else {
+                        $("tbody#tbody").find("tr").eq(i).removeClass("pays");
+                    }
+                    i++;
+                });
+            } else if ("tous" === selectPays.value) {
+                images.forEach(image => {
+                    $("tbody#tbody").find("tr").eq(i).removeClass("pays");
+                    $("tbody#tbody").find("tr").eq(i).find("td").eq(7).find("input").eq(0).attr('checked', false);
+                    i++;
+                });
+
+            }else {
+                images.forEach(image => {
+                    texte = $("tbody#tbody").find("tr").eq(i).find("td").eq(2).find("span").eq(1).text()
+                    if (image.Pays === selectPays.value) {
+                        $("tbody#tbody").find("tr").eq(i).removeClass("pays");
+                    } else {
+                        if (texte !== selectPays.value) {
+                            $("tbody#tbody").find("tr").eq(i).addClass("pays");
+                            $("tbody#tbody").find("tr").eq(i).find("td").eq(7).find("input").eq(0).attr('checked', false);
+                        }
+                    }
+                    i++;
+                });
+            }
+        });
+
+    toutModifier.checked = false;
+}
+
+function changeSelectsVille() {
+
+
+    var i = 0;
+
+    fetch('model/data/images.json')
+        .then(reponse => reponse.json())
+        .then(images => {
+            if ("sans" === selectVille.value) {
+                images.forEach(image => {
+                    texte = $("tbody#tbody").find("tr").eq(i).find("td").eq(3).find("span").eq(1).text()
+                    if (image.Ville !== "") {
+
+                        if (texte !== "") {
+                            $("tbody#tbody").find("tr").eq(i).addClass("ville");
+                            $("tbody#tbody").find("tr").eq(i).find("td").eq(7).find("input").eq(0).attr('checked', false);
+                        }
+                    } else {
+
+                        $("tbody#tbody").find("tr").eq(i).removeClass("ville");
+                    }
+                    i++;
+                });
+            } else if ("avec" === selectVille.value) {
+                images.forEach(image => {
+                    texte = $("tbody#tbody").find("tr").eq(i).find("td").eq(3).find("span").eq(1).text()
+                    if (image.Ville === "") {
+                        if (texte === "") {
+                            $("tbody#tbody").find("tr").eq(i).addClass("ville");
+                            $("tbody#tbody").find("tr").eq(i).find("td").eq(7).find("input").eq(0).attr('checked', false);
+                        }
+                    } else {
+                        $("tbody#tbody").find("tr").eq(i).removeClass("ville");
+                    }
+                    i++;
+                });
+            } else if ("tous" === selectVille.value) {
+                images.forEach(image => {
+                    $("tbody#tbody").find("tr").eq(i).removeClass("ville");
+                    $("tbody#tbody").find("tr").eq(i).find("td").eq(7).find("input").eq(0).attr('checked', false);
+                    i++;
+                });
+
+            }else {
+                images.forEach(image => {
+                    texte = $("tbody#tbody").find("tr").eq(i).find("td").eq(3).find("span").eq(1).text()
+                    if (image.Ville === selectVille.value) {
+                        $("tbody#tbody").find("tr").eq(i).removeClass("ville");
+                    } else {
+                        if (texte !== selectVille.value) {
+                            $("tbody#tbody").find("tr").eq(i).addClass("ville");
+                            $("tbody#tbody").find("tr").eq(i).find("td").eq(7).find("input").eq(0).attr('checked', false);
+                        }
+                    }
+                    i++;
+                });
+            }
+        });
+
+    toutModifier.checked = false;
+}
+
+function changeSelectsEquipe() {
+
+
+    var i = 0;
+
+    fetch('model/data/images.json')
+        .then(reponse => reponse.json())
+        .then(images => {
+            if ("sans" === selectEquipe.value) {
+                images.forEach(image => {
+                    texte = $("tbody#tbody").find("tr").eq(i).find("td").eq(4).find("span").eq(1).text()
+                    if (image.Equipe !== "") {
+
+                        if (texte !== "") {
+                            $("tbody#tbody").find("tr").eq(i).addClass("equipe");
+                            $("tbody#tbody").find("tr").eq(i).find("td").eq(7).find("input").eq(0).attr('checked', false);
+                        }
+                    } else {
+
+                        $("tbody#tbody").find("tr").eq(i).removeClass("equipe");
+                    }
+                    i++;
+                });
+            } else if ("avec" === selectEquipe.value) {
+                images.forEach(image => {
+                    texte = $("tbody#tbody").find("tr").eq(i).find("td").eq(4).find("span").eq(1).text()
+                    if (image.Equipe === "") {
+                        if (texte === "") {
+                            $("tbody#tbody").find("tr").eq(i).addClass("equipe");
+                            $("tbody#tbody").find("tr").eq(i).find("td").eq(7).find("input").eq(0).attr('checked', false);
+                        }
+                    } else {
+                        $("tbody#tbody").find("tr").eq(i).removeClass("equipe");
+                    }
+                    i++;
+                });
+            } else if ("tous" === selectEquipe.value) {
+                images.forEach(image => {
+                    $("tbody#tbody").find("tr").eq(i).removeClass("equipe");
+                    $("tbody#tbody").find("tr").eq(i).find("td").eq(7).find("input").eq(0).attr('checked', false);
+                    i++;
+                });
+
+            } else {
+                images.forEach(image => {
+                    texte = $("tbody#tbody").find("tr").eq(i).find("td").eq(4).find("span").eq(1).text()
+                    if (image.Equipe === selectEquipe.value) {
+                        $("tbody#tbody").find("tr").eq(i).removeClass("equipe");
+                    } else {
+                        if (texte !== selectEquipe.value) {
+                            $("tbody#tbody").find("tr").eq(i).addClass("equipe");
+                            $("tbody#tbody").find("tr").eq(i).find("td").eq(7).find("input").eq(0).attr('checked', false);
+                        }
+                    }
+                    i++;
+                });
+            }
+        });
+
+    toutModifier.checked = false;
+}
+
+function changeSelectsDroit() {
+
+
+    var i = 0;
+
+    fetch('model/data/images.json')
+        .then(reponse => reponse.json())
+        .then(images => {
+            if ("sans" === selectDroit.value) {
+                images.forEach(image => {
+                    texte = $("tbody#tbody").find("tr").eq(i).find("td").eq(5).find("span").eq(1).text()
+                    if (image.Droit !== "") {
+
+                        if (texte !== "") {
+                            $("tbody#tbody").find("tr").eq(i).addClass("droit");
+                            $("tbody#tbody").find("tr").eq(i).find("td").eq(7).find("input").eq(0).attr('checked', false);
+                        }
+                    } else {
+
+                        $("tbody#tbody").find("tr").eq(i).removeClass("droit");
+                    }
+                    i++;
+                });
+            } else if ("avec" === selectDroit.value) {
+                images.forEach(image => {
+                    texte = $("tbody#tbody").find("tr").eq(i).find("td").eq(5).find("span").eq(1).text()
+                    if (image.Droit === "") {
+                        if (texte === "") {
+                            $("tbody#tbody").find("tr").eq(i).addClass("droit");
+                            $("tbody#tbody").find("tr").eq(i).find("td").eq(7).find("input").eq(0).attr('checked', false);
+                        }
+                    } else {
+                        $("tbody#tbody").find("tr").eq(i).removeClass("droit");
+                    }
+                    i++;
+                });
+            } else if ("tous" === selectDroit.value) {
+                images.forEach(image => {
+                    $("tbody#tbody").find("tr").eq(i).removeClass("droit");
+                    $("tbody#tbody").find("tr").eq(i).find("td").eq(7).find("input").eq(0).attr('checked', false);
+                    i++;
+                });
+
+            } else {
+                images.forEach(image => {
+                    texte = $("tbody#tbody").find("tr").eq(i).find("td").eq(5).find("span").eq(1).text()
+                    if (image.Droit === selectDroit.value) {
+                        $("tbody#tbody").find("tr").eq(i).removeClass("droit");
+                    } else {
+                        if (texte !== selectDroit.value) {
+                            $("tbody#tbody").find("tr").eq(i).addClass("droit");
+                            $("tbody#tbody").find("tr").eq(i).find("td").eq(7).find("input").eq(0).attr('checked', false);
+                        }
+                    }
+                    i++;
+                });
+            }
+        });
+
+    toutModifier.checked = false;
+}
+
+function changeSelectsSlogan() {
+
+
+    var i = 0;
+
+    fetch('model/data/images.json')
+        .then(reponse => reponse.json())
+        .then(images => {
+            if ("sans" === selectSlogan.value) {
+                images.forEach(image => {
+                    texte = $("tbody#tbody").find("tr").eq(i).find("td").eq(6).find("span").eq(1).text()
+                    if (image.Slogan !== "") {
+
+                        if (texte !== "") {
+                            $("tbody#tbody").find("tr").eq(i).addClass("slogan");
+                            $("tbody#tbody").find("tr").eq(i).find("td").eq(7).find("input").eq(0).attr('checked', false);
+                        }
+                    } else {
+
+                        $("tbody#tbody").find("tr").eq(i).removeClass("slogan");
+                    }
+                    i++;
+                });
+            } else if ("avec" === selectSlogan.value) {
+                images.forEach(image => {
+                    texte = $("tbody#tbody").find("tr").eq(i).find("td").eq(6).find("span").eq(1).text()
+                    if (image.Slogan === "") {
+                        if (texte === "") {
+                            $("tbody#tbody").find("tr").eq(i).addClass("slogan");
+                            $("tbody#tbody").find("tr").eq(i).find("td").eq(7).find("input").eq(0).attr('checked', false);
+                        }
+                    } else {
+                        $("tbody#tbody").find("tr").eq(i).removeClass("slogan");
+                    }
+                    i++;
+                });
+            } else if ("tous" === selectSlogan.value) {
+                images.forEach(image => {
+                    $("tbody#tbody").find("tr").eq(i).removeClass("slogan");
+                    $("tbody#tbody").find("tr").eq(i).find("td").eq(7).find("input").eq(0).attr('checked', false);
+                    i++;
+                });
+
+            }
+        });
+
+    toutModifier.checked = false;
+}
 
 
 toutModifier.addEventListener('change', toutSelectionner);
@@ -451,10 +507,13 @@ function changeSelects() {
 
      */
 }
-{changeValuePseudo = [selectPseudo.value];
+
+{
+    changeValuePseudo = [selectPseudo.value];
     changeValueDroit = [selectDroit.value];
     changeValuePays = [selectPays.value];
     changeValueVille = [selectVille.value];
     changeValueSlogan = [selectSlogan.value];
-    changeValueEquipe = [selectEquipe.value];}
+    changeValueEquipe = [selectEquipe.value];
+}
 
