@@ -12,8 +12,10 @@ function monScript() {
 }
 */
 
+k = 0;
 
 function toutSelectionner() {
+
 
     nbrImages = tbody.childNodes.length;
     for (i = 0; i < nbrImages; i++) {
@@ -21,15 +23,135 @@ function toutSelectionner() {
         if (this.checked) {
             cool.children[1].textContent = "ne rien Modifier";
             tbody.rows[i].cells[5].children[3].checked = true;
-
         } else {
-
             cool.children[1].textContent = "Tout Modifier";
+            tbody.rows[i].cells[5].children[3].checked = false;
+        }
+
+        element = document.querySelector("#tbody").children;
+        if (element[i].classList.contains("hidden")) {
             tbody.rows[i].cells[5].children[3].checked = false;
 
         }
+        //      console.log(element[i].classList.contains("hidden"));
+        /*
+                if(("tbody#tbody").find("tr").eq(i).hasClass("hidden")){
+                    //   ("tbody#tbody").find("tr").eq(i).find("td").eq(5).find("input").eq(0).attr('checked', false)
+                    alert("OUI");
+                }else{
+                    alert("NON");
+                }*/
     }
+    // $("tbody.hidden").prop('checked',false).hasClass("hidden")
+
+
 }
+
+
+function changeSelectsPseudo() {
+
+
+    var i = 0;
+    a = 0;
+    aa = 0;
+
+    fetch('model/data/images.json')
+        .then(reponse => reponse.json())
+        .then(images => {
+            if ("sans" === selectPseudo.value) {
+                images.forEach(image => {
+                    texte = $("tbody#tbody").find("tr").eq(i).find("td").eq(1).find("span").eq(1).text()
+                    if (image.Pseudo !== "") {
+
+                        if (texte !== "") {
+                           $("tbody#tbody").find("tr").eq(i).addClass("hidden");
+                            $("tbody#tbody").find("tr").eq(i).find("td").eq(5).find("input").eq(0).attr('checked', false);
+                        }
+                    } else {
+                        $("tbody#tbody").find("tr").eq(i).removeClass("hidden");
+                    }
+                    i++;
+                });
+            } else if ("avec" === selectPseudo.value) {
+                images.forEach(image => {
+                    texte = $("tbody#tbody").find("tr").eq(i).find("td").eq(1).find("span").eq(1).text()
+                    if (image.Pseudo === "") {
+                        if (texte === "") {
+                          $("tbody#tbody").find("tr").eq(i).addClass("hidden");
+                            $("tbody#tbody").find("tr").eq(i).find("td").eq(5).find("input").eq(0).attr('checked', false);
+                        }
+                    } else {
+                        $("tbody#tbody").find("tr").eq(i).removeClass("hidden");
+                    }
+                    i++;
+                });
+            } else if ("tous" === selectPseudo.value) {
+                images.forEach(image => {
+                        $("tbody#tbody").find("tr").eq(i).removeClass("hidden");
+                    $("tbody#tbody").find("tr").eq(i).find("td").eq(5).find("input").eq(0).attr('checked', false);
+                    i++;
+                });
+
+            }
+        });
+
+    toutModifier.checked = false;
+}
+
+function changeSelectsDroit() {
+
+
+    var i = 0;
+
+    fetch('model/data/images.json')
+        .then(reponse => reponse.json())
+        .then(images => {
+            if ("sans" === selectDroit.value) {
+                images.forEach(image => {
+                    texte = $("tbody#tbody").find("tr").eq(i).find("td").eq(4).find("span").eq(1).text()
+                    if (image.Droit !== "") {
+
+                        if (texte !== "") {
+                            $("tbody#tbody").find("tr").eq(i).addClass("hidden");
+                            $("tbody#tbody").find("tr").eq(i).find("td").eq(5).find("input").eq(0).attr('checked', false);
+                        }
+                    } else {
+                        $("tbody#tbody").find("tr").eq(i).removeClass("hidden");
+                    }
+                    i++;
+                });
+            } else if ("avec" === selectDroit.value) {
+                images.forEach(image => {
+                    texte = $("tbody#tbody").find("tr").eq(i).find("td").eq(4).find("span").eq(1).text()
+                    if (image.Droit === "") {
+                        if (texte === "") {
+                            $("tbody#tbody").find("tr").eq(i).addClass("hidden");
+                            $("tbody#tbody").find("tr").eq(i).find("td").eq(5).find("input").eq(0).attr('checked', false);
+                        }
+                    } else {
+                        $("tbody#tbody").find("tr").eq(i).removeClass("hidden");
+                    }
+                    i++;
+                });
+            } else if ("tous" === selectDroit.value) {
+                images.forEach(image => {
+                    $("tbody#tbody").find("tr").eq(i).removeClass("hidden");
+                    $("tbody#tbody").find("tr").eq(i).find("td").eq(5).find("input").eq(0).attr('checked', false);
+                    i++;
+                });
+
+            }
+        });
+
+    toutModifier.checked = false;
+}
+toutModifier.addEventListener('change', toutSelectionner);
+selectPseudo.addEventListener('change', changeSelectsPseudo);
+selectDroit.addEventListener('change', changeSelectsDroit);
+selectPays.addEventListener('change', changeSelects);
+selectVille.addEventListener('change', changeSelects);
+selectSlogan.addEventListener('change', changeSelects);
+selectEquipe.addEventListener('change', changeSelects);
 
 changeValuePseudo = [selectPseudo.value];
 changeValueDroit = [selectDroit.value];
@@ -37,6 +159,7 @@ changeValuePays = [selectPays.value];
 changeValueVille = [selectVille.value];
 changeValueSlogan = [selectSlogan.value];
 changeValueEquipe = [selectEquipe.value];
+
 
 function changeSelects() {
     changeValuePseudo[1] = changeValuePseudo[0];
@@ -91,11 +214,11 @@ function changeSelects() {
 
     tableau = ['sans', 'avec', 'tous'];
 
-    $.get("model/data/images.json", function(data){
-        for(i = 0;i<data.length;i++){
-            console.log(data[i]);
+    $.get("model/data/images.json", function (data) {
+        for (i = 0; i < data.length; i++) {
+            //        console.log(data[i]);
         }
-        console.log(valueSelected[3]);
+
     });
 
     /*
@@ -119,9 +242,6 @@ function changeSelects() {
 }
 
 
-
-
-
 /*
     if (valueSelected[0] === "sans") {
         alert("coucou");
@@ -138,19 +258,11 @@ function changeSelects() {
         console.clear();
     }
 */
-    // if(tableau.indexOf(valueSelected[0]) !== -1){
+
+// if(tableau.indexOf(valueSelected[0]) !== -1){
 
 
 
-
-
-toutModifier.addEventListener('change', toutSelectionner);
-selectPseudo.addEventListener('change', changeSelects);
-selectDroit.addEventListener('change', changeSelects);
-selectPays.addEventListener('change', changeSelects);
-selectVille.addEventListener('change', changeSelects);
-selectSlogan.addEventListener('change', changeSelects);
-selectEquipe.addEventListener('change', changeSelects);
 
 function changeValueSelect() {
     return selectPseudo.value;

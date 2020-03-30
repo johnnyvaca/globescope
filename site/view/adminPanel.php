@@ -146,7 +146,18 @@ $jj = count($images);
 </div>
 <div class="divTable scrollit">
     <table class="table" id="myTable">
-
+    <thead>
+    <!--
+    <tr class="bg-info">
+        <th>Image</th>
+        <th>Pseudo</th>
+        <th>Pays</th>
+        <th>Slogan</th>
+        <th>Droit</th>
+        <th>Modifier</th>
+    </tr>
+    -->
+    </thead>
         <tbody id="tbody" class="tbody">
 
         <?php
