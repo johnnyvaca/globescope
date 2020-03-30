@@ -4,15 +4,307 @@ Projet : Projet WEB sur Globescope pour le cours Projet WEB
 Date : 11.02.2020
 */
 
-/*
+
 window.addEventListener('load',monScript);
 
 function monScript() {
+    /*
+    changeSelectsPseudo();
+    changeSelectsPays();
+    changeSelectsVille();
+    changeSelectsEquipe();
+    changeSelectsDroit();
+    changeSelectsSlogan();
+    */
 
 }
-*/
+function changeSelectsPseudo() {
 
-k = 0;
+
+    var i = 0;
+    fetch('model/data/images.json')
+        .then(reponse => reponse.json())
+        .then(images => {
+            if ("sans" === selectPseudo.value) {
+                images.forEach(image => {
+                    texte = $("tbody#tbody").find("tr").eq(i).find("td").eq(1).find("span").eq(1).text()
+                    if (image.Pseudo !== "") {
+
+                        if (texte !== "") {
+                            $("tbody#tbody").find("tr").eq(i).addClass("pseudo");
+                            $("tbody#tbody").find("tr").eq(i).find("td").eq(5).find("input").eq(0).attr('checked', false);
+                        }
+                    } else {
+                        $("tbody#tbody").find("tr").eq(i).removeClass("pseudo");
+                    }
+                    i++;
+                });
+            } else if ("avec" === selectPseudo.value) {
+                images.forEach(image => {
+                    texte = $("tbody#tbody").find("tr").eq(i).find("td").eq(1).find("span").eq(1).text()
+                    if (image.Pseudo === "") {
+                        if (texte === "") {
+                            $("tbody#tbody").find("tr").eq(i).addClass("pseudo");
+                            $("tbody#tbody").find("tr").eq(i).find("td").eq(5).find("input").eq(0).attr('checked', false);
+                        }
+                    } else {
+                        $("tbody#tbody").find("tr").eq(i).removeClass("pseudo");
+                    }
+                    i++;
+                });
+            } else if ("tous" === selectPseudo.value) {
+                images.forEach(image => {
+                    $("tbody#tbody").find("tr").eq(i).removeClass("pseudo");
+                    $("tbody#tbody").find("tr").eq(i).find("td").eq(5).find("input").eq(0).attr('checked', false);
+                    i++;
+                });
+
+            }
+        });
+
+    toutModifier.checked = false;
+}
+function changeSelectsPays() {
+
+
+    var i = 0;
+
+    fetch('model/data/images.json')
+        .then(reponse => reponse.json())
+        .then(images => {
+            if ("sans" === selectPays.value) {
+                images.forEach(image => {
+                    texte = $("tbody#tbody").find("tr").eq(i).find("td").eq(2).find("span").eq(1).text()
+                    if (image.Pays !== "") {
+
+                        if (texte !== "") {
+                            $("tbody#tbody").find("tr").eq(i).addClass("pays");
+                            $("tbody#tbody").find("tr").eq(i).find("td").eq(5).find("input").eq(0).attr('checked', false);
+                        }
+                    } else {
+
+                        $("tbody#tbody").find("tr").eq(i).removeClass("pays");
+                    }
+                    i++;
+                });
+            } else if ("avec" === selectPays.value) {
+                images.forEach(image => {
+                    texte = $("tbody#tbody").find("tr").eq(i).find("td").eq(2).find("span").eq(1).text()
+                    if (image.Droit === "") {
+                        if (texte === "") {
+                            $("tbody#tbody").find("tr").eq(i).addClass("pays");
+                            $("tbody#tbody").find("tr").eq(i).find("td").eq(5).find("input").eq(0).attr('checked', false);
+                        }
+                    } else {
+                        $("tbody#tbody").find("tr").eq(i).removeClass("pays");
+                    }
+                    i++;
+                });
+            } else if ("tous" === selectPays.value) {
+                images.forEach(image => {
+                    $("tbody#tbody").find("tr").eq(i).removeClass("pays");
+                    $("tbody#tbody").find("tr").eq(i).find("td").eq(5).find("input").eq(0).attr('checked', false);
+                    i++;
+                });
+
+            }
+        });
+
+    toutModifier.checked = false;
+}
+function changeSelectsVille() {
+
+
+    var i = 0;
+
+    fetch('model/data/images.json')
+        .then(reponse => reponse.json())
+        .then(images => {
+            if ("sans" === selectVille.value) {
+                images.forEach(image => {
+                    texte = $("tbody#tbody").find("tr").eq(i).find("td").eq(3).find("span").eq(1).text()
+                    if (image.Ville !== "") {
+
+                        if (texte !== "") {
+                            $("tbody#tbody").find("tr").eq(i).addClass("ville");
+                            $("tbody#tbody").find("tr").eq(i).find("td").eq(5).find("input").eq(0).attr('checked', false);
+                        }
+                    } else {
+
+                        $("tbody#tbody").find("tr").eq(i).removeClass("ville");
+                    }
+                    i++;
+                });
+            } else if ("avec" === selectVille.value) {
+                images.forEach(image => {
+                    texte = $("tbody#tbody").find("tr").eq(i).find("td").eq(3).find("span").eq(1).text()
+                    if (image.Ville === "") {
+                        if (texte === "") {
+                            $("tbody#tbody").find("tr").eq(i).addClass("ville");
+                            $("tbody#tbody").find("tr").eq(i).find("td").eq(5).find("input").eq(0).attr('checked', false);
+                        }
+                    } else {
+                        $("tbody#tbody").find("tr").eq(i).removeClass("ville");
+                    }
+                    i++;
+                });
+            } else if ("tous" === selectVille.value) {
+                images.forEach(image => {
+                    $("tbody#tbody").find("tr").eq(i).removeClass("ville");
+                    $("tbody#tbody").find("tr").eq(i).find("td").eq(5).find("input").eq(0).attr('checked', false);
+                    i++;
+                });
+
+            }
+        });
+
+    toutModifier.checked = false;
+}
+function changeSelectsEquipe() {
+
+
+    var i = 0;
+
+    fetch('model/data/images.json')
+        .then(reponse => reponse.json())
+        .then(images => {
+            if ("sans" === selectEquipe.value) {
+                images.forEach(image => {
+                    texte = $("tbody#tbody").find("tr").eq(i).find("td").eq(4).find("span").eq(1).text()
+                    if (image.Equipe !== "") {
+
+                        if (texte !== "") {
+                            $("tbody#tbody").find("tr").eq(i).addClass("equipe");
+                            $("tbody#tbody").find("tr").eq(i).find("td").eq(4).find("input").eq(0).attr('checked', false);
+                        }
+                    } else {
+
+                        $("tbody#tbody").find("tr").eq(i).removeClass("equipe");
+                    }
+                    i++;
+                });
+            } else if ("avec" === selectEquipe.value) {
+                images.forEach(image => {
+                    texte = $("tbody#tbody").find("tr").eq(i).find("td").eq(2).find("span").eq(1).text()
+                    if (image.Equipe === "") {
+                        if (texte === "") {
+                            $("tbody#tbody").find("tr").eq(i).addClass("equipe");
+                            $("tbody#tbody").find("tr").eq(i).find("td").eq(5).find("input").eq(0).attr('checked', false);
+                        }
+                    } else {
+                        $("tbody#tbody").find("tr").eq(i).removeClass("equipe");
+                    }
+                    i++;
+                });
+            } else if ("tous" === selectEquipe.value) {
+                images.forEach(image => {
+                    $("tbody#tbody").find("tr").eq(i).removeClass("equipe");
+                    $("tbody#tbody").find("tr").eq(i).find("td").eq(5).find("input").eq(0).attr('checked', false);
+                    i++;
+                });
+
+            }
+        });
+
+    toutModifier.checked = false;
+}
+function changeSelectsDroit() {
+
+
+    var i = 0;
+
+    fetch('model/data/images.json')
+        .then(reponse => reponse.json())
+        .then(images => {
+            if ("sans" === selectDroit.value) {
+                images.forEach(image => {
+                    texte = $("tbody#tbody").find("tr").eq(i).find("td").eq(5).find("span").eq(1).text()
+                    if (image.Droit !== "") {
+
+                        if (texte !== "") {
+                            $("tbody#tbody").find("tr").eq(i).addClass("droit");
+                            $("tbody#tbody").find("tr").eq(i).find("td").eq(5).find("input").eq(0).attr('checked', false);
+                        }
+                    } else {
+
+                        $("tbody#tbody").find("tr").eq(i).removeClass("droit");
+                    }
+                    i++;
+                });
+            } else if ("avec" === selectDroit.value) {
+                images.forEach(image => {
+                    texte = $("tbody#tbody").find("tr").eq(i).find("td").eq(5).find("span").eq(1).text()
+                    if (image.Droit === "") {
+                        if (texte === "") {
+                            $("tbody#tbody").find("tr").eq(i).addClass("droit");
+                            $("tbody#tbody").find("tr").eq(i).find("td").eq(5).find("input").eq(0).attr('checked', false);
+                        }
+                    } else {
+                        $("tbody#tbody").find("tr").eq(i).removeClass("droit");
+                    }
+                    i++;
+                });
+            } else if ("tous" === selectDroit.value) {
+                images.forEach(image => {
+                    $("tbody#tbody").find("tr").eq(i).removeClass("droit");
+                    $("tbody#tbody").find("tr").eq(i).find("td").eq(5).find("input").eq(0).attr('checked', false);
+                    i++;
+                });
+
+            }
+        });
+
+    toutModifier.checked = false;
+}
+function changeSelectsSlogan() {
+
+
+    var i = 0;
+
+    fetch('model/data/images.json')
+        .then(reponse => reponse.json())
+        .then(images => {
+            if ("sans" === selectSlogan.value) {
+                images.forEach(image => {
+                    texte = $("tbody#tbody").find("tr").eq(i).find("td").eq(6).find("span").eq(1).text()
+                    if (image.Slogan !== "") {
+
+                        if (texte !== "") {
+                            $("tbody#tbody").find("tr").eq(i).addClass("slogan");
+                            $("tbody#tbody").find("tr").eq(i).find("td").eq(5).find("input").eq(0).attr('checked', false);
+                        }
+                    } else {
+
+                        $("tbody#tbody").find("tr").eq(i).removeClass("slogan");
+                    }
+                    i++;
+                });
+            } else if ("avec" === selectSlogan.value) {
+                images.forEach(image => {
+                    texte = $("tbody#tbody").find("tr").eq(i).find("td").eq(6).find("span").eq(1).text()
+                    if (image.Slogan === "") {
+                        if (texte === "") {
+                            $("tbody#tbody").find("tr").eq(i).addClass("slogan");
+                            $("tbody#tbody").find("tr").eq(i).find("td").eq(5).find("input").eq(0).attr('checked', false);
+                        }
+                    } else {
+                        $("tbody#tbody").find("tr").eq(i).removeClass("slogan");
+                    }
+                    i++;
+                });
+            } else if ("tous" === selectSlogan.value) {
+                images.forEach(image => {
+                    $("tbody#tbody").find("tr").eq(i).removeClass("slogan");
+                    $("tbody#tbody").find("tr").eq(i).find("td").eq(5).find("input").eq(0).attr('checked', false);
+                    i++;
+                });
+
+            }
+        });
+
+    toutModifier.checked = false;
+}
+
 
 function toutSelectionner() {
 
@@ -22,17 +314,39 @@ function toutSelectionner() {
 
         if (this.checked) {
             cool.children[1].textContent = "ne rien Modifier";
-            tbody.rows[i].cells[5].children[3].checked = true;
+            tbody.rows[i].cells[7].children[3].checked = true;
         } else {
             cool.children[1].textContent = "Tout Modifier";
-            tbody.rows[i].cells[5].children[3].checked = false;
+            tbody.rows[i].cells[7].children[3].checked = false;
         }
+
+
 
         element = document.querySelector("#tbody").children;
-        if (element[i].classList.contains("hidden")) {
-            tbody.rows[i].cells[5].children[3].checked = false;
+        if (element[i].classList.contains("pseudo")) {
+            tbody.rows[i].cells[7].children[3].checked = false;
 
         }
+        if (element[i].classList.contains("droit")) {
+            tbody.rows[i].cells[7].children[3].checked = false;
+
+        }
+        if (element[i].classList.contains("pays")) {
+            tbody.rows[i].cells[7].children[3].checked = false;
+
+        }
+        if (element[i].classList.contains("ville")) {
+            tbody.rows[i].cells[7].children[3].checked = false;
+
+        }
+        if (element[i].classList.contains("slogan")) {
+            tbody.rows[i].cells[7].children[3].checked = false;
+
+        }        if (element[i].classList.contains("equipe")) {
+            tbody.rows[i].cells[7].children[3].checked = false;
+
+        }
+
         //      console.log(element[i].classList.contains("hidden"));
         /*
                 if(("tbody#tbody").find("tr").eq(i).hasClass("hidden")){
@@ -48,117 +362,14 @@ function toutSelectionner() {
 }
 
 
-function changeSelectsPseudo() {
 
-
-    var i = 0;
-    a = 0;
-    aa = 0;
-
-    fetch('model/data/images.json')
-        .then(reponse => reponse.json())
-        .then(images => {
-            if ("sans" === selectPseudo.value) {
-                images.forEach(image => {
-                    texte = $("tbody#tbody").find("tr").eq(i).find("td").eq(1).find("span").eq(1).text()
-                    if (image.Pseudo !== "") {
-
-                        if (texte !== "") {
-                           $("tbody#tbody").find("tr").eq(i).addClass("hidden");
-                            $("tbody#tbody").find("tr").eq(i).find("td").eq(5).find("input").eq(0).attr('checked', false);
-                        }
-                    } else {
-                        $("tbody#tbody").find("tr").eq(i).removeClass("hidden");
-                    }
-                    i++;
-                });
-            } else if ("avec" === selectPseudo.value) {
-                images.forEach(image => {
-                    texte = $("tbody#tbody").find("tr").eq(i).find("td").eq(1).find("span").eq(1).text()
-                    if (image.Pseudo === "") {
-                        if (texte === "") {
-                          $("tbody#tbody").find("tr").eq(i).addClass("hidden");
-                            $("tbody#tbody").find("tr").eq(i).find("td").eq(5).find("input").eq(0).attr('checked', false);
-                        }
-                    } else {
-                        $("tbody#tbody").find("tr").eq(i).removeClass("hidden");
-                    }
-                    i++;
-                });
-            } else if ("tous" === selectPseudo.value) {
-                images.forEach(image => {
-                        $("tbody#tbody").find("tr").eq(i).removeClass("hidden");
-                    $("tbody#tbody").find("tr").eq(i).find("td").eq(5).find("input").eq(0).attr('checked', false);
-                    i++;
-                });
-
-            }
-        });
-
-    toutModifier.checked = false;
-}
-
-function changeSelectsDroit() {
-
-
-    var i = 0;
-
-    fetch('model/data/images.json')
-        .then(reponse => reponse.json())
-        .then(images => {
-            if ("sans" === selectDroit.value) {
-                images.forEach(image => {
-                    texte = $("tbody#tbody").find("tr").eq(i).find("td").eq(4).find("span").eq(1).text()
-                    if (image.Droit !== "") {
-
-                        if (texte !== "") {
-                            $("tbody#tbody").find("tr").eq(i).addClass("hidden");
-                            $("tbody#tbody").find("tr").eq(i).find("td").eq(5).find("input").eq(0).attr('checked', false);
-                        }
-                    } else {
-                        $("tbody#tbody").find("tr").eq(i).removeClass("hidden");
-                    }
-                    i++;
-                });
-            } else if ("avec" === selectDroit.value) {
-                images.forEach(image => {
-                    texte = $("tbody#tbody").find("tr").eq(i).find("td").eq(4).find("span").eq(1).text()
-                    if (image.Droit === "") {
-                        if (texte === "") {
-                            $("tbody#tbody").find("tr").eq(i).addClass("hidden");
-                            $("tbody#tbody").find("tr").eq(i).find("td").eq(5).find("input").eq(0).attr('checked', false);
-                        }
-                    } else {
-                        $("tbody#tbody").find("tr").eq(i).removeClass("hidden");
-                    }
-                    i++;
-                });
-            } else if ("tous" === selectDroit.value) {
-                images.forEach(image => {
-                    $("tbody#tbody").find("tr").eq(i).removeClass("hidden");
-                    $("tbody#tbody").find("tr").eq(i).find("td").eq(5).find("input").eq(0).attr('checked', false);
-                    i++;
-                });
-
-            }
-        });
-
-    toutModifier.checked = false;
-}
 toutModifier.addEventListener('change', toutSelectionner);
 selectPseudo.addEventListener('change', changeSelectsPseudo);
 selectDroit.addEventListener('change', changeSelectsDroit);
-selectPays.addEventListener('change', changeSelects);
-selectVille.addEventListener('change', changeSelects);
-selectSlogan.addEventListener('change', changeSelects);
-selectEquipe.addEventListener('change', changeSelects);
-
-changeValuePseudo = [selectPseudo.value];
-changeValueDroit = [selectDroit.value];
-changeValuePays = [selectPays.value];
-changeValueVille = [selectVille.value];
-changeValueSlogan = [selectSlogan.value];
-changeValueEquipe = [selectEquipe.value];
+selectPays.addEventListener('change', changeSelectsPays);
+selectVille.addEventListener('change', changeSelectsVille);
+selectSlogan.addEventListener('change', changeSelectsSlogan);
+selectEquipe.addEventListener('change', changeSelectsEquipe);
 
 
 function changeSelects() {
@@ -240,165 +451,10 @@ function changeSelects() {
 
      */
 }
+{changeValuePseudo = [selectPseudo.value];
+    changeValueDroit = [selectDroit.value];
+    changeValuePays = [selectPays.value];
+    changeValueVille = [selectVille.value];
+    changeValueSlogan = [selectSlogan.value];
+    changeValueEquipe = [selectEquipe.value];}
 
-
-/*
-    if (valueSelected[0] === "sans") {
-        alert("coucou");
-        fetch('model/data/images.json')
-            .then(reponse => reponse.json())
-            .then(images => {
-                images.forEach(image => {
-                    if (image.valueSelected[3] === "") {
-                        console.log(image);
-                    }
-                });
-            });
-    } else {
-        console.clear();
-    }
-*/
-
-// if(tableau.indexOf(valueSelected[0]) !== -1){
-
-
-
-
-function changeValueSelect() {
-    return selectPseudo.value;
-
-}
-
-var i = 0;
-
-function cargarUsuarios() {
-    tbody.innerHTML = "";
-
-    fetch('model/data/images.json')
-        .then(reponse => reponse.json())
-        .then(images => {
-
-        });
-}
-
-/*            images.forEach(image => {
-
-                          Pseudo1 = changeValueSelect();
-                          if (Pseudo1 == "avec") {
-                              if (image.Pseudo != "") {
-                                  //       console.log(image.Pseudo);
-
-                                  imgTd = document.createElement('img');
-                                  tdImage = document.createElement('td');
-                                  tdPseudo = document.createElement('td');
-                                  tdPays = document.createElement('td');
-                                  tdSlogan = document.createElement('td');
-                                  tdDroit = document.createElement('td');
-                                  trPaire = document.createElement('tr');
-
-                                  scrImg = "images/128-128/" + image.IDImage + ".png";
-                                  imgTd.setAttribute("src", scrImg);
-                                  imgTd.setAttribute("alt", "image");
-                                  if (i % 2 == 0) {
-                                      trPaire.className = "bg-success";
-                                  } else {
-                                      trPaire.className = "bg-danger";
-                                  }
-                                  tdImage.appendChild(imgTd);
-
-                                  tdPseudo.innerHTML = "<b><span>Pseudo</span></b><br><br><span>" + image.Pseudo + "</span>";
-                                  tdPays.innerHTML = "<b><span>Pays</span></b><br><br><span>" + image.Pays + "</span>";
-                                  tdSlogan.innerHTML = "<b><span>Slogan</span></b><br><br><span>" + image.Slogan + "</span>";
-                                  tdDroit.innerHTML = "<b><span>Droit</span></b><br><br><span>" + image.Droit + "</span>";
-
-                                  trPaire.appendChild(tdImage);
-                                  trPaire.appendChild(tdPseudo);
-                                  trPaire.appendChild(tdPays);
-                                  trPaire.appendChild(tdSlogan);
-                                  trPaire.appendChild(tdDroit);
-                                  tbody.appendChild(trPaire);
-                                  i++;
-
-                              }
-                          }
-
-                      })*/
-
-
-/*
-
-if (Pseudo1 == "avec") {
-if (image.Pseudo != "") {
-
-
-console.log(image.Pseudo);
-
-/*
-                        tbody.innerHTML = "";
-                        imgTd = document.createElement('img');
-                        br1Td = document.createElement('br');
-                        br2Td = document.createElement('br');
-                        bTd = document.createElement('b');
-                        span1Td = document.createElement('span');
-                        span2Td = document.createElement('span');
-                        tdImage = document.createElement('td');
-                        tdPseudo = document.createElement('td');
-                        tdPays = document.createElement('td');
-                        tdSlogan = document.createElement('td');
-                        tdDroit = document.createElement('td');
-                        trPaire = document.createElement('tr');
-                        scrImg = "images/128-128/" + image.IDImage;
-
-                        imgTd.setAttribute("src", "images/128-128/" + image.IDImage+".png");
-                        imgTd.setAttribute("alt", "image");
-
-
-                        if (i % 2 == 0) {
-                            trPaire.className = "bg-success";
-                            console.log("a");
-                        } else {
-                            trPaire.className = "bg-danger";
-                        }
-
-
-                        tdImage.appendChild(imgTd);
-
-                        span2Td.innerText = image.Pseudo;
-
-                        bTd.appendChild(span1Td);
-
-                        tdPseudo.appendChild(bTd);
-                        tdPseudo.appendChild(br1Td);
-                        tdPseudo.appendChild(br2Td);
-                        tdPseudo.appendChild(span2Td);
-
-
-                        tdPays.appendChild(bTd);
-                        tdPays.appendChild(br1Td);
-                        tdPays.appendChild(br2Td);
-                        tdPays.appendChild(span2Td);
-
-                        trPaire.appendChild(tdImage);
-                        trPaire.appendChild(tdPseudo);
-                        trPaire.appendChild(tdPays);
-                        trPaire.appendChild(tdSlogan);
-                        trPaire.appendChild(tdDroit);
-                        tbody.appendChild(trPaire);
-
-
-                        //   console.log(image.Pseudo);
-                       // console.log(i);
-                        i++;
-
-
-}
-
-} else if (Pseudo1 == "sans") {
-if (image.Pseudo == "") {
-//      console.log(image.Pseudo);
-}
-
-} else if (Pseudo1 == "tous") {
-//  console.log(image.Pseudo);
-}
-*/

@@ -1,9 +1,7 @@
-.hidden{
+.pseudo,.droit,.pays,.ville,.slogan,.equipe{
 display: none;
 }
-.inline{
-    display: block;
-}
+
 .divMenu {
 
 }
