@@ -27,6 +27,7 @@ function onImageClick(x) {
                     childCountry.textContent = myObj.Pays;
                     childCity.textContent = myObj.Ville;
                     childTeam.textContent = myObj.Equipe;
+                    childMedia.textContent = myObj.Media;
                 }
             }
         }

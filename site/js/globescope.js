@@ -88,6 +88,7 @@ var childRight = document.getElementById("childRight");
 var childCountry = document.getElementById("childCountry");
 var childCity = document.getElementById("childCity");
 var childTeam = document.getElementById("childTeam");
+var childMedia = document.getElementById("childMedia");
 
 childImage.onload = showOnClickDetails;
 closeSideBar.onclick = hideSideBar;

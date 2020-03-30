@@ -62,6 +62,8 @@ $title = "globescope";
             <p id="childTeam"></p>
             <p id="childCitation"></p>
             <p id="childRight"></p>
+            <p id="childMedia"><a href=""></a></p>
+
         </div>
     </div>
     <div id="onSearchDetails" class="flexContainer">
