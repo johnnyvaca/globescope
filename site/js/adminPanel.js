@@ -7,7 +7,47 @@ Date : 11.02.2020
 
 window.addEventListener('load', monScript);
 
+i = 0
+
 function monScript() {
+    /*
+    $(document).ready(function(){
+    $("#search").on("keyup", function() {
+        console.log("change");
+        var value = $(this).val().toLowerCase();
+        $("#tbody tr").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
+}); */
+    nbrImages = tbody.childNodes.length;
+console.log(  $("tbody#tbody").has("td"))
+
+    $("#search1").keyup(function () {
+     //   console.log(search1.value);
+        for (b = 0; b < nbrImages; b++) {
+            textPseudo = $("tbody#tbody").find("tr").eq(b).find("td").eq(1).find("span").eq(1).text();
+            textPays = $("tbody#tbody").find("tr").eq(b).find("td").eq(2).find("span").eq(1).text();
+            textVille = $("tbody#tbody").find("tr").eq(b).find("td").eq(3).find("span").eq(1).text();
+            textEquipe = $("tbody#tbody").find("tr").eq(b).find("td").eq(4).find("span").eq(1).text();
+            textDroit = $("tbody#tbody").find("tr").eq(b).find("td").eq(5).find("span").eq(1).text();
+            textSlogan = $("tbody#tbody").find("tr").eq(b).find("td").eq(6).find("span").eq(1).text();
+
+            textComplet = [textPseudo, textPays, textVille, textEquipe, textDroit, textSlogan];
+   //         console.log(textComplet);
+            if (textComplet.indexOf(search1.value) === -1) {
+                $("tbody#tbody").find("tr").eq(b).addClass("search");
+                $("tbody#tbody").find("tr").eq(b).find("td").eq(7).find("input").eq(0).attr('checked', false);
+            } else {
+                //    console.log($("#search1").val());
+                $("tbody#tbody").find("tr").eq(i).removeClass("search");
+            }
+
+
+    }
+    });
+
+    bouton.disabled = true;
     /*
         changeSelectsPseudo();
         changeSelectsPays();
@@ -15,20 +55,40 @@ function monScript() {
         changeSelectsEquipe();
         changeSelectsDroit();
         changeSelectsSlogan();
-
     */
+    toutModifier.addEventListener('change', toutSelectionner);
+    selectPseudo.addEventListener('change', changeSelectsPseudo);
+    selectDroit.addEventListener('change', changeSelectsDroit);
+    selectPays.addEventListener('change', changeSelectsPays);
+    selectVille.addEventListener('change', changeSelectsVille);
+    selectSlogan.addEventListener('change', changeSelectsSlogan);
+    selectEquipe.addEventListener('change', changeSelectsEquipe);
+
 }
 
+/*
+$( "#search1" ).keyup(function() {
+    alert("keyup");
+});
+$('#search1').keydown(function(){
+    alert("keydown");
+});
+
+$('#search1').keypress(function(){
+   alert("keypress");
+});
+
+ */
 function toutSelectionner() {
-
-
     nbrImages = tbody.childNodes.length;
     for (i = 0; i < nbrImages; i++) {
 
         if (this.checked) {
             cool.children[1].textContent = "ne rien Modifier";
             tbody.rows[i].cells[7].children[3].checked = true;
+            bouton.disabled = false;
         } else {
+            bouton.disabled = true;
             cool.children[1].textContent = "Tout Modifier";
             tbody.rows[i].cells[7].children[3].checked = false;
         }
@@ -59,6 +119,10 @@ function toutSelectionner() {
             tbody.rows[i].cells[7].children[3].checked = false;
 
         }
+        if (element[i].classList.contains("search")) {
+            tbody.rows[i].cells[7].children[3].checked = false;
+
+        }
 
         //      console.log(element[i].classList.contains("hidden"));
         /*
@@ -74,9 +138,7 @@ function toutSelectionner() {
 
 }
 
-function changeSelectsPseudo() {
-
-
+function changeFilterPseudo() {
     var i = 0;
     fetch('model/data/images.json')
         .then(reponse => reponse.json())
@@ -119,6 +181,52 @@ function changeSelectsPseudo() {
         });
 
     toutModifier.checked = false;
+}
+
+function changeSelectsPseudo() {
+    var i = 0;
+    fetch('model/data/images.json')
+        .then(reponse => reponse.json())
+        .then(images => {
+            if ("sans" === selectPseudo.value) {
+                images.forEach(image => {
+                    texte = $("tbody#tbody").find("tr").eq(i).find("td").eq(1).find("span").eq(1).text()
+                    if (image.Pseudo !== "") {
+
+                        if (texte !== "") {
+                            $("tbody#tbody").find("tr").eq(i).addClass("pseudo");
+                            $("tbody#tbody").find("tr").eq(i).find("td").eq(7).find("input").eq(0).attr('checked', false);
+                        }
+                    } else {
+                        $("tbody#tbody").find("tr").eq(i).removeClass("pseudo");
+                    }
+                    i++;
+                });
+            } else if ("avec" === selectPseudo.value) {
+                images.forEach(image => {
+                    texte = $("tbody#tbody").find("tr").eq(i).find("td").eq(1).find("span").eq(1).text()
+                    if (image.Pseudo === "") {
+                        if (texte === "") {
+                            $("tbody#tbody").find("tr").eq(i).addClass("pseudo");
+                            $("tbody#tbody").find("tr").eq(i).find("td").eq(7).find("input").eq(0).attr('checked', false);
+                        }
+                    } else {
+                        $("tbody#tbody").find("tr").eq(i).removeClass("pseudo");
+                    }
+                    i++;
+                });
+            } else if ("tous" === selectPseudo.value) {
+                images.forEach(image => {
+                    $("tbody#tbody").find("tr").eq(i).removeClass("pseudo");
+                    $("tbody#tbody").find("tr").eq(i).find("td").eq(7).find("input").eq(0).attr('checked', false);
+                    i++;
+                });
+
+            }
+        });
+
+    toutModifier.checked = false;
+    bouton.disabled = true;
 }
 
 function changeSelectsPays() {
@@ -164,7 +272,7 @@ function changeSelectsPays() {
                     i++;
                 });
 
-            }else {
+            } else {
                 images.forEach(image => {
                     texte = $("tbody#tbody").find("tr").eq(i).find("td").eq(2).find("span").eq(1).text()
                     if (image.Pays === selectPays.value) {
@@ -226,7 +334,7 @@ function changeSelectsVille() {
                     i++;
                 });
 
-            }else {
+            } else {
                 images.forEach(image => {
                     texte = $("tbody#tbody").find("tr").eq(i).find("td").eq(3).find("span").eq(1).text()
                     if (image.Ville === selectVille.value) {
@@ -416,96 +524,6 @@ function changeSelectsSlogan() {
         });
 
     toutModifier.checked = false;
-}
-
-
-toutModifier.addEventListener('change', toutSelectionner);
-selectPseudo.addEventListener('change', changeSelectsPseudo);
-selectDroit.addEventListener('change', changeSelectsDroit);
-selectPays.addEventListener('change', changeSelectsPays);
-selectVille.addEventListener('change', changeSelectsVille);
-selectSlogan.addEventListener('change', changeSelectsSlogan);
-selectEquipe.addEventListener('change', changeSelectsEquipe);
-
-
-function changeSelects() {
-    changeValuePseudo[1] = changeValuePseudo[0];
-    changeValuePseudo[2] = selectPseudo.value;
-
-    changeValueDroit[1] = changeValueDroit[0];
-    changeValueDroit[2] = selectDroit.value;
-
-    changeValuePays[1] = changeValuePays[0];
-    changeValuePays[2] = selectPays.value;
-
-    changeValueVille[1] = changeValueVille[0];
-    changeValueVille[2] = selectVille.value;
-
-    changeValueSlogan[1] = changeValueSlogan[0];
-    changeValueSlogan[2] = selectSlogan.value;
-
-    changeValueEquipe[1] = changeValueEquipe[0];
-    changeValueEquipe[2] = selectEquipe.value;
-
-
-    if (changeValuePseudo[1] !== changeValuePseudo[2]) {
-        changeValuePseudo[0] = changeValuePseudo[2];
-        changeValuePseudo[3] = "Pseudo";
-        valueSelected = changeValuePseudo;
-    }
-    if (changeValueDroit[1] !== changeValueDroit[2]) {
-        changeValueDroit[0] = changeValueDroit[2];
-        changeValueDroit[3] = "Droit";
-        valueSelected = changeValueDroit;
-    }
-    if (changeValuePays[1] !== changeValuePays[2]) {
-        changeValuePays[0] = changeValuePays[2];
-        changeValuePays[3] = "Pays";
-        valueSelected = changeValuePays;
-    }
-    if (changeValueVille[1] !== changeValueVille[2]) {
-        changeValueVille[0] = changeValueVille[2];
-        changeValueVille[3] = "Ville";
-        valueSelected = changeValueVille;
-    }
-    if (changeValueSlogan[1] !== changeValueSlogan[2]) {
-        changeValueSlogan[0] = changeValueSlogan[2];
-        changeValueSlogan[3] = "Slogan";
-        valueSelected = changeValueSlogan;
-    }
-    if (changeValueEquipe[1] !== changeValueEquipe[2]) {
-        changeValueEquipe[0] = changeValueEquipe[2];
-        changeValueEquipe[3] = "Equipe";
-        valueSelected = changeValueEquipe;
-    }
-
-    tableau = ['sans', 'avec', 'tous'];
-
-    $.get("model/data/images.json", function (data) {
-        for (i = 0; i < data.length; i++) {
-            //        console.log(data[i]);
-        }
-
-    });
-
-    /*
-    if (valueSelected[0] === "sans") {
-        fetch('model/data/images.json')
-            .then(reponse => reponse.json())
-            .then(images => {
-             teste = "image.Pseudo";
-                images.forEach(image => {
-                    if (teste === "") {
-                        console.log(image);
-                    }
-                });
-            });
-    } else {
-        console.clear();
-    }
-
-
-     */
 }
 
 {

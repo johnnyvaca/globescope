@@ -27,12 +27,12 @@ $jj = count($images);
                 <option>Droit</option>
             </select> -->
 
-            <input type="text" placeholder="Recherche..." aria-label="label" id="search">
+            <input type="text" placeholder="Recherche..." aria-label="label" id="search1">
         </div>
 
         <div class="divModifier" id="cool">
 
-            <input type="submit" value="Modifier">
+            <input type="submit" value="Modifier" id="bouton">
 
             <span>Tout Modifier </span><input type="checkbox" aria-label="Checkbox for following text input"
                                               id="toutModifier">
@@ -157,7 +157,6 @@ $jj = count($images);
             -->
             </thead>
             <tbody id="tbody" class="tbody">
-
             <?php
             foreach ($images as $i => $image) {
                 if ($i % 2 == 0) {

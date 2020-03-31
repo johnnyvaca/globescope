@@ -5,7 +5,7 @@ Date : 16.03.2020
 -->
 
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/html">
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 <head>
     <title><?= $title ?></title>
     <meta charset="utf-8">
@@ -14,11 +14,10 @@ Date : 16.03.2020
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css?d=<?php echo time(); ?>">
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap-grid.css?d=<?php echo time(); ?>">
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap-reboot.css?d=<?php echo time(); ?>">
+
 </head>
 <body id="body">
 <?= $content ?>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <!--
 <script src="../node_modules/jquery/dist/jquery.js"></script>
 <script src="../node_modules/jquery/dist/jquery.js"></script>
@@ -32,9 +31,18 @@ Date : 16.03.2020
         $('#myTable').ddTableFilter();
     </script>
 -->
-
 <script  src="../js/jQuery.js"></script>
 <script src="../js/adminPanel.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
+<!--
+<script src="../js/filter-table.js"></script>
+<script src="../js/filter-table.min.js"></script>
+<script>
+    $(function(){
+        $('#tbody').filterTable('#search');
+    })
+</script>
+-->
 </body>
 </html>
