@@ -9,7 +9,7 @@ $title = "Globescope - Panel Administrateur";
 <?php
 $jj = count($images);
 //echo $jj / 2 ?>
-<form action="index.php?action=modify" method="POST">
+<form action="index.php?action=modify" method="POST" target="_blank">
     <div class="divMenu">
         <div class="divTitle1">
             <h1>Panel Administrateur

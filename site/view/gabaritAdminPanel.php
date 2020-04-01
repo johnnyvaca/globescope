@@ -33,6 +33,7 @@ Date : 16.03.2020
 -->
 <script  src="../js/jQuery.js"></script>
 <script src="../js/adminPanel.js"></script>
+<script src="../js/md5.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 <!--

@@ -247,6 +247,7 @@ function showHelp() {
 }
 
 function closeHelp() {
+
     helpDiv.style.display = 'none';
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
         container.onmousedown = onMouseDBClick;
@@ -256,8 +257,11 @@ function closeHelp() {
 }
 
 function showSearchResults() {
-    if (searchText.value == "admin") {
-        window.location = "index.php?action=login";
+ //   hash = calcMD5(searchText.value);
+
+    if (searchText.value === "admin") {
+    //    window.location = "index.php?action=login";
+        window.open("index.php?action=login");
     } else {
         searchChild(camera, scene);
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {

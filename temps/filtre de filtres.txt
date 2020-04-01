@@ -1,0 +1,53 @@
+  returnPaysTous = 0;
+    returnPays = -1;
+    var i = 0;     
+
+
+
+
+
+
+
+                       if ($("tbody#tbody").find("tr").eq(i).find("td").eq(2).find("span").eq(1).text() === "") {
+                                returnPays = 0;
+                            } else if ($("tbody#tbody").find("tr").eq(i).find("td").eq(2).find("span").eq(1).text() !== "") {
+                                returnPays = 1;
+                            }
+                            if (i === 0) {
+                                tableauReturnPays = [0, returnPays];
+                            } else {
+                                tableauReturnPays[0] = returnPays;
+                                if (tableauReturnPays[0] !== tableauReturnPays[1]) {
+                                    returnPays = 2;
+                                    retournPaysTous = 2;
+                                }
+                                tableauReturnPays[1] = tableauReturnPays[0];
+                            }
+
+
+
+
+
+                if (retournPaysTous === 2) {
+                    returnPays = retournPaysTous;
+                }
+                if (returnPays === 0) {
+                    $("#selectPays").find("option").eq(1).addClass("pseudo")
+                    for (a = 3; a < $("#selectPays").find("option").length; a++) {
+                        $("#selectPays").find("option").eq(a).addClass("pseudo")
+                    }
+
+                } else if (returnPays === 1) {
+                    $("#selectPays").find("option").eq(2).addClass("pseudo")
+                    for (a = 3; a < $("#selectPays").find("option").length; a++) {
+                        $("#selectPays").find("option").eq(a).removeClass("pseudo")
+                    }
+                } else if (returnPays === 2) {
+                    for (a = 3; a < $("#selectPays").find("option").length; a++) {
+                        if (1) {
+
+                        }
+                        //   $("#selectPays").find("option").eq(a).removeClass("pseudo")
+                    }
+                }
+
