@@ -1,6 +1,5 @@
-  returnPaysTous = 0;
-    returnPays = -1;
-    var i = 0;     
+  returnPaysTous = -1;
+    returnPays = -1;  
 
 
 

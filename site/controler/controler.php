@@ -1,4 +1,3 @@
-
 <?php
 
 //Auteurs : Kevin Vaucher et Johnny Vaca
@@ -18,8 +17,13 @@ function getAdminPanelPage()
     $iVille = 0;
     $iEquipe = 0;
     $iPays = 0;
+    $iPseudo = 0;
+    $iSlogan = 0;
     foreach ($images as $image) {
-
+        if ($image['Pseudo'] != "") {
+            $pseudos[$iPseudo] = $image['Pseudo'];
+            $iPseudo++;
+        }
         if ($image['Droit'] != "") {
             $droits[$iDroit] = $image['Droit'];
             $iDroit++;
@@ -39,17 +43,26 @@ function getAdminPanelPage()
 
             $iPays++;
         }
+        if ($image['Slogan'] != "") {
+            $slogans[$iPseudo] = $image['Slogan'];
+            $iSlogan++;
+        }
 
     }
     $droits = array_unique($droits);
     $villes = array_unique($villes);
     $equipes = array_unique($equipes);
     $pays = array_unique($pays);
+    $pseudos = array_unique($pseudos);
+    $slogans = array_unique($slogans);
     require "view/adminPanel.php";
 }
 
-function getModifyPage(){
-    $images = getImages();
+function getModifyPage($listeModify)
+{
     require "model/model.php";
+    $images = getImages();
+
+
     require "view/modifyPanel.php";
 }

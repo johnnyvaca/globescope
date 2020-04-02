@@ -12,8 +12,10 @@ switch ($action) {
         getAdminPanelPage();
         break;
     case "modify":
-        var_dump($_POST['arrayModify']);
-    //    getModifyPage();
+   //     var_dump($_POST['arrayModify']);
+
+     $listeChose =   $_POST['arrayModify'];
+        getModifyPage($listeChose);
         break;
 
     default:

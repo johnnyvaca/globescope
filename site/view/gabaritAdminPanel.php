@@ -14,27 +14,77 @@ Date : 16.03.2020
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css?d=<?php echo time(); ?>">
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap-grid.css?d=<?php echo time(); ?>">
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap-reboot.css?d=<?php echo time(); ?>">
+    <script  src="../js/jQuery.js"></script>
 
+    <script src="../js/md5.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="../js/adminPanel.js"></script>
 </head>
-<body id="body">
+<body id="body" >
+
+<form action="index.php?action=modify" method="POST" target="_blank">
+    <div class="divMenu"
+    >
+
+        <div class="divTitle1">
+            <h1>Panel Administrateur
+            </h1>
+        </div>
+        <div class="divTitle2">
+            <h3>Liste des Participants
+            </h3>
+        </div>
+
+        <div class="divModifier " id="cool">
+
+
+            <span>Tout Modifier </span><input type="checkbox" aria-label="Checkbox for following text input"
+                                              id="toutModifier">
+            <input type="submit" value="Modifier" id="bouton">
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+
+    <div class="divTable scrollit">
+        <table class="table-dark" id="myTable">
+            <thead>
+
+            </thead>
+            <tbody id="tbody" class="tbody">
+            <?php
+            foreach ($images as $i => $image) {
+
+                ?>
+
+                <td><a type="button" id="btnCheck"><img src="../images/128-128/<?= $image['IDImage'] ?>.png"></a></td>
+                <td class="classPseudo"><b><span>Pseudo</span></b><br><br><span><?= $image['Pseudo'] ?></span></td>
+                <td><b><span>Pays</span></b><br><br><span><?= $image['Pays'] ?></span></td>
+                <td><b><span>Ville</span></b><br><br><span><?= $image['Ville'] ?></span></td>
+                <td><b><span>Equipe</span></b><br><br><span><?= $image['Equipe'] ?></span></td>
+                <td class="classDroit"><b><span>Droit</span></b><br><br><span><?= $image['Droit'] ?></span></td>
+                <td><b><span>Slogan</span></b><br><br><span><?= $image['Slogan'] ?></span></td>
+                <td>
+                    <br>
+                    <br>
+                    <span><b>Modifier</b></span>
+                    <input type="checkbox" aria-label="helo" value="<?= $image['IDPlace'] ?>" name="arrayModify[]">
+                </td>
+                </tr>
+                <?php
+            }
+            ?>
+
+
+            </tbody>
+        </table>
+
+    </div>
+</form>
 <?= $content ?>
-<!--
-<script src="../node_modules/jquery/dist/jquery.js"></script>
-<script src="../node_modules/jquery/dist/jquery.js"></script>
-<script src="../node_modules/jquery/dist/jquery.slim.js"></script>
-<script src="../node_modules/jquery/dist/jquery.min.js"></script>
-<script src="../node_modules/jquery/dist/jquery.slim.min.js"></script>
--->
-<!--
-<script src="../js/ddtf.js"></script>
-    <script>
-        $('#myTable').ddTableFilter();
-    </script>
--->
-<script  src="../js/jQuery.js"></script>
-<script src="../js/adminPanel.js"></script>
-<script src="../js/md5.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
 
 <!--
 <script src="../js/filter-table.js"></script>

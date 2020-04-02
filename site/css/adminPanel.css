@@ -1,7 +1,10 @@
 .Pseudo,.Pays,.Ville,.Equipe,.Droit,.Slogan,.Search{
 display: none;
 }
-
+.allBody{
+    height: 100%;
+    width: 100%;
+}
 .divMenu {
 
 }

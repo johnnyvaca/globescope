@@ -44,7 +44,7 @@ void main() {
     gl_FragColor = vec4(sample.xyz, sample.w);
 }
 </script>
-<script src="../js/login.js"></script>
+
 <script src="../js/globescope.js"></script>
 </body>
 </html>

@@ -6,193 +6,129 @@ ob_start();
 $title = "Globescope - Panel Administrateur";
 ?>
 
-<?php
-$jj = count($images);
-//echo $jj / 2 ?>
-<form action="index.php?action=modify" method="POST" target="_blank">
-    <div class="divMenu">
-        <div class="divTitle1">
-            <h1>Panel Administrateur
-            </h1>
-        </div>
-        <div class="divTitle2">
-            <h3>Liste des Participants
-            </h3>
-        </div>
-        <div class="divSearch">
-            <!--
-            <select aria-label="gros">
-                <option hidden selected>Rechercher par ...</option>
-                <option>Pseudo</option>
-                <option>Droit</option>
-            </select> -->
-
-            <input type="text" placeholder="Recherche..." aria-label="label" id="search1">
-        </div>
-
-        <div class="divModifier" id="cool">
-
-            <input type="submit" value="Modifier" id="bouton">
-
-            <span>Tout Modifier </span><input type="checkbox" aria-label="Checkbox for following text input"
-                                              id="toutModifier">
-
-        </div>
-    </div>
-    <br>
-    <br>
-    <br>
-    <!--<label for="choix_bieres">Indiquez votre bière préférée :</label>
-    <input list="bieres" type="text" id="choix_bieres">
-    <datalist id="bieres">
-        <option value="Meteor">
-        <option value="Pils">
-        <option value="Kronenbourg">
-        <option value="Grimbergen">
-    </datalist>
-    -->
-    <div class="divSelects" id="selects">
-        <br>
-        <br>
-        <br>
-        <span>Filtrer par Pseudo</span>
-        <select class="divSelect" id="selectPseudo">
-            <option value="tous">tous</option>
-            <option value="avec">avec</option>
-            <option value="sans">sans</option>
-        </select>
-        <br>
-        <br> <br>
-        <span>Filtrer par Pays</span>
-        <select class="divSelect" id="selectPays">
-            <option value="tous">tous</option>
-            <option value="avec">avec</option>
-            <option value="sans">sans</option>
-            <?php
-            foreach ($pays as $imag) {
+<div class="divSelects" id="selects">
 
 
-                if ($imag != "") {
-                    ?>
+    <span>Filtrer par Pays</span>
+    <input list="selectPays1" type="text" id="selectPays">
+    <datalist class="divSelect" id="selectPays1">
+        <option value="tous">tous</option>
+        <option value="avec">avec</option>
+        <option value="sans">sans</option>
+        <?php
+        foreach ($pays as $imag) {
 
-                    <option value="<?= $imag ?>"><?= $imag ?></option>
-                <?php }
 
-            } ?>
-
-        </select>
-        <br>
-        <br> <br>
-        <span>Filtrer par ville</span>
-        <select class="divSelect" id="selectVille">
-            <option value="tous">tous</option>
-            <option value="avec">avec</option>
-            <option value="sans">sans</option>
-            <?php
-            foreach ($villes as $ville) {
-
-                if ($ville != "") {
-                    ?>
-                    <option value="<?= $ville ?>"><?= $ville ?></option>
-                <?php }
-
-            } ?>
-        </select> <br>
-
-        <br> <br>
-        <span>Filtrer par Equipe</span>
-        <select class="divSelect" id="selectEquipe">
-            <option value="tous">tous</option>
-            <option value="avec">avec</option>
-            <option value="sans">sans</option> <?php
-            foreach ($equipes as $equipe) {
-
-                if ($equipe != "") {
-                    ?>
-                    <option value="<?= $equipe ?>"><?= $equipe ?></option>
-                <?php }
-
-            } ?>
-            <option></option>
-        </select><br>
-        <br> <br>
-        <span>Filtrer par Droit</span>
-
-        <select class="divSelect" id="selectDroit">
-            <option>tous</option>
-            <option>avec</option>
-            <option>sans</option>
-
-            <?php
-            foreach ($droits as $droit) {
-                if ($droit != "" && $droit != " ") {
-                    ?>
-                    <option><?= $droit ?></option>
-                <?php }
-            } ?>
-        </select>
-
-        <br>
-        <br> <br>
-        <span>Filtrer par Slogan ...</span>
-        <select class="divSelect" id="selectSlogan">
-            <option value="tous">tous</option>
-            <option value="avec">avec</option>
-            <option value="sans">sans</option>
-        </select>
-
-    </div>
-    <div class="divTable scrollit">
-        <table class="table" id="myTable">
-            <thead>
-            <!--
-            <tr class="bg-info">
-                <th>Image</th>
-                <th>Pseudo</th>
-                <th>Pays</th>
-                <th>Slogan</th>
-                <th>Droit</th>
-                <th>Modifier</th>
-            </tr>
-            -->
-            </thead>
-            <tbody id="tbody" class="tbody">
-            <?php
-            foreach ($images as $i => $image) {
-                if ($i % 2 == 0) {
-                    ?>
-                    <tr class="bg-success">
-                    <?php
-                } else {
-                    ?>
-                    <tr class="bg-danger">
-                    <?php
-                }
+            if ($imag != "") {
                 ?>
 
-                <td><img src="images/128-128/<?= $image['IDImage'] ?>.png" alt="image"></td>
-                <td class="classPseudo"><b><span>Pseudo</span></b><br><br><span><?= $image['Pseudo'] ?></span></td>
-                <td><b><span>Pays</span></b><br><br><span><?= $image['Pays'] ?></span></td>
-                <td><b><span>Ville</span></b><br><br><span><?= $image['Ville'] ?></span></td>
-                <td><b><span>Equipe</span></b><br><br><span><?= $image['Equipe'] ?></span></td>
-                <td class="classDroit"><b><span>Droit</span></b><br><br><span><?= $image['Droit'] ?></span></td>
-                <td><b><span>Slogan</span></b><br><br><span><?= $image['Slogan'] ?></span></td>
-                <td>
-                    <br>
-                    <br>
-                    <span><b>Modifier</b></span>
-                    <input type="checkbox" aria-label="helo" value="<?= $image['IDPlace'] ?>" name="arrayModify[]">
-                </td>
-                </tr>
-                <?php
-            }
-            ?>
+                <option value="<?= $imag ?>"><?= $imag ?></option>
+            <?php }
 
-            </tbody>
-        </table>
-    </div>
+        } ?>
 
-</form>
+    </datalist>
+    <br>
+    <br> <br>
+    <span>Filtrer par ville</span>
+    <input list="selectVille1" type="text" id="selectVille">
+    <datalist class="divSelect" id="selectVille1">
+        <option value="tous">tous</option>
+        <option value="avec">avec</option>
+        <option value="sans">sans</option>
+        <?php
+        foreach ($villes as $ville) {
+
+            if ($ville != "") {
+                ?>
+                <option value="<?= $ville ?>"><?= $ville ?></option>
+            <?php }
+
+        } ?>
+    </datalist>
+    <br>
+
+    <br> <br>
+    <span>Filtrer par Equipe</span>
+    <input list="selectEquipe1" type="text" id="selectEquipe">
+    <datalist class="divSelect" id="selectEquipe1">
+        <option value="tous">tous</option>
+        <option value="avec">avec</option>
+        <option value="sans">sans</option> <?php
+        foreach ($equipes as $equipe) {
+
+            if ($equipe != "") {
+                ?>
+                <option value="<?= $equipe ?>"><?= $equipe ?></option>
+            <?php }
+
+        } ?>
+        <option></option>
+    </datalist>
+    <br>
+    <br> <br>
+    <span>Filtrer par Droit</span>
+    <input list="selectDroit1" type="text" id="selectDroit">
+    <datalist class="divSelect" id="selectDroit1">
+        <option>tous</option>
+        <option>avec</option>
+        <option>sans</option>
+
+        <?php
+        foreach ($droits as $droit) {
+            if ($droit != "" && $droit != " ") {
+                ?>
+                <option><?= $droit ?></option>
+            <?php }
+        } ?>
+    </datalist>
+
+    <br>
+    <br> <br>
+    <span>Filtrer par Pseudo</span>
+    <input list="selectPseudo1" type="text" id="selectPseudo">
+    <datalist class="divSelect" type="text" id="selectPseudo1">
+        <option value="tous">tous</option>
+        <option value="avec">avec</option>
+        <option value="sans">sans</option>
+        <?php
+        foreach ($pseudos as $pseudo) {
+
+
+            if ($pseudo != "") {
+                ?>
+                <option value="<?= $pseudo ?>"></option>
+            <?php }
+
+        } ?>
+    </datalist>
+    <br>
+    <br> <br>
+    <span>Filtrer par Slogan ...</span>
+    <input list="selectSlogan1" type="text" id="selectSlogan">
+    <datalist class="divSelect" id="selectSlogan1">
+        <option value="tous">tous</option>
+        <option value="avec">avec</option>
+        <option value="sans">sans</option>
+        <?php
+        foreach ($slogans as $slogan) {
+            if ($slogan != "" && $slogan != " ") {
+                ?>
+                <option><?= $slogan ?></option>
+            <?php }
+        } ?>
+    </datalist>
+    <br>
+    <br>
+
+    <!--     <a id="boutonFiltre" class="btn btn-primary">Primary</a> -->
+
+</div>
+
+
+
+
+
 <?php
 
 
@@ -200,8 +136,7 @@ $content = ob_get_clean();
 require "view/gabaritAdminPanel.php";
 ?>
 <!--
-   /// IMAGES //
-<?= $image['IDImage'] ?>.png
+
 
 <option value="France" >France</option>
         <option value="Afghanistan">Afghanistan</option>
