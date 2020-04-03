@@ -14,32 +14,30 @@ Date : 16.03.2020
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css?d=<?php echo time(); ?>">
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap-grid.css?d=<?php echo time(); ?>">
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap-reboot.css?d=<?php echo time(); ?>">
-    <script  src="../js/jQuery.js"></script>
 
-    <script src="../js/md5.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="../js/adminPanel.js"></script>
+
 </head>
-<body id="body" >
+<body id="body">
 
 <form action="index.php?action=modify" method="POST" target="_blank">
     <div class="divMenu"
     >
 
         <div class="divTitle1">
-            <h1>Panel Administrateur
+            <h1><?= $titlePanel ?>
             </h1>
         </div>
         <div class="divTitle2">
-            <h3>Liste des Participants
+            <h3><?= $subTitlePanel ?>
             </h3>
         </div>
 
         <div class="divModifier " id="cool">
 
 
-            <span>Tout Modifier </span><input type="checkbox" aria-label="Checkbox for following text input"
-                                              id="toutModifier">
+            <?=$check?>
+
             <input type="submit" value="Modifier" id="bouton">
         </div>
     </div>
@@ -69,7 +67,7 @@ Date : 16.03.2020
                     <br>
                     <br>
                     <span><b>Modifier</b></span>
-                    <input type="checkbox" aria-label="helo" value="<?= $image['IDPlace'] ?>" name="arrayModify[]">
+                    <?=$chek1par1?>
                 </td>
                 </tr>
                 <?php
@@ -83,7 +81,6 @@ Date : 16.03.2020
     </div>
 </form>
 <?= $content ?>
-
 
 
 <!--

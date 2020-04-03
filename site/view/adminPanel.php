@@ -3,8 +3,14 @@
 //Projet : Projet Web Globescope
 //Date : 16.03.2020
 ob_start();
-$title = "Globescope - Panel Administrateur";
+$title = "Panel Admin - choisir";
+$subTitlePanel = "Choisissez les participants à changer";
+$titlePanel = "Page Administration";
+$check = '<span>Tout Modifier </span><input type="checkbox" aria-label="Checkbox for following text input\"
+                                              id="toutModifier">';
+$chech1par1 = '<input type="checkbox" aria-label="helo" value="<?= $image[\'IDPlace\'] ?>" name="arrayModify[]">';
 ?>
+<script src="../js/adminPanel.js"></script>
 
 <div class="divSelects" id="selects">
 
@@ -124,9 +130,6 @@ $title = "Globescope - Panel Administrateur";
     <!--     <a id="boutonFiltre" class="btn btn-primary">Primary</a> -->
 
 </div>
-
-
-
 
 
 <?php
