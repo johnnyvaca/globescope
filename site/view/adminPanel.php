@@ -38,6 +38,10 @@ $action = "modify";
                     <span><b>Modifier</b></span>
                     <input type="checkbox" value="<?= $image['IDPlace'] ?>" name="arrayModify[]" id="check<?= $i ?>">
                 </td>
+                <td>
+                    <a href="<?= $image['Media'] ?>" target="_blank" type="button">media</a>
+
+                </td>
             </tr>
             <?php
         }

@@ -21,7 +21,7 @@ Date : 16.03.2020
 <body id="body">
 
 
-<form action="index.php?action=<?=$action?>" method="POST" target="_blank" enctype="multipart/form-data">
+<form action="index.php?action=<?= $action ?>" method="POST" enctype="multipart/form-data">
     <div class="divMenu"
     >
 
