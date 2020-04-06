@@ -6,15 +6,17 @@
 //Auteurs : Kevin Vaucher et Johnny Vaca
 //Projet : Projet Web Globescope
 //Date : 16.03.2020
-function getImages()
-{
-    return json_decode(file_get_contents('data/images.json'), true); // by default, return everything as an associative array;
-}
+
+     // by default, return everything as an associative array;
+
 
 
 //Get JSON Params
+function coc(){
+    return json_decode(file_get_contents('data/images.json'), true);
+}
 
-$data = getImages();
+$data = coc();
 $obj = json_decode($_POST['x'], false);
 
 $query = "";

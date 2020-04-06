@@ -8,9 +8,49 @@ $subTitlePanel = "Choisissez les participants à changer";
 $titlePanel = "Page Administration";
 $check = '<span>Tout Modifier </span><input type="checkbox" aria-label="Checkbox for following text input\"
                                               id="toutModifier">';
-$chech1par1 = '<input type="checkbox" aria-label="helo" value="<?= $image[\'IDPlace\'] ?>" name="arrayModify[]">';
+
+$action = "modify";
 ?>
 <script src="../js/adminPanel.js"></script>
+
+
+<div class="divTable scrollit">
+    <table class="table-dark text-white tailleTable" id="myTable">
+        <thead>
+
+        </thead>
+        <tbody id="tbody" class="tbody">
+
+        <?php
+        foreach ($images as $i => $image) {
+            ?>
+            <tr>
+                <td><a type="button" id="btnCheck"><img src="../images/128-128/<?= $image['IDImage'] ?>"></a></td>
+                <td><b><span>Pseudo</span></b><br><br><span><?= $image['Pseudo'] ?></span></td>
+                <td><b><span>Pays</span></b><br><br><span><?= $image['Pays'] ?></span></td>
+                <td><b><span>Ville</span></b><br><br><span><?= $image['Ville'] ?></span></td>
+                <td><b><span>Equipe</span></b><br><br><span><?= $image['Equipe'] ?></span></td>
+                <td><b><span>Droit</span></b><br><br><span><?= $image['Droit'] ?></span></td>
+                <td><b><span>Slogan</span></b><br><br><span><?= $image['Slogan'] ?></span></td>
+                <td>
+                    <br>
+                    <br>
+                    <span><b>Modifier</b></span>
+                    <input type="checkbox" value="<?= $image['IDPlace'] ?>" name="arrayModify[]" id="check<?= $i ?>">
+                </td>
+            </tr>
+            <?php
+        }
+        ?>
+
+
+        </tbody>
+    </table>
+
+</div>
+
+</form>
+
 
 <div class="divSelects" id="selects">
 
@@ -34,6 +74,7 @@ $chech1par1 = '<input type="checkbox" aria-label="helo" value="<?= $image[\'IDPl
         } ?>
 
     </datalist>
+
     <br>
     <br> <br>
     <span>Filtrer par ville</span>
@@ -42,6 +83,8 @@ $chech1par1 = '<input type="checkbox" aria-label="helo" value="<?= $image[\'IDPl
         <option value="tous">tous</option>
         <option value="avec">avec</option>
         <option value="sans">sans</option>
+
+
         <?php
         foreach ($villes as $ville) {
 

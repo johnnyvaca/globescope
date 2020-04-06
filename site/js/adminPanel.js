@@ -11,23 +11,39 @@ i = 0
 
 function monScript() {
 
+
+    toutModifier.addEventListener('change', toutSelectionner);
+
+    selectPseudo.addEventListener('change', changeSelectsPseudo);
+    selectDroit.addEventListener('change', changeSelectsDroit);
+    selectVille.addEventListener('change', changeSelectsVille);
+    selectEquipe.addEventListener('change', changeSelectsEquipe);
+    selectPays.addEventListener('change', changeSelectsPays);
+    selectSlogan.addEventListener('change', changeSelectsSlogan);
+    //bouton.disabled = true;
+
     nbrImages = tbody.childNodes.length;
-        bouton.disabled = true;
+    /*    for (i = 0; i < nbrImages; i++) {
+          eco = "check" + i;
+          coco = document.getElementById("check" + i);
+      //    console.log(coco);
+          coco.addEventListener('change', selectionne);
 
-        toutModifier.addEventListener('change', toutSelectionner);
 
-        selectPseudo.addEventListener('change', changeSelectsPseudo);
-        selectDroit.addEventListener('change', changeSelectsPays);
-        selectVille.addEventListener('change', changeSelectsVille);
-        selectEquipe.addEventListener('change', changeSelectsEquipe);
-        selectPays.addEventListener('change', changeSelectsDroit);
-        selectSlogan.addEventListener('change', changeSelectsSlogan);
 
+
+
+
+      /*
+          selectPseudo.addEventListener('change', filterPseudo());
+          selectDroit.addEventListener('change', filterPays);
+          selectVille.addEventListener('change', filterVille);
+          selectEquipe.addEventListener('change', filterEquipe);
+          selectPays.addEventListener('change', filterDroit);
+          selectSlogan.addEventListener('change', filterSlogan);
+      */
 }
 
-function  checkImages() {
-
-}
 function filtrer() {
     /*
     changeSelectsPseudo()
@@ -44,24 +60,21 @@ function filtrer() {
     selectEquipe.addEventListener('change', changeSelectsEquipe);
     selectPays.addEventListener('change', changeSelectsDroit);
     selectSlogan.addEventListener('change', changeSelectsSlogan);
-     */
+*/
 }
 
 function toutSelectionner() {
-    nbrImages = tbody.childNodes.length;
     for (i = 0; i < nbrImages; i++) {
 
         if (this.checked) {
-            cool.children[1].textContent = "ne rien Modifier";
+            cool.children[0].textContent = "ne rien Modifier";
             tbody.rows[i].cells[7].children[3].checked = true;
             bouton.disabled = false;
         } else {
-            bouton.disabled = true;
-            cool.children[1].textContent = "Tout Modifier";
+
+            cool.children[0].textContent = "Tout Modifier";
             tbody.rows[i].cells[7].children[3].checked = false;
         }
-
-
         element = document.querySelector("#tbody").children;
         if (element[i].classList.contains("Pseudo")) {
             tbody.rows[i].cells[7].children[3].checked = false;
@@ -92,9 +105,6 @@ function toutSelectionner() {
 
         }
     }
-
-
-
 }
 
 function filter(texteSecondaire, elementExiste, elementExistePlus, i,) {
@@ -125,7 +135,7 @@ function filterContinue(elementExiste, elementExistePlus, idElement, classElemen
     if (elementExistePlus === 2) {
         elementExiste = elementExistePlus;
     }
-    console.log(elementExiste);
+    // console.log(elementExiste);
     if (elementExiste === 0) {
         $(idElement).find("option").eq(1).addClass(classElement)
         for (ii = 3; ii < $(idElement).find("option").length; ii++) {
@@ -156,8 +166,13 @@ function changeSelects(value, select, numeroPrincipal) {
     nbrImages = tbody.childNodes.length;
     for (i = 0; i < nbrImages; i++) {
         textePrincipal = $("tbody#tbody").find("tr").eq(i).find("td").eq(numeroPrincipal).find("span").eq(1).text();
+        // bouton.disabled = true;
 
-        if ("sans" === value) {
+
+
+        if ("" === value) {
+            $("tbody#tbody").find("tr").eq(i).removeClass(select);
+        } else if ("sans" === value) {
             if (textePrincipal !== "") {
                 $("tbody#tbody").find("tr").eq(i).addClass(select);
                 $("tbody#tbody").find("tr").eq(i).find("td").eq(7).find("input").eq(0).attr('checked', false);
@@ -188,12 +203,8 @@ function changeSelects(value, select, numeroPrincipal) {
 
 //    console.log(tableau);
 
-    bouton.disabled = true;
+
 }
-
-
-
-
 
 
 function changeSelectsPseudo() {
@@ -398,59 +409,60 @@ if (0) {
         changeSelects(value, select, numeroPrincipal, elementExiste, elementExistePlus);
     }
 
-    function filterPseudo() {
-        value = selectPseudo.value;
-        select = "Pseudo";
-        numeroPrincipal = 1;
-        elementExiste = -1;
-        elementExistePlus = -1;
-        filtreFilters(value, select, numeroPrincipal, elementExiste, elementExistePlus);
-    }
+}
 
-    function filterPays() {
-        value = selectPays.value
-        select = "Pays";
-        numeroPrincipal = 2;
-        elementExiste = -1;
-        elementExistePlus = -1;
-        filtreFilters(value, select, numeroPrincipal, elementExiste, elementExistePlus);
-    }
+function filterPseudo() {
+    value = selectPseudo.value;
+    select = "Pseudo";
+    numeroPrincipal = 1;
+    elementExiste = -1;
+    elementExistePlus = -1;
+    filtreFilters(value, select, numeroPrincipal, elementExiste, elementExistePlus);
+}
 
-    function filterVille() {
-        value = selectVille.value
-        select = "Ville";
-        numeroPrincipal = 3;
-        elementExiste = -1;
-        elementExistePlus = -1;
-        filtreFilters(value, select, numeroPrincipal, elementExiste, elementExistePlus);
-    }
+function filterPays() {
+    value = selectPays.value
+    select = "Pays";
+    numeroPrincipal = 2;
+    elementExiste = -1;
+    elementExistePlus = -1;
+    filtreFilters(value, select, numeroPrincipal, elementExiste, elementExistePlus);
+}
 
-    function filterEquipe() {
-        value = selectEquipe.value
-        select = "Equipe";
-        numeroPrincipal = 4;
-        elementExiste = -1;
-        elementExistePlus = -1;
-        filtreFilters(value, select, numeroPrincipal, elementExiste, elementExistePlus);
-    }
+function filterVille() {
+    value = selectVille.value
+    select = "Ville";
+    numeroPrincipal = 3;
+    elementExiste = -1;
+    elementExistePlus = -1;
+    filtreFilters(value, select, numeroPrincipal, elementExiste, elementExistePlus);
+}
 
-    function filterDroit() {
+function filterEquipe() {
+    value = selectEquipe.value
+    select = "Equipe";
+    numeroPrincipal = 4;
+    elementExiste = -1;
+    elementExistePlus = -1;
+    filtreFilters(value, select, numeroPrincipal, elementExiste, elementExistePlus);
+}
 
-        value = selectDroit.value
-        select = "Droit";
-        numeroPrincipal = 5;
-        elementExiste = -1;
-        elementExistePlus = -1;
-        filtreFilters(value, select, numeroPrincipal, elementExiste, elementExistePlus);
+function filterDroit() {
 
-    }
+    value = selectDroit.value
+    select = "Droit";
+    numeroPrincipal = 5;
+    elementExiste = -1;
+    elementExistePlus = -1;
+    filtreFilters(value, select, numeroPrincipal, elementExiste, elementExistePlus);
 
-    function filterSlogan() {
-        value = selectSlogan.value
-        select = "Slogan";
-        numeroPrincipal = 6;
-        elementExiste = -1;
-        elementExistePlus = -1;
-        filtreFilters(value, select, numeroPrincipal, elementExiste, elementExistePlus);
-    }
+}
+
+function filterSlogan() {
+    value = selectSlogan.value
+    select = "Slogan";
+    numeroPrincipal = 6;
+    elementExiste = -1;
+    elementExistePlus = -1;
+    filtreFilters(value, select, numeroPrincipal, elementExiste, elementExistePlus);
 }
