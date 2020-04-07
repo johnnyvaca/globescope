@@ -132,8 +132,14 @@ $action = "update";
                         </div>
                         <div class="modal-body">
                             <div class="form-group">
-                                <label for="recipient-name" class="col-form-label">Choisissez le Media</label>
+                                <label for="recipient-name" class="col-form-label">Choisissez le Media si lien
+                                    local</label>
                                 <input type="file" name="media[]" class="form-control" placeholder="bigimage">
+                            </div>
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Ecrire si lien internet</label>
+                                <input type="text" name="mediaInternet[]" class="form-control" placeholder="bigimage"
+                                >
                             </div>
                             <div class="form-group">
                                 <label for="recipient-name" class="col-form-label">Choisissez la description du
@@ -143,7 +149,7 @@ $action = "update";
                             </div>
 
 
-                            <label for="recipient-name" class="col-form-label">Eliminer l'image ancienne</label>
+                            <label for="recipient-name" class="col-form-label">Eliminer l'ancien media</label>
                             <div class="custom-control custom-radio">
                                 <input type="radio" class="custom-control-input" id="customControlValidation<?= $i ?>"
                                        name="deleteMedia<?= $i ?>" value="yes" required>
@@ -172,6 +178,7 @@ $action = "update";
             </div>
             <input type="hidden" name="IDPlaces[]" value="<?= $imageSelected['IDPlace'] ?>">
             <input type="hidden" name="nameImage[]" value="<?= $imageSelected['IDImage'] ?>">
+            <input type="hidden" name="nameMedia[]" value="<?= $imageSelected['Media'] ?>">
 
 
             <?php

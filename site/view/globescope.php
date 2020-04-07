@@ -62,7 +62,7 @@ $title = "globescope";
             <p id="childTeam"></p>
             <p id="childCitation"></p>
             <p id="childRight"></p>
-            <p id="childMedia"><a href=""></a></p>
+            <a href="<p id="childMedia"></p>"</a>
 
         </div>
     </div>

@@ -21,28 +21,18 @@ switch ($action) {
         break;
     case "update":
         $images = getImages();
-        /*        foreach ($images as $image){
-                    if ($nameImage === $image['IDImage']){
-                        $newName = $image['IDImage'];
-                    }
 
-                }
-        */
         $tous = glob('images/64-64/*');
-//foreach ($tous as $item){
-        // var_dump($item);
-        //  var_dump("<br>");
-//}
-
-        //      var_dump("tous : <br><br><br>");
-//        var_dump($tous);
 
         for ($i = 0; $i < count($_FILES['img64']['name']); $i++) {
 
             $rand1 = rand(1000, 999999);
             $rand2 = rand(1000, 999999);
             $rand3 = rand(1, 999);
+
+            var_dump($_FILES['media']['name'][$i]);
             $media[$i]['name'] = $_FILES['media']['name'][$i];
+
             $media[$i]['tmp_name'] = $_FILES['media']['tmp_name'][$i];
             $image64[$i]['name'] = $_FILES['img64']['name'][$i];
             $image64[$i]['tmp_name'] = $_FILES['img64']['tmp_name'][$i];
@@ -56,13 +46,10 @@ switch ($action) {
             $image400[$i]['tmp_name'] = $_FILES['img400']['tmp_name'][$i];
 
             $nameImage[$i] = $_POST['nameImage'][$i];
-            //   var_dump($nameImage[$i]);
-            // var_dump("<br>");
-            //    str_replace('','', $);
-
 
             for ($ii = 0; $ii < count($_POST['IDPlaces']); $ii++) {
                 $delete[$ii] = $_POST['delete' . $ii];
+                $deleteMedia[$ii] = $_POST['deleteMedia' . $ii];
             };
 
             if (!empty($image64[$i]['name'])) {
@@ -72,7 +59,7 @@ switch ($action) {
 
                 if ($delete[$i] == "no") {
                     rename("images/64-64/$newImage", "images/old/64-64/$rand1$rand2$rand3$newImage");
-                    // copy("images/64-64/$newImage", "images/64-64/old/$newImage");
+
                 } else {
                     unlink("images/64-64/$newImage");
                 }
@@ -81,7 +68,6 @@ switch ($action) {
                 rename("images/64-64/$oldImage", "images/64-64/$newImage");
             }
 
-            // var_dump($retour64);
             if (!empty($image128[$i]['name'])) {
 
                 $oldImage = $image128[$i]['name'];
@@ -89,7 +75,6 @@ switch ($action) {
 
                 if ($delete[$i] == "no") {
                     rename("images/128-128/$newImage", "images/old/128-128/$rand1$rand2$rand3$newImage");
-                    // copy("images/64-64/$newImage", "images/64-64/old/$newImage");
                 } else {
                     unlink("images/128-128/$newImage");
                 }
@@ -103,7 +88,6 @@ switch ($action) {
 
                 if ($delete[$i] == "no") {
                     rename("images/400-500/$newImage", "images/old/400-500/$rand1$rand2$rand3$newImage");
-                    // copy("images/64-64/$newImage", "images/64-64/old/$newImage");
                 } else {
                     unlink("images/400-500/$newImage");
                 }
@@ -112,15 +96,35 @@ switch ($action) {
                 rename("images/400-500/$oldImage", "images/400-500/$newImage");
             }
 
-
+            $copie = $_POST['nameMedia'][$i];
+            $copie = substr($copie, 10);
             if (!empty($media[$i]['name'])) {
+
+                if ($deleteMedia[$i] == "no") {
+                    rename("medias/$copie", "medias/old/$copie");
+                } else {
+                    unlink("medias/$copie");
+                }
+
+
                 uploadMedia($media[$i]['tmp_name'], $media[$i]['name'], count($_FILES['media']['name']));
             }
+            if (!empty($media[$i]['name'])) {
+                $retour = $media[$i]['name'];
+                $retourMedia = "../medias/" . $retour;
 
-            /*
-                addSnow($image128[$i]['name'], $media[$i]['name'], $_POST['Pseudos'][$i], $_POST['Pays'][$i], $_POST['Villes'][$i],
-                    $_POST['Equipes'][$i], $_POST['Droits'][$i], $_POST['Slogans'][$i], $_POST['IDPlaces'][$i]);
-        */
+            } else {
+                if (!empty($_POST['mediaInternet'][$i])) {
+                    $retourMedia = $_POST['mediaInternet'][$i];
+                } else {
+                    $retourMedia = $_POST['nameMedia'][$i];
+                }
+            }
+
+
+            addSnow($retourMedia, $_POST['MediaDesc'][$i], $_POST['Pseudos'][$i], $_POST['Pays'][$i], $_POST['Villes'][$i],
+                $_POST['Equipes'][$i], $_POST['Droits'][$i], $_POST['Slogans'][$i], $_POST['IDPlaces'][$i]);
+
         }
 
 

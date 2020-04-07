@@ -5,7 +5,7 @@
     "mer": "0",
     "lat": "10",
     "lon": "6",
-    "Pseudo": "image1",
+    "Pseudo": "image11",
     "Droit": "Utiliser son t\u00e9l\u00e9phone en classe",
     "Slogan": "slogan 1",
     "Provenance": "c",
@@ -13,8 +13,8 @@
     "Pays": "Suisse",
     "Ville": "Lausanne",
     "Equipe": "CPNV",
-    "Media": "..\/medias\/video1.mp4",
-    "MediaDesc": "Ceci est la description du m\u00e9dia."
+    "Media": "..\/medias\/deberes.pdf",
+    "MediaDesc": null
   },
   {
     "IDPlace": "18",
@@ -22,16 +22,16 @@
     "mer": "0",
     "lat": "10",
     "lon": "7",
-    "Pseudo": "image2",
-    "Droit": "Les enfants r\u00e9fugi\u00e9 ont droit \u00e0 une protection sp\u00e9ciale",
-    "Slogan": "slogan 2",
+    "Pseudo": "image22",
+    "Droit": "nous avons le droit de vivre",
+    "Slogan": "voici mon slogan 2",
     "Provenance": "",
     "ImageOK": "VRAI",
-    "Pays": "Allemagne",
-    "Ville": "Berlin",
-    "Equipe": "equipe0",
+    "Pays": "Espagne",
+    "Ville": "madrid",
+    "Equipe": "equipe00",
     "Media": "https:\/\/www.youtube.com\/watch?v=pP9jw3fgrCU",
-    "MediaDesc": "Ceci est la description du m\u00e9dia."
+    "MediaDesc": null
   },
   {
     "IDPlace": "19",
@@ -48,7 +48,7 @@
     "Ville": "Berlin",
     "Equipe": "equipe0",
     "Media": "https:\/\/www.youtube.com\/watch?v=pP9jw3fgrCU",
-    "MediaDesc": "Ceci est la description du m\u00e9dia."
+    "MediaDesc": null
   },
   {
     "IDPlace": "20",
@@ -65,7 +65,7 @@
     "Ville": "Zurich",
     "Equipe": "equipe0",
     "Media": "https:\/\/www.youtube.com\/watch?v=pP9jw3fgrCU",
-    "MediaDesc": "Ceci est la description du m\u00e9dia."
+    "MediaDesc": null
   },
   {
     "IDPlace": "26",

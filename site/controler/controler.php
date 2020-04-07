@@ -123,34 +123,32 @@ function getModifyPage($listeModify)
 
 function uploadMedia($tmp_name, $name, $max)
 {
-
-
     for ($i = 0; $i < $max; $i++) {
         $extention = strchr($name, ".");
-        //  $extentionAllowed = array(".jpg", ".JPG",".jpeg",".JPEG", ".png", ".PNG");
-        $destination = "images/64-64/" . $name;
-        //    if (in_array($extention, $extentionAllowed)) {
+          $extentionAllowed = array(".jpg", ".JPG",".jpeg",".JPEG", ".png", ".PNG");
+        $destination = "medias/" . $name;
+
         if (move_uploaded_file($tmp_name, $destination)) {
             return;
         }
-        //      }
-    }
 
+    }
 }
 
 function uploadImages64($tmp_name, $name, $max)
 {
 
-    for ($i = 0; $i < $max; $i++) { }
+    for ($i = 0; $i < $max; $i++) {
+    }
 
-        $extention = strchr($name, ".");
-        $extentionAllowed = array(".jpg", ".JPG", ".jpeg", ".JPEG", ".png", ".PNG");
-        $destination = "images/64-64/" . $name;
-        if (in_array($extention, $extentionAllowed)) {
-            if (move_uploaded_file($tmp_name, $destination)) {
-                return;
-            }
+    $extention = strchr($name, ".");
+    $extentionAllowed = array(".jpg", ".JPG", ".jpeg", ".JPEG", ".png", ".PNG");
+    $destination = "images/64-64/" . $name;
+    if (in_array($extention, $extentionAllowed)) {
+        if (move_uploaded_file($tmp_name, $destination)) {
+            return;
         }
+    }
 
 
 }
@@ -158,8 +156,7 @@ function uploadImages64($tmp_name, $name, $max)
 function uploadImages128($tmp_name, $name, $max)
 {
 
- //    var_dump($name);
-    //   var_dump($tmp_name);
+
     for ($i = 0; $i < $max; $i++) {
         $extention = strchr($name, ".");
         $extentionAllowed = array(".jpg", ".JPG", ".png", ".PNG", ".jpeg", ".JPEG");
@@ -175,8 +172,7 @@ function uploadImages128($tmp_name, $name, $max)
 
 function uploadImages400($tmp_name, $name, $max)
 {
-    //var_dump($name);
-    // var_dump($tmp_name);
+
     for ($i = 0; $i < $max; $i++) {
         $extention = strchr($name, ".");
         $extentionAllowed = array(".jpg", ".JPG", ".png", ".PNG", ".jpeg", ".JPEG");
@@ -191,7 +187,7 @@ function uploadImages400($tmp_name, $name, $max)
 }
 
 
-function addSnow($imageChoisis, $mediaChoisis, $pseudo, $pays, $ville, $equipe, $droit, $slogan, $id)
+function addSnow($mediaChoisi, $mediaDescChoisi, $pseudo, $pays, $ville, $equipe, $droit, $slogan, $id)
 {
 
     $personnes = getImages();
@@ -199,10 +195,10 @@ function addSnow($imageChoisis, $mediaChoisis, $pseudo, $pays, $ville, $equipe, 
     foreach ($personnes as $i => $personne) {
 
         if ($personne['IDPlace'] === $id) {
-            $tableau[$i] = ['IDPlace' => $id, 'IDImage' => $imageChoisis, 'mer' => $personne['mer'], 'lat' => $personne['lat'],
+            $tableau[$i] = ['IDPlace' => $id, 'IDImage' => $personne['IDImage'], 'mer' => $personne['mer'], 'lat' => $personne['lat'],
                 'lon' => $personne['lon'], 'Pseudo' => $pseudo, 'Droit' => $droit, 'Slogan' => $slogan,
                 'Provenance' => $personne['Provenance'], 'ImageOK' => $personne['ImageOK'], 'Pays' => $pays,
-                'Ville' => $ville, 'Equipe' => $equipe, 'Media' => $personne['Media'], 'MediaDesc' => $personne['MediaDesc']];
+                'Ville' => $ville, 'Equipe' => $equipe, 'Media' => $mediaChoisi, 'MediaDesc' => $mediaDescChoisi];
 
         } else {
             $tableau[$i] = $personne;
