@@ -64,7 +64,6 @@ function getAdminPanelPage()
 
 function getModifyPage($listeModify)
 {
-
     $images = getImages();
 
     //   var_dump($tabla);
@@ -124,6 +123,8 @@ function getModifyPage($listeModify)
 
 function uploadMedia($tmp_name, $name, $max)
 {
+
+
     for ($i = 0; $i < $max; $i++) {
         $extention = strchr($name, ".");
         //  $extentionAllowed = array(".jpg", ".JPG",".jpeg",".JPEG", ".png", ".PNG");
@@ -139,7 +140,9 @@ function uploadMedia($tmp_name, $name, $max)
 
 function uploadImages64($tmp_name, $name, $max)
 {
-    for ($i = 0; $i < $max; $i++) {
+
+    for ($i = 0; $i < $max; $i++) { }
+
         $extention = strchr($name, ".");
         $extentionAllowed = array(".jpg", ".JPG", ".jpeg", ".JPEG", ".png", ".PNG");
         $destination = "images/64-64/" . $name;
@@ -148,22 +151,21 @@ function uploadImages64($tmp_name, $name, $max)
                 return;
             }
         }
-    }
+
 
 }
 
 function uploadImages128($tmp_name, $name, $max)
 {
 
-    // var_dump($name);
+ //    var_dump($name);
     //   var_dump($tmp_name);
     for ($i = 0; $i < $max; $i++) {
         $extention = strchr($name, ".");
-        $extentionAllowed = array(".jpg", ".JPG", ".png", ".PNG");
+        $extentionAllowed = array(".jpg", ".JPG", ".png", ".PNG", ".jpeg", ".JPEG");
         $destination = "images/128-128/" . $name;
         if (in_array($extention, $extentionAllowed)) {
             if (move_uploaded_file($tmp_name, $destination)) {
-
                 return;
             }
         }
@@ -177,7 +179,7 @@ function uploadImages400($tmp_name, $name, $max)
     // var_dump($tmp_name);
     for ($i = 0; $i < $max; $i++) {
         $extention = strchr($name, ".");
-        $extentionAllowed = array(".jpg", ".JPG", ".png", ".PNG");
+        $extentionAllowed = array(".jpg", ".JPG", ".png", ".PNG", ".jpeg", ".JPEG");
         $destination = "images/400-500/" . $name;
         if (in_array($extention, $extentionAllowed)) {
             if (move_uploaded_file($tmp_name, $destination)) {

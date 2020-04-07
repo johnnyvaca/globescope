@@ -80,7 +80,7 @@ function loadData(scene,canvContainer,controls)
                         index++;
                         //afficher le canvas lorsque la dernière image est chargée
                         
-                        file ="images/64-64/"+data[x].IDImage;
+                        file ="images/64-64/"+data[x].IDImage+".png";
                         texture =  textureLoader.load( file, function()
                         {
                             imageLoaded++;

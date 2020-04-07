@@ -31,11 +31,12 @@ $action = "update";
         foreach ($imagesSelected as $i => $imageSelected) {
 
             ?>
+            <?= $imagesSelected['IDImage'] ?>
             <tr>
                 <td>
                     <a type="button" id="btnCheck" data-toggle="modal" data-target="#exampleModal<?= $i ?>"
                        data-whatever="@mdo"><img
-                                src="../images/128-128/<?= $imageSelected['IDImage'] ?>"></a></td>
+                                src="../images/64-64/<?= $imageSelected['IDImage'] ?>.png"></a></td>
 
                 <td><b><span>Pseudo</span></b><br><br><input type="text" value="<?= $imageSelected['Pseudo'] ?>"
                                                              name="Pseudos[]"></td>
@@ -61,7 +62,6 @@ $action = "update";
                        data-whatever="@mdo">Changer</a>
                 </td>
 
-                <input type="hidden" name="IDPlaces[]" value="<?= $imageSelected['IDPlace'] ?>">
 
             </tr>
 
@@ -170,10 +170,14 @@ $action = "update";
                     </div>
                 </div>
             </div>
+            <input type="hidden" name="IDPlaces[]" value="<?= $imageSelected['IDPlace'] ?>">
+            <input type="hidden" name="nameImage[]" value="<?= $imageSelected['IDImage'] ?>">
 
 
             <?php
+
         }
+
         ?>
 
 

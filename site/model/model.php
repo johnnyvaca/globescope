@@ -16,3 +16,4 @@ function putSnow($tableau)
     $json_string = json_encode($tableau);
     file_put_contents($file, $json_string);
 }
+

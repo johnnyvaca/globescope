@@ -25,7 +25,7 @@ $action = "modify";
         foreach ($images as $i => $image) {
             ?>
             <tr>
-                <td><a type="button" id="btnCheck"><img src="../images/128-128/<?= $image['IDImage'] ?>"></a></td>
+                <td><a type="button" id="btnCheck"><img src="../images/64-64/<?= $image['IDImage'] ?>.png"></a></td>
                 <td><b><span>Pseudo</span></b><br><br><span><?= $image['Pseudo'] ?></span></td>
                 <td><b><span>Pays</span></b><br><br><span><?= $image['Pays'] ?></span></td>
                 <td><b><span>Ville</span></b><br><br><span><?= $image['Ville'] ?></span></td>
@@ -39,7 +39,7 @@ $action = "modify";
                     <input type="checkbox" value="<?= $image['IDPlace'] ?>" name="arrayModify[]" id="check<?= $i ?>">
                 </td>
                 <td>
-                    <a href="<?= $image['Media'] ?>" target="_blank" type="button">media</a>
+                    <a href="<?= $image['Media'] ?>" target="_blank" type="button" class="btn-primary">media</a>
 
                 </td>
             </tr>
