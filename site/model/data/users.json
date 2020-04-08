@@ -1,0 +1,14 @@
+[
+  {
+    "name": "admin",
+    "email": "admin@globescope.com",
+    "password": "admin",
+    "droit": "1"
+  },
+  {
+    "name": "invite",
+    "email": "invite@globescope.com",
+    "password": "invite",
+    "droit": "0"
+  }
+]

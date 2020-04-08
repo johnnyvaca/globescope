@@ -5,7 +5,7 @@
     "mer": "0",
     "lat": "10",
     "lon": "6",
-    "Pseudo": "image11",
+    "Pseudo": "image1",
     "Droit": "Utiliser son t\u00e9l\u00e9phone en classe",
     "Slogan": "slogan 1",
     "Provenance": "c",
@@ -14,7 +14,7 @@
     "Ville": "Lausanne",
     "Equipe": "CPNV",
     "Media": "..\/medias\/deberes.pdf",
-    "MediaDesc": null
+    "MediaDesc": "esto es una prueba 23432"
   },
   {
     "IDPlace": "18",
@@ -22,7 +22,7 @@
     "mer": "0",
     "lat": "10",
     "lon": "7",
-    "Pseudo": "image22",
+    "Pseudo": "image2",
     "Droit": "nous avons le droit de vivre",
     "Slogan": "voici mon slogan 2",
     "Provenance": "",
@@ -31,7 +31,7 @@
     "Ville": "madrid",
     "Equipe": "equipe00",
     "Media": "https:\/\/www.youtube.com\/watch?v=pP9jw3fgrCU",
-    "MediaDesc": null
+    "MediaDesc": "esto es la prueba 222113131231"
   },
   {
     "IDPlace": "19",
@@ -48,7 +48,7 @@
     "Ville": "Berlin",
     "Equipe": "equipe0",
     "Media": "https:\/\/www.youtube.com\/watch?v=pP9jw3fgrCU",
-    "MediaDesc": null
+    "MediaDesc": ""
   },
   {
     "IDPlace": "20",
@@ -80360,7 +80360,7 @@
   },
   {
     "IDPlace": "3964",
-    "IDImage": "2.jpg",
+    "IDImage": "9-31-13",
     "mer": "9",
     "lat": "31",
     "lon": "13",
@@ -80372,8 +80372,8 @@
     "Pays": "Suisse",
     "Ville": "St-croix",
     "Equipe": "CPNV",
-    "Media": "https:\/\/www.youtube.com\/watch?v=pP9jw3fgrCU",
-    "MediaDesc": "Ceci est la description du m\u00e9dia."
+    "Media": "..\/medias\/WhatsApp Image 2020-03-19 at 14.51.24.jpeg",
+    "MediaDesc": null
   },
   {
     "IDPlace": "3953",

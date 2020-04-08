@@ -1,9 +1,3 @@
-<!--
-Auteurs : Kevin Vaucher et Johnny Vaca
-Projet : Projet Web Globescope
-Date : 16.03.2020
--->
-
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 <head>
@@ -18,37 +12,20 @@ Date : 16.03.2020
     <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
 
 </head>
-<body id="body">
+<body>
 
-
-<form action="index.php?action=<?= $action ?>" method="POST" enctype="multipart/form-data">
-
-    <div class="divMenu"
-    >
-
-        <div class="divTitle1">
-          <a href="?action=login">  <h1><?= $titlePanel ?>
-            </h1></a>
-        </div>
-        <div class="divTitle2">
-            <h3><?= $subTitlePanel ?>
-            </h3>
-        </div>
-
-        <div class="divModifier " id="cool">
-
-
-            <?= $check ?>
-
-            <input type="submit" value="Modifier" id="bouton">
-        </div>
+<form action="?action=tryLogin" method="post">
+    <div class="form-group">
+        <label for="email">Adresse Email:</label>
+        <input type="email" class="form-control" placeholder="Enter email" id="email" name="email">
     </div>
-
-    <br>
-    <br>
-    <br>
-
-    <?= $content ?>
+    <div class="form-group">
+        <label for="pwd">Mot de Passe:</label>
+        <input type="password" class="form-control" placeholder="Enter password" id="pwd" name="password">
+    </div>
+    <button type="submit" class="btn btn-primary">Connexion</button>
+</form>
 
 </body>
 </html>
+<?php

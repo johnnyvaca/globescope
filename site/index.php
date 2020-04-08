@@ -2,13 +2,26 @@
 //Auteurs : Kevin Vaucher et Johnny Vaca
 //Projet : Projet Web Globescope
 //Date : 16.03.2020
+
+session_start();
+
 require "controler/controler.php";
 
 $action = $_GET['action'];
 
 switch ($action) {
+
+    case "successLogin":
+            getAdminPanelPage();
+        break;
+    case "tryLogin":
+
+        verifyLogin( $_POST['email'], $_POST['password']);
+        break;
     case "login":
-        getAdminPanelPage();
+getTryLogin();
+
+
         break;
     case "modify":
         //     var_dump($_POST['arrayModify']);
@@ -23,14 +36,14 @@ switch ($action) {
         $images = getImages();
 
         $tous = glob('images/64-64/*');
+        $i = 0;
+        if ($i < count($_FILES['img64']['name'])) {
 
-        for ($i = 0; $i < count($_FILES['img64']['name']); $i++) {
 
             $rand1 = rand(1000, 999999);
             $rand2 = rand(1000, 999999);
             $rand3 = rand(1, 999);
 
-            var_dump($_FILES['media']['name'][$i]);
             $media[$i]['name'] = $_FILES['media']['name'][$i];
 
             $media[$i]['tmp_name'] = $_FILES['media']['tmp_name'][$i];
@@ -46,11 +59,12 @@ switch ($action) {
             $image400[$i]['tmp_name'] = $_FILES['img400']['tmp_name'][$i];
 
             $nameImage[$i] = $_POST['nameImage'][$i];
-
-            for ($ii = 0; $ii < count($_POST['IDPlaces']); $ii++) {
+            $ii = 0;
+            if ($ii < count($_POST['IDPlaces'])) {
                 $delete[$ii] = $_POST['delete' . $ii];
                 $deleteMedia[$ii] = $_POST['deleteMedia' . $ii];
-            };
+                $ii++;
+            }
 
             if (!empty($image64[$i]['name'])) {
 
@@ -122,10 +136,14 @@ switch ($action) {
             }
 
 
-            addSnow($retourMedia, $_POST['MediaDesc'][$i], $_POST['Pseudos'][$i], $_POST['Pays'][$i], $_POST['Villes'][$i],
+            addSnow($retourMedia, $_POST['mediaDesc'][$i], $_POST['Pseudos'][$i], $_POST['Pays'][$i], $_POST['Villes'][$i],
                 $_POST['Equipes'][$i], $_POST['Droits'][$i], $_POST['Slogans'][$i], $_POST['IDPlaces'][$i]);
 
+            $i++;
+        } else {
+
         }
+        require "view/finUpdate.php";
 
 
         break;

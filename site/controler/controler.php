@@ -12,6 +12,27 @@ function getHomePage()
     require "view/globescope.php";
 }
 
+function verifyLogin($email, $password)
+{
+    $users = getUsers();
+
+
+    foreach ($users as $user) {
+        if ($email == $user['email'] && $password == $user['password']) {
+            getAdminPanelPage();
+            $_SESSION['admin']['name'] = $user['name'];
+            $_SESSION['admin']['email'] = $user['email'];
+            $_SESSION['admin']['droit'] = $user['droit'];
+        }
+    }
+
+}
+
+function getTryLogin()
+{
+    require "view/trylogin.php";
+}
+
 function getAdminPanelPage()
 {
     $images = getImages();
@@ -125,7 +146,7 @@ function uploadMedia($tmp_name, $name, $max)
 {
     for ($i = 0; $i < $max; $i++) {
         $extention = strchr($name, ".");
-          $extentionAllowed = array(".jpg", ".JPG",".jpeg",".JPEG", ".png", ".PNG");
+        $extentionAllowed = array(".jpg", ".JPG", ".jpeg", ".JPEG", ".png", ".PNG");
         $destination = "medias/" . $name;
 
         if (move_uploaded_file($tmp_name, $destination)) {

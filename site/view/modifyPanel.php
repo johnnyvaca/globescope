@@ -19,7 +19,6 @@ $champSlogan = '<input type="text" value="$image[\'Slogan\']">';
 $action = "update";
 ?>
 
-
 <div class="divTable scrollit">
     <table class="table-dark text-white tailleTable" id="myTable">
         <thead>
