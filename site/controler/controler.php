@@ -18,12 +18,20 @@ function verifyLogin($email, $password)
 
 
     foreach ($users as $user) {
-        if ($email == $user['email'] && $password == $user['password']) {
-            getAdminPanelPage();
-            $_SESSION['admin']['name'] = $user['name'];
-            $_SESSION['admin']['email'] = $user['email'];
-            $_SESSION['admin']['droit'] = $user['droit'];
+        if ($email == $user['email']) {
+            if (password_verify($password, $user['password'])) {
+
+                $_SESSION['name'] = $user['name'];
+                $_SESSION['email'] = $user['email'];
+                $_SESSION['droit'] = $user['droit'];
+                getAdminPanelPage();
+                return;
+            }
+
+        } else {
+            getTryLogin();
         }
+
     }
 
 }

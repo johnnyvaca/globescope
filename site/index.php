@@ -8,27 +8,29 @@ session_start();
 require "controler/controler.php";
 
 $action = $_GET['action'];
-
+var_dump($_SESSION);
 switch ($action) {
 
     case "successLogin":
-            getAdminPanelPage();
+        getAdminPanelPage();
         break;
     case "tryLogin":
-
-        verifyLogin( $_POST['email'], $_POST['password']);
+        verifyLogin($_POST['email'], $_POST['password']);
         break;
     case "login":
-getTryLogin();
+        getTryLogin();
 
 
         break;
     case "modify":
-        //     var_dump($_POST['arrayModify']);
 
-        $listeChose = $_POST['arrayModify'];
 
-        getModifyPage($listeChose);
+        if ($_SESSION['droit'] == 1) {
+            $listeChose = $_POST['arrayModify'];
+            getModifyPage($listeChose);
+        } else {
+            getAdminPanelPage();
+        }
 
 
         break;

@@ -2,13 +2,13 @@
   {
     "name": "admin",
     "email": "admin@globescope.com",
-    "password": "admin",
+    "password": "$2y$10$rE5WdbiX/CkTNfF5Bvb/8elzradEKEKuvAOABpGnSH7EZxt3BwRm2",
     "droit": "1"
   },
   {
     "name": "invite",
     "email": "invite@globescope.com",
-    "password": "invite",
+    "password": "$2y$10$yY3hgQEBUyfmyL0orrjJF.8ksli0X.Ri7uWdf/v.co3p6wtENr.2y",
     "droit": "0"
   }
 ]
