@@ -1,58 +1,4 @@
 /*
-// console.log(tbody.children);
-function fnAjouterVoyageur() {
-// Controle si un transport a deja été ajouté
-    if (document.getElementById('tbody1').rows[0].cells[0].value !== "") {
-
-        // chaque inputX contient les valeurs de chaque valeurs des champs text des voyageurs
-        input0 = document.getElementById('tbody').children[2];
-        longueur = input0.childNodes.length;
-        //controlle si tous les champs text contiennent un carachtere
-
-
-        // création de tous les elements
-        td0 = document.createElement('td');
-        td1 = document.createElement('td');
-        td2 = document.createElement('td');
-        td3 = document.createElement('td');
-        td4 = document.createElement('td');
-        tr = document.createElement('tr');
-        bouton0 = document.createElement('button');
-        chkConfirmer = document.createElement('input');
-
-        // Ajout de toutes les attributs de chaque td
-        td0.innerText = input0;
-        td1.innerText = input1;
-        td2.innerText = input2;
-        td3.innerText = input3;
-        td4.innerText = input4;
-        chkConfirmer.type = "checkbox";
-        bouton0.innerText = "supprimer";
-        bouton0.className = "btn btn-danger";
-        bouton0.addEventListener('click', fnSupprimerVoyageur);
-
-        // mettre les elements créés dans les l'élément parent du DOM
-        tr.appendChild(td0);
-        tr.appendChild(td1);
-        tr.appendChild(td2);
-        tr.appendChild(td3);
-        tr.appendChild(td4)
-        tr.appendChild(bouton0);
-        tr.appendChild(chkConfirmer);
-        tbody1.appendChild(tr);
-        // Vidange des champs text des voyageurs => libere pour nouveaux
-        document.getElementById('ajoutVoyageurs').children[0].children[1].value = "";
-        document.getElementById('ajoutVoyageurs').children[1].children[1].value = "";
-        document.getElementById('ajoutVoyageurs').children[2].children[1].value = "";
-        document.getElementById('ajoutVoyageurs').children[3].children[1].value = "";
-        document.getElementById('ajoutVoyageurs').children[4].children[1].value = "";
-
-
-    }
-
-
-}
-*/
 
 /**Initialisation THREE JS */
 var scene = new THREE.Scene();
@@ -141,6 +87,7 @@ var childImage = document.getElementById("childImage");
 var childPseudo = document.getElementById("childPseudo");
 var childCitation = document.getElementById("childCitation");
 var childRight = document.getElementById("childRight");
+var childMedia = document.getElementById("childMedia");
 
 childImage.onload = showOnClickDetails;
 closeSideBar.onclick = hideSideBar;

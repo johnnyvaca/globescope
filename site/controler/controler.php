@@ -5,17 +5,15 @@
 //Date : 16.03.2020
 
 require "model/model.php";
-
 function getHomePage()
 {
-    require "model/GetData.php";
+    $images = getImages();
     require "view/globescope.php";
 }
 
 function verifyLogin($email, $password)
 {
     $users = getUsers();
-
 
     foreach ($users as $user) {
         if ($email == $user['email']) {

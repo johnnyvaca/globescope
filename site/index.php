@@ -6,10 +6,13 @@
 session_start();
 
 require "controler/controler.php";
+require 'controler/GetData.php';
 
 $action = $_GET['action'];
-var_dump($_SESSION);
 switch ($action) {
+    case "GetData":
+        GetData();
+        break;
 
     case "successLogin":
         getAdminPanelPage();

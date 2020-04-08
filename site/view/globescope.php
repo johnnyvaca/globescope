@@ -62,7 +62,7 @@ $title = "globescope";
             <p id="childTeam"></p>
             <p id="childCitation"></p>
             <p id="childRight"></p>
-            <a href="<p id="childMedia"></p>"</a>
+            <p id="childMedia"></p>
 
         </div>
     </div>
@@ -90,7 +90,10 @@ $title = "globescope";
 </div>
 
 <?php
-echo json_encode($res);
+if($res != ""){
+    echo json_encode($res);
+}
+
 $content = ob_get_clean();
 require "view/gabaritGlobe.php";
 ?>
