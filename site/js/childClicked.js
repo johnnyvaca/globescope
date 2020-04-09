@@ -27,9 +27,7 @@ function onImageClick(x) {
                     childCountry.textContent = myObj.Pays;
                     childCity.textContent = myObj.Ville;
                     childTeam.textContent = myObj.Equipe;
-                    childMedia.textContent = "Media de la personne";
-                    childMediaDesc.textContent = myObj.MediaDesc;
-                    lienMedia.href = myObj.Media;
+                    childMedia.textContent = myObj.Media;
                 }
             }
         }

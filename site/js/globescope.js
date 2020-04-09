@@ -89,8 +89,6 @@ var childCountry = document.getElementById("childCountry");
 var childCity = document.getElementById("childCity");
 var childTeam = document.getElementById("childTeam");
 var childMedia = document.getElementById("childMedia");
-var childMediaDesc = document.getElementById("childMediaDesc");
-var lienMedia = document.getElementById("lienMedia");
 
 childImage.onload = showOnClickDetails;
 closeSideBar.onclick = hideSideBar;
@@ -259,10 +257,10 @@ function closeHelp() {
 }
 
 function showSearchResults() {
-    //   hash = calcMD5(searchText.value);
+ //   hash = calcMD5(searchText.value);
 
     if (searchText.value === "admin") {
-        //    window.location = "index.php?action=login";
+    //    window.location = "index.php?action=login";
         window.open("index.php?action=login");
     } else {
         searchChild(camera, scene);
