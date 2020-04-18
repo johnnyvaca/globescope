@@ -38,6 +38,7 @@ function searchChild(camera,scene)
 
                         img.id=myObj[i].IDImage;
                         img.src = "images/64-64/"+myObj[i].IDImage+".png"
+
                         img.onclick = function()
                         {
                             var plane = scene.getObjectByName( myObj[i].IDPlace );

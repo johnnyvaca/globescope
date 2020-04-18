@@ -1,95 +1,109 @@
-.Pseudo,.Pays,.Ville,.Equipe,.Droit,.Slogan,.Search{
-display: none;
-}
-.allBody{
-    height: 100%;
-    width: 100%;
-}
-.divMenu {
-
-}
-
-.divTitle1 {
-    position: absolute;
-    top: 1%;
-    left: 1%;
-}
-
-.divTitle2 {
-
-    position: absolute;
-    top: 10%;
-    left: 29%;
-}
-.tailleTable{
-    width: 100%;
-    height: 100%;
-}
-.divSearch {
-
-
-    position: absolute;
-    top: 1%;
-    left: 67%;
-    right: 10%;
-}
-
-.divModifier {
-
-    position: absolute;
-    top: 10%;
-    right: 5.5%;
-}
-
-.divSelect {
-    width: 100%;
-    height: 5%;
-
-
-}
-
-.divSelects {
-    width: 10%;
-    height: 80%;
-    position: absolute;
-    top: 15%;
-    left: 1%;
-}
-
-.divTable {
-    position: absolute;
-    left: 13%;
-    right: 2%;
-    top: 15%;
-
-}
-
-.scrollit {
-    overflow: scroll;
-    height: 80%;
-}
-
-tr {
-    height: 125px;
-}
-
-td {
-    height: 125px;
-}
-
-img {
-    height: 125px;
-    width: 100px;
-}
-
-.divSearch > select {
-
-    position: absolute;
-    left: 0px;
-}
-
-.divSearch > input {
-
-    position: absolute;
-    right: 0px;
-}
+.Pseudo,.Pays,.Ville,.Equipe,.Droit,.Slogan,.Search{
+
+    display: none;
+}
+.temps{
+    display: none;
+}
+
+.myClass{
+
+    background-color: brown;
+}
+.allBody{
+    height: 100%;
+    width: 100%;
+}
+.divMenu {
+
+}
+
+.divTitle1 {
+    position: absolute;
+    top: 1%;
+    left: 1%;
+}
+
+.divTitle2 {
+
+    position: absolute;
+    top: 10%;
+    left: 29%;
+}
+.tailleTable{
+    width: 100%;
+    height: 100%;
+}
+.divSearch {
+
+
+    position: absolute;
+    top: 1%;
+    left: 67%;
+    right: 10%;
+}
+
+.divModifier {
+
+    position: absolute;
+    top: 10%;
+    right: 5.5%;
+}
+
+.divSelect {
+    width: 100%;
+    height: 5%;
+
+
+}
+
+.divSelects {
+    width: 10%;
+    height: 80%;
+    position: absolute;
+    top: 15%;
+    left: 1%;
+}
+
+.divTable {
+    position: absolute;
+    left: 13%;
+    right: 2%;
+    top: 15%;
+
+}
+
+.scrollit {
+    overflow: scroll;
+    height: 80%;
+}
+
+tr {
+    height: 125px;
+}
+
+td {
+    height: 125px;
+}
+
+img {
+    height: 125px;
+    width: 100px;
+}
+
+.divSearch > select {
+
+    position: absolute;
+    left: 0px;
+}
+
+.divSearch > input {
+
+    position: absolute;
+    right: 0px;
+}
+.chargement{
+    position: absolute;
+    top: 1%;
+    left: 30%;
+}
