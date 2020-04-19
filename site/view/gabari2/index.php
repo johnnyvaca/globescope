@@ -130,11 +130,7 @@ switch ($action) {
             }
             if (!empty($media[$i]['name'])) {
                 $retour = $media[$i]['name'];
-<<<<<<< HEAD
-                $retourMedia = "../medias/" . $retour;
-=======
                 $retourMedia = "medias/" . $retour;
->>>>>>> parent of 910d8f80... mise à jour
 
             } else {
                 if (!empty($_POST['mediaInternet'][$i])) {

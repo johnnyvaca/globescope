@@ -4,12 +4,21 @@
     <title><?= $title ?></title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<<<<<<< HEAD
     <link rel="stylesheet" href="../css/adminPanel.css">
     <link href="../node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
     <link href="../node_modules/bootstrap/dist/css/bootstrap-grid.css" rel="stylesheet">
     <link href="../node_modules/bootstrap/dist/css/bootstrap-reboot.css" rel="stylesheet">
     <script src="../node_modules/jquery/dist/jquery.js"></script>
     <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+=======
+    <link rel="stylesheet" href="css/adminPanel.css">
+    <link href="node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="node_modules/bootstrap/dist/css/bootstrap-grid.css" rel="stylesheet">
+    <link href="node_modules/bootstrap/dist/css/bootstrap-reboot.css" rel="stylesheet">
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+>>>>>>> parent of 910d8f80... mise à jour
 
 </head>
 <body>

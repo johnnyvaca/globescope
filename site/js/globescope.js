@@ -89,6 +89,11 @@ var childCountry = document.getElementById("childCountry");
 var childCity = document.getElementById("childCity");
 var childTeam = document.getElementById("childTeam");
 var childMedia = document.getElementById("childMedia");
+<<<<<<< HEAD
+=======
+var childMediaDesc = document.getElementById("childMediaDesc");
+var lienMedia = document.getElementById("lienMedia");
+>>>>>>> parent of 910d8f80... mise à jour
 
 childImage.onload = showOnClickDetails;
 closeSideBar.onclick = hideSideBar;
@@ -257,10 +262,17 @@ function closeHelp() {
 }
 
 function showSearchResults() {
+<<<<<<< HEAD
  //   hash = calcMD5(searchText.value);
 
     if (searchText.value === "admin") {
     //    window.location = "index.php?action=login";
+=======
+    //   hash = calcMD5(searchText.value);
+
+    if (searchText.value === "admin") {
+        //    window.location = "index.php?action=login";
+>>>>>>> parent of 910d8f80... mise à jour
         window.open("index.php?action=login");
     } else {
         searchChild(camera, scene);
