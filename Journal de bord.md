@@ -8,4 +8,4 @@ Ce site internet nous permet de gérer la partie administrative du globe.
 ### accès administration :
 - écrire : admin, dans la barre de recherche
 - email d'utilisaeur : admin@globescope.com
-- admin
+- mot de passe : admin
