@@ -1,6 +1,11 @@
 Journal de bord - Johnny et Kevin
 Projet WEB - Globescope
 
-13.02.2020 :
-Création du markdown pour le repo Github
-Kevin seul le temps que Johnny revienne
+Ce site internet nous permet de gérer la partie administrative du globe.
+- modifier les données du globe (pays,nom,images,etc...)
+- filtrer le informations en JQuery
+- lien internet : https://edm.mycpnv.ch/g_a2/
+### accès administration :
+- écrire : admin, dans la barre de recherche
+- email d'utilisaeur : admin@globescope.com
+- admin
